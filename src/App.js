@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './assets/sass/App.css';
+/* import { Component } from './assets/scss/components/navbar/NavBar'; */
 
+/* 
+* * se nada que ver
+* ! ojo con esto
+ */
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+        <body>
+        <section className='hero'>
+            <div className='hero__content'>
+                <div className='content__csoon'> Hello World3 </div>
+                <button className='content__btn btn__main'>Juega el beta</button> 
+            </div>
+        </section>
+        </body> 
+    );
+};
 
-export default App;
+    export default App;
