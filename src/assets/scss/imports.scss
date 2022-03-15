@@ -1,0 +1,34 @@
+/* FUENTES */
+@import '../fonts/_bfort.scss';
+
+/* ABSTRATCS IMPORTS */
+@import 'abstracts/_breakpoints',
+        'abstracts/_customs',
+        'abstracts/_default';
+
+
+/* COMPONENTS IMPORTS */
+@import 'components/buttons/classic/_buttonC', // Boton C
+        'components/buttons/betaBtn/_betaBtn', // Boton beta access
+        'components/buttons/playBtn/_playBtn', // Boton play    
+        'components/cardNew/_cardNew',
+        'components/countdown/_countdown', // Cuenta regresiva
+        'components/footer/_footer',
+        'components/inputs/_inputs',
+        'components/maps/_maps',
+        'components/modals/classic/_modalC', // Modal Clasico
+        'components/navMain/_navMain';
+
+
+/* VIEWS IMPORTS */
+@import 'views/hero/_hero',
+        'views/news/_news',
+        'views/about/_about',
+        'views/guides/_guides',
+        'views/story/_story',
+        'views/register/_register', 
+        'views/logIn/_logIn', 
+        'views/lostPsw/_lostPsw', 
+        'views/playBeta/_playBeta',
+        'views/userPanel/_userPanel';
+        

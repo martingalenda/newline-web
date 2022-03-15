@@ -1,0 +1,55 @@
+/* **** CONFIGS | CUSTOM PROPERTY **** */
+
+/* Dark Mode - Colors */
+$main-DColor: #FBFAF7;
+$scnd-DColor: rgba(251, 250, 247, 0.55);;
+$hover-DColor: #EFB938;
+$bg-DColor: #131416;
+$bg-DScndColor: #2b2e3c;
+
+/* Tipografias */
+$main-typo: 'Beaufort';
+$scnd-typo:  Calibri, 'Trebuchet MS', sans-serif;
+
+
+/* --- SCROLLBAR PRO CSS - HABILITADA ---*/ 
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #1E1F26);
+
+}
+  
+
+/* --- TEXTO SELECCIONADO ---*/
+::selection {
+    background-color: rgb(41 44 57 / 70%);
+    color: $main-DColor;
+}
+
+
+/* --- DARK MODE DESHABILITADO --- */
+/* @media (prefers-color-scheme: dark) {
+    :root {
+      --main-color : #1F2432;
+      --scnd-color : #f2f2f2;  
+    }
+}  */
+ 
+
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+/* 
+----- OPCIONAL -----
+En caso de activarlo, se debe colocar el selector correcto (en lugar de *) por cuestiones de rendimiento 
+*/
+/* 
+    @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none;
+      transition: none;
+    }
+} 
+*/

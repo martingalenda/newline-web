@@ -1,3 +1,19 @@
+# Guia de instalación
+
+
+1- Clonar el proyecto en git
+
+2- Instalar dependencias:
+`! Sass (preprocesador)`
+`! fontawesome.com (icons)`
+`! reacttraining.com (react router)`
+`! wowjs.uk + animate.style (wow.js + animate.css)`
+
+# Metodología de clases: `BEM`
+
+
+<!-- ----------------------------------------------------------------------- -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

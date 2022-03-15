@@ -1,0 +1,26 @@
+.playBeta {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    z-index: 100;
+    width: 10em;
+    @include hd {
+        display: none;
+    }
+    &:hover > .playBeta__txt{
+        color: $hover-DColor;
+        transition-property: color;
+        transition-duration: 1.5s;
+    }
+    .playBeta__txt {
+        position: absolute;
+        z-index: 105;
+        bottom: 0;
+        left: 0;
+        padding: 0.2em 0.95em;
+        text-transform: uppercase;
+        color: $scnd-DColor;
+        font-size: 0.75em;
+        font-weight: bold;
+    }
+}

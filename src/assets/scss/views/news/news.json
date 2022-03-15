@@ -1,0 +1,40 @@
+{
+    "news": [
+        {
+            "title": "Acceso al beta",
+            "type": "Events",
+            "date": "01.01.2021",
+            "description": " Saludos comunidad. Las últimas optimizaciones nos traen un juego mucho más dinamico. Seguimos enfocados en la búsqueda de... "
+        },
+        {
+            "title": "Alpha-Update v4.0",
+            "type": "Updates",
+            "date": "02.02.2021",
+            "description": " Actualización v4.0 "
+        },
+        {
+            "title": "Puesta al tanto",
+            "type": "Server Status",
+            "date": "03.12.2021",
+            "description": " Mucho tiempo ha pasado desde nuestra última aparición. "
+        },
+        {
+            "title": "Web-Update v13.0",
+            "type": "Updates",
+            "date": "07.19.2021",
+            "description": " Actualización de nuestro sitio oficial. "
+        },
+        {
+            "title": "Agradecimientos",
+            "type": "Comunidad",
+            "date": "10.09.2021",
+            "description": " Deseo aprovechar esta oportunidad para agradecer por el apoyo recibido durante todos estos años. "
+        },
+        {
+            "title": "Newline Team",
+            "type": "Curiosidades",
+            "date": "12.01.2021",
+            "description": " Somos Newline Team. Años de experiencia nos avalan para hablar de esta manera. Njoy! "
+        }
+    ]
+}
