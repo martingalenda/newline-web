@@ -1,0 +1,15 @@
+.test {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    span {
+        color: greenyellow;
+    }
+    h2 {
+        color: red;
+        margin-bottom: 1em;
+    }
+}
+
+
+@include button('test', #19191ad1, #61543536, #d7c08d, 15.5em);

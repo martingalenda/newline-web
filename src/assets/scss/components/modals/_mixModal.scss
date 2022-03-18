@@ -1,0 +1,11 @@
+@mixin modalTemplate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 600;
+    background-color: rgba($bg-DColor, .85);
+    display: grid;
+    place-content: center;
+}

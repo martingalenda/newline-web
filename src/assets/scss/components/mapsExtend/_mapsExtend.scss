@@ -1,0 +1,33 @@
+.mapsExtend {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-image: url(./media/castles1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    &__container {
+        width: 45%;
+        margin: auto;
+        .container__title {
+            font-size: 2em;
+            line-height: 2em;
+        }
+        .container__text {
+            color: $scnd-DColor;
+        }
+    }
+
+    .absolute {
+        img {
+            position: absolute;
+            height: 100vh;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: none;
+        }
+    }   
+}

@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logoFlag from './media/flagLogo.png';
 import { Link, NavLink } from "react-router-dom"; // Enrutado
 
 /* FA ICONS */
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import {faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 
-class NavMain extends Component{
+const NavMain = () => {
+
+        /* const [show, setShow] = useState("default"); */
  
-    render() {
         return(
             <nav className="navMain">
                 
@@ -38,7 +39,6 @@ class NavMain extends Component{
 
             </nav>
         );
-    }
 }
 
 export default NavMain;

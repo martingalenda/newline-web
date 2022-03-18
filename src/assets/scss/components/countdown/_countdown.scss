@@ -10,10 +10,7 @@
 }
 
 .item__txt, .num__days, .num__hours, .num__mins, .num__secs, .countdown__title  {
-    background: linear-gradient(180deg, #f5cb67 0%, #cbc6b5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @include mainDegrade();
 }
 .countdown__title {
     font-size: 2em;

@@ -8,27 +8,34 @@
 
 
 /* COMPONENTS IMPORTS */
-@import 'components/buttons/classic/_buttonC', // Boton C
+@import 'components/buttons/classicBtn/_buttonC', // Boton C
         'components/buttons/betaBtn/_betaBtn', // Boton beta access
         'components/buttons/playBtn/_playBtn', // Boton play    
+
         'components/cardNew/_cardNew',
         'components/countdown/_countdown', // Cuenta regresiva
         'components/footer/_footer',
-        'components/inputs/_inputs',
+
         'components/maps/_maps',
-        'components/modals/classic/_modalC', // Modal Clasico
+        'components/mapsExtend/_mapsExtend',
+
+        'components/modals/_mixModal', // Mixin modals
+        'components/modals/classic/_modalC', // Modal: Clasico
+        'components/modals/playVideo/_playVideo', // Modal: Play Video 
+
+        'components/test/_anotaciones', // TEST TEST TEST
         'components/navMain/_navMain';
 
 
-/* VIEWS IMPORTS */
-@import 'views/hero/_hero',
-        'views/news/_news',
-        'views/about/_about',
-        'views/guides/_guides',
-        'views/story/_story',
-        'views/register/_register', 
-        'views/logIn/_logIn', 
-        'views/lostPsw/_lostPsw', 
-        'views/playBeta/_playBeta',
-        'views/userPanel/_userPanel';
+/* PAGES IMPORTS */
+@import 'pages/hero/_hero',
+        'pages/news/_news',
+        'pages/about/_about',
+        'pages/guides/_guides',
+        'pages/story/_story',
+        'pages/register/_register', 
+        'pages/logIn/_logIn', 
+        'pages/lostPsw/_lostPsw', 
+        'pages/playBeta/_playBeta',
+        'pages/userPanel/_userPanel';
         

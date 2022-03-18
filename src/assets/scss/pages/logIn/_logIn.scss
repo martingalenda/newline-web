@@ -1,0 +1,26 @@
+.logIn {
+    height: 100vh;
+    background-image: url(./media/logInBg.png);
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    &__title {
+        font-size: 2em;
+        line-height: 2em;
+        text-transform: uppercase;
+        @include mainDegrade();
+    }
+    &__form {
+        .form__input {
+            margin: 1em auto;
+            background-color: #131416;
+            border: 1px solid rgba(251, 250, 247, 0.02);
+            padding: 0.7em;
+            text-align: center;
+        }
+    }
+}
+
+
+@include button('dLogin', #19191ad1, #61543536, #d7c08d, 19.5em);

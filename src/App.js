@@ -7,16 +7,16 @@ import NavMain from './assets/scss/components/navMain/NavMain';
 import BetaBtn from './assets/scss/components/buttons/betaBtn/BetaBtn';
 
 /* Vistas: */
-import Hero from './assets/scss/views/hero/Hero';
-import News from './assets/scss/views/news/News';
-import About from './assets/scss/views/about/About';
-import Guides from './assets/scss/views/guides/Guides';
-import Story from './assets/scss/views/story/Story';
-import Register from './assets/scss/views/register/Register';
-import LogIn from './assets/scss/views/logIn/LogIn';
-import LostPsw from './assets/scss/views/lostPsw/LostPsw';
-import PlayBeta from './assets/scss/views/playBeta/PlayBeta';
-import UserPanel from './assets/scss/views/userPanel/UserPanel';
+import Hero from './assets/scss/pages/hero/Hero';
+import News from './assets/scss/pages/news/News';
+import About from './assets/scss/pages/about/About';
+import Guides from './assets/scss/pages/guides/Guides';
+import Story from './assets/scss/pages/story/Story';
+import Register from './assets/scss/pages/register/Register';
+import LogIn from './assets/scss/pages/logIn/LogIn';
+import LostPsw from './assets/scss/pages/lostPsw/LostPsw';
+import PlayBeta from './assets/scss/pages/playBeta/PlayBeta';
+import UserPanel from './assets/scss/pages/userPanel/UserPanel';
 
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
                 <Route path="/register" element={<Register/>} />
                 <Route path="/login" element={<LogIn/>} />
                 <Route path="/lostpsw" element={<LostPsw/>} />
-                <Route path="" element={<PlayBeta/>} />
+                <Route path="/playbeta" element={<PlayBeta/>} />
                 <Route path="/mypanel" element={<UserPanel/>} />
             </Routes>
 
