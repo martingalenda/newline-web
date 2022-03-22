@@ -1,0 +1,30 @@
+.countdown {
+    display:flex;
+    font-weight: 600;
+}
+
+.countdown__item {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em auto;
+}
+
+.item__txt, .num__days, .num__hours, .num__mins, .num__secs, .countdown__title  {
+    @include mDegrade(linear-gradient(180deg, $hover-DColor 0%, #cbc6b5 100%));
+}
+.countdown__title {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1em;
+}
+
+.item__num {
+    background-image: url(./media/bg.png);
+    background-repeat: no-repeat;
+    font-size: 2em;
+    width: 2em;
+    background-size: cover;
+    height: 1.7em;
+    display: grid;
+    place-items: center;
+}

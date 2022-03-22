@@ -1,0 +1,72 @@
+// Btn Template
+@mixin btnTemplate ($bgColor: none,
+                    $txtColor: #000, 
+                    $HBgColor : $HTxtColor, 
+                    $HTxtColor: $bgColor, 
+                    $width: 19.5em, 
+                    $height: 3em ) {
+    width: $width;
+    height: $height;
+    background: $bgColor;
+    color: $txtColor;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+        color: $HTxtColor;
+        background: $HBgColor;
+        transition-duration: 1.5s;
+    }
+}
+
+// Classic Btn
+@mixin btnC ($name, 
+                $bgColor: none, 
+                $txtColor: #000, 
+                $HBgColor : $HTxtColor, 
+                $HTxtColor: $bgColor, 
+                $width: 19.5em, 
+                $height: 3em ) {
+    .btnC-#{$name} {
+        @include btnTemplate($bgColor, $txtColor, $HBgColor, $HTxtColor, $width, $height );
+        border: 0.1em solid $txtColor;
+        &:hover {
+            border: 0.1em solid $HTxtColor;
+        }
+    }
+}
+
+// Btn Degrade
+@mixin btnD ($name, 
+                $bgColor: none, 
+                $txtColor: #000, 
+                $HBgColor : $HTxtColor, 
+                $HTxtColor: $bgColor, 
+                $width: 19.5em, 
+                $height: 3em ) {
+    .btnD-container {
+        background-color: $bg-DColor;
+        &:hover {
+            background-color: $HBgColor;
+            transition-duration: 1.5s;
+        }
+        .btnD-#{$name} {
+            @include btnTemplate($bgColor, $txtColor, $HBgColor, $HTxtColor, $width, $height );
+            border: 0.1em solid transparent;
+            border-image: linear-gradient(180deg, #c9bda3 0, #b69d6b);
+            border-image-slice: 1;
+            background: linear-gradient(180deg, #cdcdcd 0%, #7e724a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            &:hover {
+                border: $HBgColor;
+                background: linear-gradient(180deg, #131416 0%, #3d3410 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+    }
+}

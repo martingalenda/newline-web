@@ -1,0 +1,12 @@
+.test {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    span {
+        color: greenyellow;
+    }
+    h2 {
+        color: red;
+        margin-bottom: 1em;
+    }
+}

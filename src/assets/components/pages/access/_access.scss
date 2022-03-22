@@ -1,0 +1,56 @@
+.access {
+    height: 100vh; 
+    background-image: url(./media/logInBg.png);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    letter-spacing: 0.08em;
+    .access__container {
+        background: #090a0e30;
+        padding: 5em 6em;
+        .access__title {
+            font-size: 2em;
+            line-height: 2em;
+            text-transform: uppercase;
+            margin-bottom: 0.75em;
+            @include mDegrade(linear-gradient(180deg, #c4a048 0%, #9d9d9d 100%));
+        }
+    }
+}
+
+.access__redirect {
+    color: $scnd-DColor;
+    border-bottom: 0.1em solid $scnd-DColor;
+    border-style: dotted;
+    &:hover {
+        color: $main-DColor;
+        border-bottom: 0.1em solid $main-DColor;
+        border-style: dotted;
+    }
+}
+
+.access__input {
+    width: 15.75em;
+    margin: 1em auto 0;
+    color: $scnd-DColor;
+    background-color: $bg-DColor;
+    border: none;
+    outline: 0.02em solid rgb(251 250 247 / 8%);
+    padding: 0.7em;
+    text-align: center;
+    letter-spacing: 0.08em;
+    &::placeholder {
+        color: rgb(251 250 247 / 25%);
+    }
+    &:focus-visible, &:focus {
+        outline: 0.02em solid rgb(251 250 247 / 35%);
+        color: rgb(251 250 247 / 55%);
+    }
+}
+
+@include btnD('acc', #12151a, #cbc6b5, #d7be7e, #12151a, 100%);
+
+
+/* #cb9d30 "actual"*/

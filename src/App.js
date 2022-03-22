@@ -1,23 +1,21 @@
 import React from 'react'; // React
 import { Routes, Route } from "react-router-dom"; // Rutas del sitio
-import './assets/scss/imports.scss'; // Sass Imports
+import './assets/imports.scss'; // Sass Imports
 
-/* Componentes: */
-import NavMain from './assets/scss/components/navMain/NavMain';
-import BetaBtn from './assets/scss/components/buttons/betaBtn/BetaBtn';
+/* Global components: */
+import NavMain from './assets/components/globals/navMain/NavMain.jsx';
 
-/* Vistas: */
-import Hero from './assets/scss/pages/hero/Hero';
-import News from './assets/scss/pages/news/News';
-import About from './assets/scss/pages/about/About';
-import Guides from './assets/scss/pages/guides/Guides';
-import Story from './assets/scss/pages/story/Story';
-import Register from './assets/scss/pages/register/Register';
-import LogIn from './assets/scss/pages/logIn/LogIn';
-import LostPsw from './assets/scss/pages/lostPsw/LostPsw';
-import PlayBeta from './assets/scss/pages/playBeta/PlayBeta';
-import UserPanel from './assets/scss/pages/userPanel/UserPanel';
-
+/* Pages: */
+import Hero from './assets/components/pages/hero/Hero.jsx';
+import News from './assets/components/pages/news/News.jsx';
+import About from './assets/components/pages/about/About.jsx';
+import Guides from './assets/components/pages/guides/Guides.jsx';
+import Story from './assets/components/pages/story/Story.jsx';
+import Register from './assets/components/pages/access/register/Register.jsx';
+import LogIn from './assets/components/pages/access/logIn/LogIn.jsx';
+import LostPsw from './assets/components/pages/access/lostPsw/LostPsw.jsx';
+import PlayBeta from './assets/components/pages/playBeta/PlayBeta.jsx';
+import UserPanel from './assets/components/pages/userPanel/UserPanel.jsx';
 
 function App() {
     return (
@@ -39,7 +37,6 @@ function App() {
                 <Route path="/mypanel" element={<UserPanel/>} />
             </Routes>
 
-            <BetaBtn />  
         </React.Fragment>    
 
     );

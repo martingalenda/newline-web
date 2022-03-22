@@ -1,0 +1,11 @@
+{
+    "logIn": {
+        "title": "Iniciar sesión",
+        "user": "Usuario",
+        "psw": "Contraseña",
+        "lostPsw": "Olvide la contraseña",
+        "logInBtn": "Iniciar sesión",
+        "haventAcc": "No poseo cuenta. ",
+        "register": "Registrarme"
+    }
+}

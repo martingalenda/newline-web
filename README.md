@@ -4,10 +4,11 @@
 1- Clonar el proyecto en git
 
 2- Instalar dependencias:
-`! Sass (preprocesador)`
-`! fontawesome.com (icons)`
-`! reacttraining.com (react router)`
-`! wowjs.uk + animate.style (wow.js + animate.css)`
+`! Sass (preprocesador css)`
+`! https://fontawesome.com (icons)`
+`! https://reacttraining.com (react router)`
+`! https://wowjs.uk + animate.style (wow.js + animate.css)`
+`! https://react-hook-form.com/ (react hook form)`
 
 # Metodología de clases: `BEM`
 

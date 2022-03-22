@@ -1,8 +1,0 @@
-{
-    "logIn": {
-        "title": "Iniciar sesión",
-        "lostPsw": "Olvide mi contraseña",
-        "haventAcc": "No poseo cuenta, deseo",
-        "register": "registrarme"
-    }
-}

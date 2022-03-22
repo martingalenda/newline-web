@@ -1,0 +1,44 @@
+/* FUENTES */
+@import 'fonts/_bfort.scss';
+
+/* ABSTRATCS IMPORTS */
+@import 'styles/_breakpoints',
+        'styles/_customs',
+        'styles/_default';
+
+
+/* COMPONENTS IMPORTS */
+@import 'components/globals/buttons/classicBtn/_buttonC', // Boton C
+        'components/globals/buttons/betaBtn/_betaBtn', // Boton beta access
+        'components/globals/buttons/playBtn/_playBtn', // Boton play    
+
+        'components/globals/cardNew/_cardNew',
+        'components/globals/countdown/_countdown', // Cuenta regresiva
+        'components/globals/footer/_footer',
+
+        'components/globals/maps/_maps',
+        'components/globals/mapsExtend/_mapsExtend',
+
+        'components/globals/modals/_mixModal', // Mixin modals
+        'components/globals/modals/classic/_modalC', // Modal: Clasico
+        'components/globals/modals/playVideo/_playVideo', // Modal: Play Video 
+
+        'components/test/_anotaciones', // TEST TEST TEST
+        'components/globals/navMain/_navMain';
+
+
+/* PAGES IMPORTS */
+@import 'components/pages/hero/_hero',
+        'components/pages/news/_news',
+        'components/pages/about/_about',
+        'components/pages/guides/_guides',
+        'components/pages/story/_story',
+
+        'components/pages/access/_access', 
+        'components/pages/access/register/_register', 
+        'components/pages/access/logIn/_logIn', 
+        'components/pages/access/lostPsw/_lostPsw', 
+
+        'components/pages/playBeta/_playBeta',
+        'components/pages/userPanel/_userPanel';
+        

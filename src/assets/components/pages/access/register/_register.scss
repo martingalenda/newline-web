@@ -1,0 +1,14 @@
+.register__form {
+    .access__confirm {
+    margin: 3em auto 0;
+    }
+    .form__login {
+        display: inline-flex;
+        gap: 0.3em;
+        margin-top: 0.75em;
+        color: $scnd-DColor;
+        .access__redirect {
+            padding-bottom: 0.2em;
+        }
+    }
+}

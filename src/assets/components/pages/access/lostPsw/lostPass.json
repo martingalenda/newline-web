@@ -1,0 +1,12 @@
+{
+    "lostPsw": {
+        "title": "Recuperar cuenta",
+        "email": "Correo electrónico",
+        "send": "Enviar correo",
+        "code": "Código de recuperación",
+        "reSend": "Re-enviar correo",
+        "nPsw": "Nueva contraseña",
+        "rNPsw": "Repetir contraseña",
+        "confirm": "Confirmar"
+    }
+}
