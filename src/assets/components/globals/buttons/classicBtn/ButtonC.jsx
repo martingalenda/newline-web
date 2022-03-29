@@ -5,7 +5,9 @@ const ButtonC = (props) => {
 
         return(
             <Link to={props.link}>
-            <button className={`btnC-${props.btnClass}`}>{props.text}</button>
+                <div className="btnD-container">  
+                    <button className={`btnD-${props.btnClass}`}>{props.text}</button>
+                </div>
             </Link>
         );
 }

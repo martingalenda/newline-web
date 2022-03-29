@@ -1,0 +1,11 @@
+ .modal__container {
+    box-shadow: 0px 0px 12.1em #52587c52;
+    border-radius: 1em;
+    @include r2k {
+       width: 58vw;
+    }
+    iframe {
+       border-radius: 1em;
+       opacity: 90%;
+    }
+ }

@@ -19,14 +19,14 @@
             text-transform: uppercase;
             font-size: 2em;
             line-height: 2em;
-            text-shadow: 0.1em 0.2em 0.2em #121218;
+            text-shadow: 0.1em 0.2em 0.2em #1e1e2654;
         }
         .intro__parraph, .changes__parraph {
             color: $scnd-DColor;
+            font-size: 1.1em;
             margin: 3.5em 0;
             padding: 0 3em;
             line-height: 1.7em;
-            font-style: italic;
             text-shadow: 0.1em 0.2em 0.2em #121218;
         }
         .changes__parraph {

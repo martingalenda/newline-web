@@ -1,0 +1,20 @@
+{
+    "register": {
+        "title": "Registro",
+        "email": "Correo electrónico",
+        "user": "Nombre de usuario",
+        "char": "Nombre del personaje",
+        "psw": "Contraseña",
+        "rPsw": "Repetir contraseña",
+        "next": "Continuar",
+        "haveAcc": "Ya poseo cuenta. ",
+        "login": "Iniciar sesión",
+        "regInBtn": "Registrarme",
+        "required": "Campo obligatorio",
+        "min": "Debe poseer mínimo: ",
+        "max": "Debe poseer máximo: ",
+        "chars": "caracteres",
+        "notPsw": "Contraseña invalida",
+        "notEmail": "Correo invalido"
+    }
+}

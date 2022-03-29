@@ -1,0 +1,14 @@
+{
+    "story": {
+        "episode": "Episodio I",
+        "title": "La Corona",
+        "btn": "Conocé la historia" ,
+        "img": ["url(./media/btn1)", "url(./media/btn1)", "url(./media/btn1)"]
+    },
+    "story2": {
+        "episode": "Episodio 2",
+        "title": "La Corona 2",
+        "btn": "Conocé la historia 2" ,
+        "img": ["url(./media/btn2)", "url(./media/btn2)", "url(./media/btn2)"]
+    }
+}

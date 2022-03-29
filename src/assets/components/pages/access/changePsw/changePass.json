@@ -1,0 +1,19 @@
+{
+    "changePsw": {
+        "title": "Cambiar contraseña",
+        "email": "Correo electrónico",
+        "send": "Enviar correo",
+        "code": "Código de recuperación",
+        "reSend": "Re-enviar correo",
+        "nPsw": "Nueva contraseña",
+        "rNPsw": "Repetir contraseña",
+        "confirm": "Confirmar",
+        "required": "Campo obligatorio",
+        "min": "Debe poseer mínimo: ",
+        "max": "Debe poseer máximo: ",
+        "chars": "caracteres",
+        "notCode": "Código invalido",
+        "notPsw": "Contraseña invalida",
+        "notEmail": "Correo invalido"
+    }
+}

@@ -1,0 +1,127 @@
+.mapsExtend {
+    display: grid;
+    grid-template-columns: 50%;
+    place-content: center; 
+    height: 100vh;
+    background: #21262f;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    text-shadow: 0.1em 0.1em 0.45em #121218;
+    &__bg--opacity {   
+        background: radial-gradient(50% 44% at 50% 52%, rgb(19 20 22 / 19%) 46.37%, #131416f5 100%);
+        position:absolute;
+        z-index: 60;
+        width: 100%; 
+        height: 100vh;
+        left: 0;
+        top: 0;
+    } 
+    &__container {
+        margin: auto;
+        position: relative;
+        z-index: 70;
+        .container__title {
+            font-size: 2em;
+            line-height: 2em;
+        }
+        .container__text {
+            font-size: 1.1em;
+            color: $scnd-DColor;
+            margin: 1em 0 2.5em;
+        }
+    }
+}
+
+.media__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    .list__imgs {
+        width: 9em;
+        opacity: 75%;
+        filter: contrast(90%) saturate(10%);
+        cursor: pointer;
+        &:hover {
+            filter: contrast(90%) saturate(150%) drop-shadow(0em 0em 5.5em #717171b0);
+        }
+        &:focus-visible {
+            border: 0.1em solid red;
+        }
+    }
+}
+
+
+
+// BOTONES
+.chInferno, .chCastles {
+    position: absolute;
+    top: calc(50% - 1em);
+    z-index: 70;
+    color: $scnd-DColor;
+    text-transform: uppercase;
+    border: 0.1em solid $scnd-DColor;
+    border-right: none;
+    border-left: none;
+    padding: 0.4em 0;
+    display: flex;
+    gap: 0.5em;
+    cursor: pointer;
+    .fa-arrow-left, .fa-arrow-right {
+        width: min-content;
+    }
+    &:hover {
+        color: $main-DColor;
+        border: 0.1em solid $main-DColor;
+        border-right: none;
+        border-left: none;
+    }
+}
+
+.activeBtn {
+    filter: contrast(90%) saturate(150%) !important;
+}
+
+.chInferno {
+    left: 2em;
+}
+.chCastles {
+    right: 2em;
+}
+
+
+// Mapa Castles:
+.castlesBg0 {
+    background-image: url(./media/castles/castlesBg.png);;
+}
+.castlesBg1 {
+    background-image: url(./media/castles/castlesBg1.png);;
+}
+.castlesBg2 {
+    background-image: url(./media/castles/castlesBg2.png);;
+}
+.castlesBg3 {
+    background-image: url(./media/castles/castlesBg3.png);;
+}
+.castlesBg4 {
+    background-image: url(./media/castles/castlesBg4.png);;
+}
+// Mapa Inferno:
+.infernoBg0 {
+    background-image: url(./media/inferno/infernoBg.png);;
+}
+.infernoBg1 {
+    background-image: url(./media/inferno/infernoBg1.png);;
+}
+.infernoBg2 {
+    background-image: url(./media/inferno/infernoBg2.png);;
+}
+.infernoBg3 {
+    background-image: url(./media/inferno/infernoBg3.png);;
+}
+.infernoBg4 {
+    background-image: url(./media/inferno/infernoBg4.png);;
+}

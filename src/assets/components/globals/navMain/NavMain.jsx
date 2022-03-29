@@ -2,10 +2,13 @@ import React from 'react';
 import logoFlag from './media/flagLogo.png';
 import { Link, NavLink } from "react-router-dom"; // Enrutado
 import navMain from './navMain.json';
+import SubMenu from './subMenu/SubMenu.jsx';
 
 /* FA ICONS */
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSignInAlt} from '@fortawesome/free-solid-svg-icons';
+import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
+import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 
 const NavMain = () => {
 
@@ -32,9 +35,23 @@ const NavMain = () => {
                     </div>                  
                     
                     <div className='container__user'>
-                        <div className="user__register menu__item"><NavLink to="/register" activeclassname="active">{navMain.navMain.register}</NavLink></div>
-                        <div className="user__login"><NavLink to="/login" activeclassname="active"> <FontAwesomeIcon icon={faSignInAlt}/></NavLink></div>
-                    </div>   
+
+                        <button className="user__language"><FontAwesomeIcon icon={faGlobeAmericas}/></button>
+
+                        <div className="user__loggedOut">
+                            <div className="user__register menu__item"><Link to="/register" className="registerBtn">{navMain.navMain.register}</Link></div>
+                            <div className="user__login"><NavLink to="/login" activeclassname="active"> <FontAwesomeIcon icon={faSignInAlt}/></NavLink></div>
+                        </div>
+
+                        <div className="user__logged">
+                            <div className="logged__btn">  
+                                <span className="userAcc">Redline</span>
+                                <FontAwesomeIcon icon={faAngleDown}/>  
+                            </div>
+                            <SubMenu/>
+                        </div>
+
+                    </div>    
 
                 </div>
 

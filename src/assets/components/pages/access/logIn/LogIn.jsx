@@ -1,70 +1,78 @@
-import React, {useState} from 'react';
-/* import WOW from 'wowjs'; */
+import React from 'react';
+/* import WOW from 'wowjs';  */
 import { Link } from "react-router-dom"; // Enrutado
-import logIn from './logIn.json'; 
+import logInTxt from './logIn.json';
+import { useForm } from 'react-hook-form';
 
 const LogIn = () => {
 
-    /* const newWOW = () => {new WOW.WOW().init();} 
+/*  const newWOW = () => {new WOW.WOW().init();} 
     newWOW() */
+    const logIn = logInTxt.logIn;
 
-    const [creds, setCreds] = useState({
-        user: '',
-        password: ''
-    })
-    
-    const handleInputChange = (event) => {
-        setCreds({
-            ...creds,
-            [event.target.name] : event.target.value
-        })
-    }
-
-    const sendDates = (event) => {
-        event.preventDefault();
-        console.log(creds.user + ' ' + creds.password)
-    }
+    const {register, handleSubmit, formState: {errors}} = useForm();
+    const onSubmit = (data) => { console.log(data) }
 
     return(
         <section className="logIn access wow animate__fadeIn" data-wow-duration="3.5s">
             <div className="access__container">
-                <h2 className="access__title">{logIn.logIn.title}</h2>
-                <form className="logIn__form" onSubmit={sendDates}>
+                <h2 className="access__title">{logIn.title}</h2>
+
+                <form className="logIn__form" onSubmit={handleSubmit(onSubmit)}>
+
                     <input 
                         className="access__input" 
                         type="text" 
                         autoComplete="off" 
-                        placeholder={logIn.logIn.user} 
-                        name="user" 
-                        required
-                        onChange={handleInputChange} />
+                        placeholder={logIn.user} 
+                        {...register (
+                            "user",
+                            { required: true,
+                            minLength: 5,
+                            maxLength: 20}
+                        )} />
+                    <span className="errorMsg">
+                        {errors.user?.type === 'required' && `${logIn.required}`}
+                        {errors.user?.type === 'minLength' && `${logIn.notUser}`}
+                        {errors.user?.type === 'maxLength' && `${logIn.notUser}`}
+                    </span>
+
                     <input 
                         className="access__input" 
                         type="password" 
                         autoComplete="off" 
-                        placeholder={logIn.logIn.psw} 
-                        name="password" 
-                        required
-                        onChange={handleInputChange} />
+                        placeholder={logIn.psw} 
+                        {...register (
+                            "psw",
+                            { required: true,
+                            minLength: 5,
+                            maxLength: 25}
+                        )} />
+                    <span className="errorMsg">
+                        {errors.psw?.type === 'required' && `${logIn.required}`}
+                        {errors.psw?.type === 'minLength' && `${logIn.notPsw}`}
+                        {errors.psw?.type === 'maxLength' && `${logIn.notPsw}`}
+                    </span>
                     <Link to="/lostpsw">         
-                        <span className="form__lostPsw access__redirect">{logIn.logIn.lostPsw}</span>
+                        <span className="form__lostPsw access__redirect">{logIn.lostPsw}</span>
                     </Link>
+
                     <div className="btnD-container">
                         <input 
                             className="btnD-acc access__confirm" 
                             type="submit" 
-                            value={logIn.logIn.logInBtn} />
+                            value={logIn.logInBtn} />
                     </div>
-                    <span className="form__signup">{logIn.logIn.haventAcc}
+                    <span className="form__signup">{logIn.haventAcc}
                         <Link to="/register">
-                            <span className="access__redirect">{logIn.logIn.register}</span>
+                            <span className="access__redirect">{logIn.register}</span>
                         </Link>
                     </span>
+
                 </form>
             </div>
         </section>
     );
-
 }
 
 export default LogIn;

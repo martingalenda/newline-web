@@ -1,10 +1,14 @@
 import React from 'react';
+import Anotaciones from '../../test/Anotaciones.jsx'
 
 const PlayBeta = () => {
         return(
-            <section className="playBeta">
-                PlayBeta
-            </section>
+            <React.Fragment>
+                <section className="playBeta">
+                    PlayBeta
+                    <Anotaciones/>
+                </section>
+            </React.Fragment>
         );
 }
 

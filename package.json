@@ -16,7 +16,9 @@
     "react-hook-form": "^7.28.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
     "sass": "^1.49.7",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2",
     "wowjs": "^1.1.3"
   },

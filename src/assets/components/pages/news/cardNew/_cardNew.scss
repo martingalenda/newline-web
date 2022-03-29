@@ -1,0 +1,61 @@
+@mixin newType () {
+    background: rgba(136, 25, 138, 0.75); // Esto debe ser dinamico
+    color: $main-DColor;
+    text-transform: uppercase;
+    padding: 0.1em 1.1em;
+    letter-spacing: 0.15em;
+    text-align: center;
+    width: 11em;
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+.cardNew {
+    color: rgba($bg-DColor, .75);
+    background: $main-DColor;
+    background-image: url(./media/betaAccess.png); // Esto debe ser dinamico
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 0.1em solid $main-DColor;
+    height: 27.75em;
+    width: 27em;
+    cursor: grab;
+    border-radius: 0.4em;
+    position: relative;
+    &__container {
+        padding: 2.4em;
+        .container__item {
+            margin-bottom: 1.25em;
+        }
+        .container__title {
+            color: $bg-DColor;
+            font-weight: 600;
+            font-size: 1.25em;
+        }
+        .container__type {
+            @include newType();
+        }
+        .container__date {
+            font-weight: 600;
+        }
+        .container__intro {
+            margin-top: 2.25em;
+            line-height: 1.75em;
+            font-size: 1.1em;
+        }
+        .container__readMore {
+            @include btnTemplate (rgba($bg-DColor, .75), $main-DColor, $bg-DColor, $main-DColor, 66%, 2.5em );
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: -1em;
+            margin: auto;
+            padding: 0
+        }
+        &:hover > .container__readMore {
+            width: 100%;
+            background: $bg-DColor;
+            transition-duration: 1.5s;
+        }
+    }
+}

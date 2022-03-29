@@ -2,4 +2,61 @@
     display: grid;
     place-content: center;
     height: 100vh;
+    background: $main-DColor;
+    background-image: url(./media/newsBg.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    &__container {
+        width: 72%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3em 1.5em;
+        padding: 5em 0 8em;
+        margin: 0 auto;
+    }
+    &__title {
+        color: $bg-DColor;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 2em;
+        text-align: center;
+        margin: 8em 0 1em;
+        letter-spacing: 0.075em;
+    }
 }
+
+
+@mixin linesEffect () {
+    .linesEffect {
+        width: 0.5em;
+        background: $bg-DColor;
+        height: 7em;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        z-index: 0;
+    }
+    .linesEffect::before,
+    .linesEffect::after {
+        content: '';
+        width: 0.5em;
+        height: 6em;
+        background: $bg-DColor;
+        position: absolute;
+    }
+    
+    .linesEffect::before {
+        right: 1em;
+    }
+    
+    .linesEffect::after {
+        left: 1em;
+    }
+}
+
+@include linesEffect;

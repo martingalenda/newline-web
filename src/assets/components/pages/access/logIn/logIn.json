@@ -6,6 +6,9 @@
         "lostPsw": "Olvide la contraseña",
         "logInBtn": "Iniciar sesión",
         "haventAcc": "No poseo cuenta. ",
-        "register": "Registrarme"
+        "register": "Registrarme",
+        "required": "Campo obligatorio",
+        "notUser": "Usuario invalido",
+        "notPsw": "Contraseña invalida"
     }
 }

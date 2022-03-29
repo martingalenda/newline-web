@@ -1,52 +1,45 @@
-import React, {useState} from 'react';
+import React from 'react';
 /* import WOW from 'wowjs'; */
-import lostPsw from './lostPass.json'; 
+import { useForm } from 'react-hook-form';
+import lostPswTxt from './lostPass.json'; 
 
 const LostPsw = () => {
 
     /* const newWOW = () => {new WOW.WOW().init();} 
     newWOW() */
-
-    const [creds, setCreds] = useState({
-        email: '',  
-        code: '',
-        password: '',
-        rPassword: ''
-    })
     
-    const handleInputChange = (event) => {
-        setCreds({
-            ...creds,
-            [event.target.name] : event.target.value
-        })
-    }
+    const lostPsw = lostPswTxt.lostPsw;
 
-    const sendDates = (event) => {
-        event.preventDefault();
-        console.log(creds.email + ' ' + creds.code + ' ' + creds.password + ' ' + creds.rPassword)
-    }
-
+    const {register, handleSubmit, formState: {errors}} = useForm();
+    const onSubmit = (data) => { console.log(data) }
 
     return(
         <section className="lostPsw access wow animate__fadeIn" data-wow-duration="3.5s">
             <div className="access__container">
-                <h2 className="access__title">{lostPsw.lostPsw.title}</h2>
-                <form className="lostPsw__form" onSubmit={sendDates}>
+                <h2 className="access__title">{lostPsw.title}</h2>
+                <form className="lostPsw__form" onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="firstStep">
                         <input 
                             className="access__input" 
                             type="email" 
-                            autoComplete="off" 
-                            placeholder={lostPsw.lostPsw.email} 
-                            name="email" 
-                            required
-                            onChange={handleInputChange} />
+                            placeholder={lostPsw.email} 
+                            {...register (
+                                "email",
+                                { required: true,
+                                minLength: 6,
+                                maxLength: 40}
+                            )} />
+                        <span className="errorMsg">
+                            {errors.email?.type === 'required' && `${lostPsw.required}`}
+                            {errors.email?.type === 'minLength' && `${lostPsw.notEmail}`}
+                            {errors.email?.type === 'maxLength' && `${lostPsw.notEmail}`}
+                        </span>
                         <div className="btnD-container">                            
                             <input 
                                 className="btnD-acc access__confirm" 
                                 type="submit" 
-                                value={lostPsw.lostPsw.send} />
+                                value={lostPsw.send} />
                         </div>
                     </div>
 
@@ -55,15 +48,23 @@ const LostPsw = () => {
                         className="access__input" 
                         type="text" 
                         autoComplete="off" 
-                        placeholder={lostPsw.lostPsw.code} 
-                        name="code" 
-                        required
-                        onChange={handleInputChange} />
+                        placeholder={lostPsw.code} 
+                        {...register (
+                            "code",
+                            { required: true,
+                            minLength: 12,
+                            maxLength: 12}
+                        )} />
+                    <span className="errorMsg">
+                        {errors.code?.type === 'required' && `${lostPsw.required}`}
+                        {errors.code?.type === 'minLength' && `${lostPsw.notCode}`}
+                        {errors.code?.type === 'maxLength' && `${lostPsw.notCode}`}
+                    </span>
                         <div className="btnD-container">      
                             <input 
                                 className="btnD-acc access__confirm" 
                                 type="submit" 
-                                value={lostPsw.lostPsw.reSend} />
+                                value={lostPsw.reSend} />
                         </div>
                     </div>
 
@@ -72,23 +73,39 @@ const LostPsw = () => {
                             className="access__input" 
                             type="password" 
                             autoComplete="off" 
-                            placeholder={lostPsw.lostPsw.nPsw} 
-                            name="password" 
-                            required
-                            onChange={handleInputChange} />
+                            placeholder={lostPsw.nPsw} 
+                            {...register (
+                                "password",
+                                { required: true,
+                                minLength: 5,
+                                maxLength: 25}
+                            )} />
+                        <span className="errorMsg">
+                            {errors.password?.type === 'required' && `${lostPsw.required}`}
+                            {errors.password?.type === 'minLength' && `${lostPsw.min} 5 ${lostPsw.chars}`}
+                            {errors.password?.type === 'maxLength' && `${lostPsw.max} 25 ${lostPsw.chars}`}
+                        </span>
                         <input 
                             className="access__input" 
                             type="password" 
                             autoComplete="off" 
-                            placeholder={lostPsw.lostPsw.rNPsw} 
-                            name="rPassword" 
-                            required
-                            onChange={handleInputChange} />
+                            placeholder={lostPsw.rNPsw} 
+                            {...register (
+                                "rPassword",
+                                { required: true,
+                                minLength: 5,
+                                maxLength: 25}
+                            )} />
+                        <span className="errorMsg">
+                            {errors.rPassword?.type === 'required' && `${lostPsw.required}`}
+                            {errors.rPassword?.type === 'minLength' && `${lostPsw.notPsw}`}
+                            {errors.rPassword?.type === 'maxLength' && `${lostPsw.notPsw}`}
+                        </span>
                             <div className="btnD-container">      
                                 <input 
                                     className="btnD-acc access__confirm" 
                                     type="submit" 
-                                    value={lostPsw.lostPsw.confirm} />
+                                    value={lostPsw.confirm} />
                             </div>
                     </div>
 

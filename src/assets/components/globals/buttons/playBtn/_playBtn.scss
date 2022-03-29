@@ -5,13 +5,13 @@ $play-hover: #ffffff;
 
 .position {
     position: relative;
-    bottom: -5.3em;
+    bottom: -4.4em;
     z-index: 1;
     @include r2k {
-        bottom: -9.3em;
+        bottom: -7.65em;
     }
     @include fhd {
-        bottom: -7em;
+        bottom: -6.3em;
     }
     .playBtn {
         width: 5em;
@@ -63,7 +63,6 @@ $play-hover: #ffffff;
     color: #5f6274;
     position: relative;
     bottom: -2em;
-    font-size: 0.9em;
     text-shadow: 0.1em 0.2em 0.2em #121218;
 }
 

@@ -6,39 +6,47 @@
         'styles/_customs',
         'styles/_default';
 
-
 /* COMPONENTS IMPORTS */
-@import 'components/globals/buttons/classicBtn/_buttonC', // Boton C
-        'components/globals/buttons/betaBtn/_betaBtn', // Boton beta access
-        'components/globals/buttons/playBtn/_playBtn', // Boton play    
+@import 'components/globals/buttons/classicBtn/_buttonC', // Botones clásicos
+        'components/globals/buttons/betaBtn/_betaBtn', // Boton Beta Access
+        'components/globals/buttons/playBtn/_playBtn', // Boton Play    
 
-        'components/globals/cardNew/_cardNew',
         'components/globals/countdown/_countdown', // Cuenta regresiva
         'components/globals/footer/_footer',
 
-        'components/globals/maps/_maps',
-        'components/globals/mapsExtend/_mapsExtend',
+        'components/globals/modals/_modalsT', // Template modal
+        'components/globals/modals/classic/_modalC', // Modal Clásico
+        'components/globals/modals/playVideo/_playVideo', // Modal Player Video 
 
-        'components/globals/modals/_mixModal', // Mixin modals
-        'components/globals/modals/classic/_modalC', // Modal: Clasico
-        'components/globals/modals/playVideo/_playVideo', // Modal: Play Video 
-
-        'components/test/_anotaciones', // TEST TEST TEST
-        'components/globals/navMain/_navMain';
-
+        'components/globals/navMain/_navMain', // Navegación principal
+        'components/globals/navMain/subMenu/_subMenu', // SubMenu navegación
+        
+        'components/test/_anotaciones'; // TESTING TEST
 
 /* PAGES IMPORTS */
-@import 'components/pages/hero/_hero',
-        'components/pages/news/_news',
-        'components/pages/about/_about',
+@import 'components/pages/hero/_hero', // Main arrival - Index/ Home
+
+        'components/pages/news/_news', // Últimos anuncios
+        'components/pages/news/cardNew/_cardNew', // Tarjeta noticia
+        'components/pages/news/newsExtend/_newsExtend', // Noticia extendida
+
+        'components/pages/about/_about', // About NL (Intro)
+
         'components/pages/guides/_guides',
-        'components/pages/story/_story',
+
+        'components/pages/story/_story', // Story arrival
+        'components/pages/story/storyExtend/_storyExtend', // Episodio 1
+
+        'components/pages/maps/_maps',
+        'components/pages/maps/mapsExtend/_mapsExtend',
 
         'components/pages/access/_access', 
         'components/pages/access/register/_register', 
         'components/pages/access/logIn/_logIn', 
         'components/pages/access/lostPsw/_lostPsw', 
+        'components/pages/access/changePsw/_changePsw', 
 
         'components/pages/playBeta/_playBeta',
+
         'components/pages/userPanel/_userPanel';
         

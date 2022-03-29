@@ -5,13 +5,14 @@
     text-transform: uppercase;
     display: grid;
     place-content: center;
+    @include btnD('JoinBeta', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 19.5em);
     &__content {
       position: relative;
       z-index: 70;
       bottom: 1em;
     }
     &__bg--opacity {
-      background: linear-gradient(251.4deg, rgba(25, 25, 26, 0.66) 18.83%, rgba(25, 25, 26, 0.6) 49.66%, rgba(25, 25, 26, 0) 100%);
+      background: linear-gradient(251.4deg, rgb(84 51 42 / 66%) 18.83%, #7075a26b 49.66%, rgb(49 12 7 / 23%) 100%);
       position:absolute;
       z-index: 60;
       width: 100%; 
@@ -28,8 +29,5 @@
       bottom: 0;
       right: 0;
       overflow: hidden;
-    }
+    } 
   }
-  
-// Boton clasic acceso al beta -> mixin button component 
-@include btnC('JoinBeta', #19191ad1, #d6c58d, #cba74f, #19191ad1 );

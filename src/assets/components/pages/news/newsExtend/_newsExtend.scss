@@ -1,0 +1,78 @@
+.newsExt {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background: $main-DColor;
+    background-image: url(../media/newsBg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    &__Drake {
+        width: 39em;
+        position: absolute;
+        animation-name: item-suspension;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+        z-index: 0;
+    }
+    &__container {
+        color: $bg-DColor;
+        width: 52%;
+        margin: auto;
+        .container__title,
+        .container__date,
+        .container__type {
+            text-align: center;
+            font-weight: 600;
+        }
+        .container__title {
+            font-size: 2em;
+            margin: 9em 0 1.5em;
+        }
+        .container__date  { 
+            font-size: 1.2em;
+            display: block;
+            margin: 0.5em 0;
+            color: rgba($bg-DColor, .75)
+        }
+        .container__type {
+            @include newType();
+            margin: auto;
+        }
+        .container__new {
+            color: rgba($bg-DColor, .65);
+            margin-top: 8em;
+            p {
+                margin: 2em 0;
+                line-height: 1.75em;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+@keyframes item-suspension {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 1.5em;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@include linesEffect;
+
+
+.moreNews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    margin: auto;
+    width: 52%;
+    padding: 5em 0;
+}
+
+

@@ -10,12 +10,20 @@
     .access__container {
         background: #090a0e30;
         padding: 5em 6em;
+        font-size: 1.1em;
         .access__title {
             font-size: 2em;
             line-height: 2em;
             text-transform: uppercase;
             margin-bottom: 0.75em;
-            @include mDegrade(linear-gradient(180deg, #c4a048 0%, #9d9d9d 100%));
+            @include mDegrade(linear-gradient(180deg, $hover-DColor 0%, #9d9d9d 100%));
+        }
+    }
+    @include btnD('acc', #12151a, #c9bda3, rgba(#c9bda3, 0.85), rgba(#b69d6b, 0.85), rgba(#c9bda3, 0.85), rgba(#b69d6b, 0.85),$bg-DColor, $bg-DColor, $bg-DColor, $bg-DColor, 16.5em);
+    .btnD-container{
+        margin: 0 auto;
+            &:hover {
+            background: linear-gradient(180deg, rgb(255 238 201 / 96%) 0, rgb(215 179 99) 121%);
         }
     }
 }
@@ -32,25 +40,40 @@
 }
 
 .access__input {
-    width: 15.75em;
+    width: 16.75em;
     margin: 1em auto 0;
-    color: $scnd-DColor;
-    background-color: $bg-DColor;
-    border: none;
-    outline: 0.02em solid rgb(251 250 247 / 8%);
+    color: #99998b;
+    background-color: #131417c9;
+    border: 0.1em solid transparent;
+    border-image: linear-gradient(90deg, #4b443700, 29%, #66666642, 70%, #4b443700);
+    border-image-slice: 1;
+    border-right: none;
+    border-left: none;
+    outline: none;
     padding: 0.7em;
     text-align: center;
     letter-spacing: 0.08em;
     &::placeholder {
-        color: rgb(251 250 247 / 25%);
+        color: #666666;
     }
     &:focus-visible, &:focus {
-        outline: 0.02em solid rgb(251 250 247 / 35%);
-        color: rgb(251 250 247 / 55%);
+        color: #ddcaa7;
+        border: 0.1em solid transparent;
+        border-image: linear-gradient(90deg,#4b443700, 29%, #ffe4b2, 70%, #4b443700);
+        border-image-slice: 1;
+        border-right: none;
+        border-left: none;
     }
 }
 
-@include btnD('acc', #12151a, #cbc6b5, #d7be7e, #12151a, 100%);
+.errorMsg {
+    color: #af0000;
+    display: block;
+    margin: 0.25em auto;
+}
+
+
+
 
 
 /* #cb9d30 "actual"*/

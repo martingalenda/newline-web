@@ -1,4 +1,4 @@
-.playBeta {
+.betaBtn {
     position: fixed;
     bottom: 0;
     left: 0; 
@@ -7,12 +7,12 @@
     @include hd {
         display: none;
     }
-    &:hover > .playBeta__txt{
+    &:hover > .betaBtn__txt{
         color: $hover-DColor;
         transition-property: color;
         transition-duration: 1.5s;
     }
-    .playBeta__txt {
+    &__txt {
         position: absolute;
         z-index: 105;
         bottom: 0;
