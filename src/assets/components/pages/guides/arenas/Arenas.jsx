@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import mapsMain from './maps.json';
+import maps from './maps.js'; // Complement
+import ArenaExtend from './arenaExtend/ArenaExtend.jsx'; // Ext component
 import infernoBtn from './media/infernoBtn.png';
 import castlesBtn from './media/castlesBtn.png';
-import MapsExtend from './mapsExtend/MapsExtend.jsx';
 
-const Maps = () => {
-
-    const maps = mapsMain.main
+const Arenas = () => {
 
     let [map, setMap] = useState("maps");
 
@@ -35,8 +33,8 @@ const Maps = () => {
 
     else 
         return (
-            <MapsExtend map={map}/>
+            <ArenaExtend map={map}/>
         );
 }
 
-export default Maps;
+export default Arenas;

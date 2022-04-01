@@ -1,13 +1,9 @@
 import React from 'react';
-/* import WOW from 'wowjs'; */
 import { Link } from "react-router-dom"; // Enrutado
 import { useForm } from 'react-hook-form';
 import regsTxt from './regs.json';
 
 const Register = () => {
-
-    /* const newWOW = () => {new WOW.WOW().init();} 
-    newWOW() */
 
     const regs = regsTxt.register;
 
@@ -46,12 +42,14 @@ const Register = () => {
                                 "userName",
                                 { required: true,
                                 minLength: 5,
-                                maxLength: 20}
+                                maxLength: 20,
+                                pattern: /^[A-Za-z0-9]+$/i}
                             )} />
                         <span className="errorMsg">
                             {errors.userName?.type === 'required' && `${regs.required}`}
                             {errors.userName?.type === 'minLength' && `${regs.min} 5 ${regs.chars}`}
                             {errors.userName?.type === 'maxLength' && `${regs.max} 20 ${regs.chars}`}
+                            {errors.userName?.type === 'pattern' && `${regs.notSymb}`} 
                         </span>
 
                         <input 
@@ -63,12 +61,14 @@ const Register = () => {
                                 "charName",
                                 { required: true,
                                 minLength: 4,
-                                maxLength: 16}
+                                maxLength: 16,
+                                pattern: /^[A-Za-z0-9]+$/i}
                             )} />
                         <span className="errorMsg">
                             {errors.charName?.type === 'required' && `${regs.required}`}
                             {errors.charName?.type === 'minLength' && `${regs.min} 4 ${regs.chars}`}
                             {errors.charName?.type === 'maxLength' && `${regs.max} 16 ${regs.chars}`}
+                            {errors.charName?.type === 'pattern' && `${regs.notSymb}`} 
                         </span>
 
                         <div className="btnD-container">
@@ -112,13 +112,18 @@ const Register = () => {
                                 "rPassword",
                                 { required: true,
                                 minLength: 5,
-                                maxLength: 25}
+                                maxLength: 25 }
                             )} />
                         <span className="errorMsg">
                             {errors.rPassword?.type === 'required' && `${regs.required}`}
                             {errors.rPassword?.type === 'minLength' && `${regs.notPsw}`}
-                            {errors.rPassword?.type === 'maxLength' && `${regs.notPsw}`}
+                            {errors.rPassword?.type === 'maxLength' && `${regs.notPsw}`} 
+
                         </span>
+                        <label className="access__terms">
+                            <input type="checkbox" value="first_checkbox" required/> 
+                            Acepto los terminos y condiciones de uso
+                        </label>
                         <div className="btnD-container">
                             <input 
                                 className="btnD-acc access__confirm" 

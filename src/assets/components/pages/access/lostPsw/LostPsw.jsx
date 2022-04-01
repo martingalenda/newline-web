@@ -1,12 +1,8 @@
 import React from 'react';
-/* import WOW from 'wowjs'; */
 import { useForm } from 'react-hook-form';
 import lostPswTxt from './lostPass.json'; 
 
 const LostPsw = () => {
-
-    /* const newWOW = () => {new WOW.WOW().init();} 
-    newWOW() */
     
     const lostPsw = lostPswTxt.lostPsw;
 

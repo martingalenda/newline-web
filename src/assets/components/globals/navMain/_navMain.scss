@@ -55,6 +55,7 @@ $heightNav: 3.7em;
         padding: 0 1.5em;
         font-weight: 600;
         cursor: pointer;
+        transition: color 2s;
         &:hover {
             color: #fad081;
         }
@@ -98,11 +99,10 @@ $heightNav: 3.7em;
             color: #fad081; 
             font-size: 1.2em;
             position: absolute;
+            transition: color, font-size, .5s;
             &:hover {
-                color: #ffffff;
-                font-size: 1.4em;
-                transition-property: color, font-size;
-                transition-duration: .5s;
+                color: $main-DColor;
+                font-size: 1.4em;        
             }
         }
     }

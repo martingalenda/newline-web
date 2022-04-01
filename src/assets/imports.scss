@@ -7,12 +7,11 @@
         'styles/_default';
 
 /* COMPONENTS IMPORTS */
-@import 'components/globals/buttons/classicBtn/_buttonC', // Botones clásicos
-        'components/globals/buttons/betaBtn/_betaBtn', // Boton Beta Access
-        'components/globals/buttons/playBtn/_playBtn', // Boton Play    
+@import 'components/globals/buttons/classicBtn/_buttonC', // Template Boton clásico
+        'components/globals/buttons/betaBtn/_betaBtn', // Boton Beta Access (fixed bottom)
+        'components/globals/buttons/playBtn/_playBtn', // Boton Play video
 
         'components/globals/countdown/_countdown', // Cuenta regresiva
-        'components/globals/footer/_footer',
 
         'components/globals/modals/_modalsT', // Template modal
         'components/globals/modals/classic/_modalC', // Modal Clásico
@@ -24,21 +23,25 @@
         'components/test/_anotaciones'; // TESTING TEST
 
 /* PAGES IMPORTS */
-@import 'components/pages/hero/_hero', // Main arrival - Index/ Home
+@import 'components/pages/hero/_hero', // MAIN ARRIVAL - INDEX / HOME
 
-        'components/pages/news/_news', // Últimos anuncios
+        'components/pages/news/_news', // ANUNCIOS
+        'components/pages/news/slider/_slider', // Slider noticias
         'components/pages/news/cardNew/_cardNew', // Tarjeta noticia
         'components/pages/news/newsExtend/_newsExtend', // Noticia extendida
 
-        'components/pages/about/_about', // About NL (Intro)
+        'components/pages/about/_about', // ABOUT NL
 
         'components/pages/guides/_guides',
+        'components/pages/guides/gameModes/_gameModes',
+        'components/pages/guides/heroes/_heroes',
+        'components/pages/guides/arenas/_arenas',
+        'components/pages/guides/arenas/arenaExtend/_arenaExtend',
+        'components/pages/guides/mobs/_mobs',
+        'components/pages/guides/install/_install',
 
         'components/pages/story/_story', // Story arrival
         'components/pages/story/storyExtend/_storyExtend', // Episodio 1
-
-        'components/pages/maps/_maps',
-        'components/pages/maps/mapsExtend/_mapsExtend',
 
         'components/pages/access/_access', 
         'components/pages/access/register/_register', 

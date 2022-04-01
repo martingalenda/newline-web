@@ -1,13 +1,10 @@
 import React from 'react';
-/* import WOW from 'wowjs';  */
 import { Link } from "react-router-dom"; // Enrutado
 import logInTxt from './logIn.json';
 import { useForm } from 'react-hook-form';
 
 const LogIn = () => {
 
-/*  const newWOW = () => {new WOW.WOW().init();} 
-    newWOW() */
     const logIn = logInTxt.logIn;
 
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -29,12 +26,14 @@ const LogIn = () => {
                             "user",
                             { required: true,
                             minLength: 5,
-                            maxLength: 20}
+                            maxLength: 20,
+                            pattern: /^[A-Za-z0-9]+$/i}
                         )} />
                     <span className="errorMsg">
                         {errors.user?.type === 'required' && `${logIn.required}`}
                         {errors.user?.type === 'minLength' && `${logIn.notUser}`}
                         {errors.user?.type === 'maxLength' && `${logIn.notUser}`}
+                        {errors.user?.type === 'pattern' && `${logIn.notSymb}`}
                     </span>
 
                     <input 

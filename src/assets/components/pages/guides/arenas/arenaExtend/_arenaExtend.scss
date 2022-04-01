@@ -54,9 +54,9 @@
     }
 }
 
+ 
 
-
-// BOTONES
+// BOTONES NEXT/PREV
 .chInferno, .chCastles {
     position: absolute;
     top: calc(50% - 1em);
@@ -69,7 +69,12 @@
     padding: 0.4em 0;
     display: flex;
     gap: 0.5em;
+    letter-spacing: 0.1em;
     cursor: pointer;
+    transition: all 1.5s;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     .fa-arrow-left, .fa-arrow-right {
         width: min-content;
     }
@@ -86,11 +91,12 @@
 }
 
 .chInferno {
-    left: 2em;
+    animation-name: prevMap;
 }
 .chCastles {
-    right: 2em;
+    animation-name: nextMap;
 }
+
 
 
 // Mapa Castles:
@@ -109,6 +115,7 @@
 .castlesBg4 {
     background-image: url(./media/castles/castlesBg4.png);;
 }
+
 // Mapa Inferno:
 .infernoBg0 {
     background-image: url(./media/inferno/infernoBg.png);;
@@ -124,4 +131,29 @@
 }
 .infernoBg4 {
     background-image: url(./media/inferno/infernoBg4.png);;
+}
+
+
+@keyframes prevMap {
+    0% {
+        left: 2em;
+    }
+    50% {
+        left: 3em;
+    }
+    100% {
+        left: 2em;
+    }
+}
+
+@keyframes nextMap {
+    0% {
+        right: 2em;
+    }
+    50% {
+        right: 3em;
+    }
+    100% {
+        right: 2em;
+    }
 }

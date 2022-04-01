@@ -1,27 +1,35 @@
 // * EJ1: CON HOOKS:
-import React from 'react';
+import React, {useState} from 'react';
 import objetoJS from './objeto.js';
 /* import objetoJSON from './objeto.json'; */
+import cardTest from './cardTest.js';
 
 const Anotaciones = () => {
 
-    const imgList = objetoJS.img.map((img, i) => <li key={i}><img className="list__imgs" src={img}  alt="infernoImgs" /></li>);
-    
+    const [newsGenerales] = useState(cardTest)
+
+    for (const news of newsGenerales) {
+        console.log(news)
+
+    }
+
+/*     Object.keys(newsGenerales.new1).forEach((e) => {
+        console.log(e, ':', newsGenerales.new2[e]);
+    }); */
+
+
 
     return (
         <div className="test">
-            
+            {
+                newsGenerales.map((item, i ) => 
+                <p >
+                    titulo: ${item.title}
+                </p>     
+
+                )
+            }
             <h2>TÍtulo: {objetoJS.title}</h2>
-
-            {/* {Importo JS} */}
-      {/*       <img src={objetoJS.img[0]} alt="img1" />
-            <img src={objetoJS.img[1]} alt="img2" /> */}
-
-            {imgList}
-            
-            {/* {Importo JSON} */}
-{/*             <img src={objetoJS.img[0]} alt="" /> */}
-
 
         </div>
     );

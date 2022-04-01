@@ -1,25 +1,24 @@
 import React from 'react';
 import WOW from 'wowjs';
-import news from './news.json';
-import CardNew from '../../pages/news/cardNew/CardNew.jsx';
-/* import SliderNews from '../../globals/slider/Slider.jsx'; */
+import data from '../../data/data.js';
+import SliderNews from './slider/Slider.jsx';
+import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn.jsx';
 
 const News = () => {
 
-    const newWOW = () => {new WOW.WOW().init();}
+    
+    const newWOW = () => {new WOW.WOW({live: false}).init();}
     newWOW()
 
     return(
-        <section className="news wow animate__fadeIn" data-wow-duration="1.5s">
-            <div className="linesEffect"/>
-            <h2 className="news__title">{news.news.title}</h2>
-            <div className="news__container card-wrapper wow animate__fadeInRight" data-wow-duration="2s">
-                    <CardNew />
-                    <CardNew />
-                    <CardNew />
-                    <CardNew /> 
-            </div>
-        </section>
+        <React.Fragment>
+            <section className="news wow animate__fadeIn" data-wow-duration="1.5s">
+                <div className="linesEffect"/>
+                <h2 className="news__title">{data.mainNews.title}</h2>
+                <SliderNews/>
+            </section>
+            <BetaBtn />
+        </React.Fragment>
     );
 }
 

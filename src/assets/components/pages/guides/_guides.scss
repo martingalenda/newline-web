@@ -1,0 +1,80 @@
+.guides {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-image: url('./media/bgGuides.png');
+    background-position: bottom;
+    background-size: contain;
+    text-transform: uppercase;
+    &__title, &__leyend {
+        color: $bg-DColor;
+    }
+    &__title {
+        font-size: 2.5em;
+        line-height: 2em;
+    }
+    &__leyend {
+        font-size: 1.1em;
+        line-height: 1.25em;
+        margin-bottom: 6em;
+    }
+    &__logo {
+        width: 6em;
+        opacity: 75%;
+        margin: 0 auto 1em;;
+    }
+
+    .sections__buttons {
+        display: flex;
+        position: relative;
+        top: 0;
+        margin-right: 0.9em;
+        @include r2k {
+            top: -1.4em;
+            gap: 0.1em;
+        }
+        @include fhd {
+            top: -1.85em;
+            gap: 0.1em;
+        }
+        .buttons__imgs {
+            opacity: 70%;
+            width: 12em;
+            position: relative;
+            transition: opacity 1s;
+            filter: saturate(40%);
+            cursor: pointer;
+            @include r2k {
+                width: 12.6em;
+            }
+            @include fhd {
+                width: 11.85em;
+            }
+            &:hover {
+                opacity: 100%;
+                filter: saturate(100%);
+            }
+            .imgs__section {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                color: $main-DColor;
+                display: grid;
+                place-content: center;
+                background: rgba($bg-DColor, .7);
+                height: 15%;
+                width: 92%;
+                margin: auto;
+                transition: background 1s;
+            }
+            &:hover .imgs__section {
+                background: rgba($bg-DColor, .8);
+            }
+        }
+    }
+
+}

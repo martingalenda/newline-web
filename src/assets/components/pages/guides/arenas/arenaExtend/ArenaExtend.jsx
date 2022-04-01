@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import WOW from 'wowjs';  
-import mapExt from './mapsExt.js';
-
+import WOW from 'wowjs';
+import mapExt from './mapsExt.js'; // Complement
+// Icons
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
-const MapsExtend = (props)=> {
+const ArenaExtend = (props)=> {
 
-    const newWOW = () => {new WOW.WOW().init();}
+    const newWOW = () => {new WOW.WOW({live: false}).init();}
         newWOW()
 
     const [maps, setMaps] = useState(props.map);
@@ -20,8 +20,8 @@ const MapsExtend = (props)=> {
     const btnChangeMap = maps === "inferno" ?  infernoBtn : castlesBtn;
 
     return (
-        <React.Fragment> 
 
+        <React.Fragment>
         <section className={`mapsExtend ${maps}${bg} wow animate__fadeIn`} data-wow-duration="0.5s"> 
             <div className="mapsExtend__bg--opacity"/>
 
@@ -50,4 +50,4 @@ const MapsExtend = (props)=> {
     )
 }
 
-export default MapsExtend;
+export default ArenaExtend;

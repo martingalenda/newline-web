@@ -9,6 +9,7 @@
         "register": "Registrarme",
         "required": "Campo obligatorio",
         "notUser": "Usuario invalido",
-        "notPsw": "Contraseña invalida"
+        "notPsw": "Contraseña invalida",
+        "notSymb": "No permite caracteres especiales"
     }
 }

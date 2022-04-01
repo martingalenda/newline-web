@@ -2,6 +2,7 @@
     display: grid;
     place-content: center;
     height: 100vh;
+    /* background: gray; */
     background: $main-DColor;
     background-image: url(./media/newsBg.png);
     background-attachment: fixed;
@@ -9,21 +10,13 @@
     background-size: cover;
     position: relative;
     overflow: hidden;
-    &__container {
-        width: 72%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 3em 1.5em;
-        padding: 5em 0 8em;
-        margin: 0 auto;
-    }
     &__title {
         color: $bg-DColor;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 2em;
         text-align: center;
-        margin: 8em 0 1em;
+        margin: 5em 0 4em;
         letter-spacing: 0.075em;
     }
 }

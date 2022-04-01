@@ -1,11 +1,11 @@
 @mixin newType () {
-    background: rgba(136, 25, 138, 0.75); // Esto debe ser dinamico
+    background: rgba(136, 25, 138, 0.75); 
     color: $main-DColor;
     text-transform: uppercase;
     padding: 0.1em 1.1em;
     letter-spacing: 0.15em;
     text-align: center;
-    width: 11em;
+    width: max-content;
     font-size: 0.75em;
     font-weight: 600;
 }
@@ -13,15 +13,18 @@
 .cardNew {
     color: rgba($bg-DColor, .75);
     background: $main-DColor;
-    background-image: url(./media/betaAccess.png); // Esto debe ser dinamico
     background-size: contain;
     background-repeat: no-repeat;
     border: 0.1em solid $main-DColor;
-    height: 27.75em;
+    height: 28.75em;
     width: 27em;
     cursor: grab;
     border-radius: 0.4em;
     position: relative;
+    transition: border-top .5s;
+    &:hover {
+        border-top: 0.5em solid rgba(136, 25, 138, 0.75); 
+    }
     &__container {
         padding: 2.4em;
         .container__item {
@@ -34,6 +37,18 @@
         }
         .container__type {
             @include newType();
+            &-Updates {
+                background: rgba(70, 149, 42, 0.75); 
+            }
+            &-Curiosidades {
+                background: rgba(184, 98, 19, 0.75) 
+            }
+            &-Comunidad {
+                background: rgba(63, 86, 198, 0.75); 
+            }
+            &-Server {
+                background: rgba(9, 57, 129, 0.75); 
+            }
         }
         .container__date {
             font-weight: 600;
@@ -48,14 +63,52 @@
             position: absolute;
             right: 0;
             left: 0;
-            bottom: -1em;
+            bottom: 1em;
             margin: auto;
-            padding: 0
+            padding: 0;
+            transition: width 1.5s;
         }
         &:hover > .container__readMore {
             width: 100%;
             background: $bg-DColor;
-            transition-duration: 1.5s;
         }
     }
+}
+
+.Updates:hover {
+    border-top: 0.5em solid rgba(70, 149, 42, 0.75); 
+}
+.Curiosidades:hover {
+    border-top: 0.5em solid rgba(184, 98, 19, 0.75) 
+}
+.Comunidad:hover {
+    border-top: 0.5em solid rgba(63, 86, 198, 0.75); 
+}
+.Server:hover {
+    border-top: 0.5em solid rgba(9, 57, 129, 0.75); 
+}
+
+.newsBg0 {
+    background-image: url(./media/newsBg0.png);
+}
+.newsBg1 {
+    background-image: url(./media/newsBg1.png);
+}
+.newsBg2 {
+    background-image: url(./media/newsBg2.png);
+}
+.newsBg3 {
+    background-image: url(./media/newsBg3.png);
+}
+.newsBg4 {
+    background-image: url(./media/newsBg4.png);
+}
+.newsBg5 {
+    background-image: url(./media/newsBg5.png);
+}
+
+
+
+.saraza {
+    font-size: 20em;
 }

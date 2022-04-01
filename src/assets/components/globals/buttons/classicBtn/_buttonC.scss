@@ -56,7 +56,6 @@
         width: $width;
         &:hover {
             background: linear-gradient(180deg, $borderD1Color 0, $borderD2Color 121%);
-            transition-duration: 1.5s;
         }
         .btnD-#{$name} {
             @include btnTemplate($bgColor, $txtColor, $HBgColor, $HTxtColor, 100%, $height );

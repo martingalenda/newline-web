@@ -15,6 +15,7 @@
         "max": "Debe poseer máximo: ",
         "chars": "caracteres",
         "notPsw": "Contraseña invalida",
+        "notSymb": "No permite caracteres especiales",
         "notEmail": "Correo invalido"
     }
 }

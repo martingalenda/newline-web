@@ -1,4 +1,4 @@
-// Buttons Iamges
+// Buttons Images
 import iBtn1 from './media/inferno/btn1.png';
 import iBtn2 from './media/inferno/btn2.png';
 import iBtn3 from './media/inferno/btn3.png';

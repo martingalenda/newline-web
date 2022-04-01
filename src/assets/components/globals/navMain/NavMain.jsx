@@ -1,7 +1,7 @@
 import React from 'react';
 import logoFlag from './media/flagLogo.png';
 import { Link, NavLink } from "react-router-dom"; // Enrutado
-import navMain from './navMain.json';
+import data from '../../data/data.js';
 import SubMenu from './subMenu/SubMenu.jsx';
 
 /* FA ICONS */
@@ -27,10 +27,10 @@ const NavMain = () => {
 
                     <div className="container__menu">                    
                         <ol>
-                            <li className='menu__item'> <NavLink to="/news" activeclassname="active">{navMain.navMain.news}</NavLink></li>
-                            <li className='menu__item'> <NavLink to="/about" activeclassname="active">{navMain.navMain.about}</NavLink></li>
-                            <li className='menu__item'> <NavLink to="/guides" activeclassname="active">{navMain.navMain.guides}</NavLink></li>
-                            <li className='menu__item'> <a href="https://discord.gg/MAgX8rzWKU" target='_blank' rel='noreferrer'>{navMain.navMain.community} </a></li>
+                            <li className='menu__item'> <NavLink to="/news" activeclassname="active">{data.navMain.news}</NavLink></li>
+                            <li className='menu__item'> <NavLink to="/guides" activeclassname="active">{data.navMain.guides}</NavLink></li>
+                            <li className='menu__item'> <NavLink to="/about" activeclassname="active">{data.navMain.about}</NavLink></li>
+                            <li className='menu__item'> <a href="https://discord.gg/MAgX8rzWKU" target='_blank' rel='noreferrer'>{data.navMain.community} </a></li>
                         </ol>
                     </div>                  
                     
@@ -39,7 +39,7 @@ const NavMain = () => {
                         <button className="user__language"><FontAwesomeIcon icon={faGlobeAmericas}/></button>
 
                         <div className="user__loggedOut">
-                            <div className="user__register menu__item"><Link to="/register" className="registerBtn">{navMain.navMain.register}</Link></div>
+                            <div className="user__register menu__item"><Link to="/register" className="registerBtn">{data.navMain.register}</Link></div>
                             <div className="user__login"><NavLink to="/login" activeclassname="active"> <FontAwesomeIcon icon={faSignInAlt}/></NavLink></div>
                         </div>
 

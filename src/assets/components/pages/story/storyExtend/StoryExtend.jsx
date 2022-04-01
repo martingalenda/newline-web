@@ -9,7 +9,7 @@ const StoryExtend = () => {
 
     const story = storyTxt.story;
 
-    const newWOW = () => {new WOW.WOW().init();}
+    const newWOW = () => {new WOW.WOW({live: false}).init();}
     newWOW()
     
     return(

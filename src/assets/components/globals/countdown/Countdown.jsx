@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import countdown from './countdown.json';
+import data from '../../data/data.js';
 
 const Countdown = () => { 
     
@@ -8,7 +8,7 @@ const Countdown = () => {
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
 
-    let interval = useRef();
+    let interval = useRef()
 
     const startTimer = () => {
 
@@ -33,7 +33,7 @@ const Countdown = () => {
 
         }, 1000);
     };
-
+    
     useEffect(() => {
         startTimer();
         return() => {
@@ -44,31 +44,31 @@ const Countdown = () => {
 
     return(
         <React.Fragment>
-        <h1 className="countdown__title">{countdown.countdown.title}</h1>    
+        <h1 className="countdown__title">{data.countdown.title}</h1>    
         <div className="countdown">
             <div className="countdown__item countdown__days">
                 <div className="item__num">
                     <span className="num__days" id="clock">{timerDays}</span>
                 </div>
-                <span className="item__txt mins__num">{countdown.countdown.days}</span>
+                <span className="item__txt mins__num">{data.countdown.days}</span>
             </div>
             <div className="countdown__item countdown__hours">
                 <div className="item__num">
                     <span className="num__hours">{timerHours}</span>
                 </div>
-                <span className="item__txt hours__txt">{countdown.countdown.hours}</span>
+                <span className="item__txt hours__txt">{data.countdown.hours}</span>
             </div>
             <div className="countdown__item countdown__mins">
                 <div className="item__num">
                     <span className="num__mins">{timerMinutes}</span>
                 </div>
-                <span className="item__txt mins__txt">{countdown.countdown.mins}</span>
+                <span className="item__txt mins__txt">{data.countdown.mins}</span>
             </div>
             <div className="countdown__item countdown__secs">
                 <div className="item__num">
                     <span className="num__secs">{timerSeconds}</span>
                 </div>
-                <span className="item__txt mins__txt">{countdown.countdown.secs}</span>
+                <span className="item__txt mins__txt">{data.countdown.secs}</span>
             </div>
         </div>
         </React.Fragment>
