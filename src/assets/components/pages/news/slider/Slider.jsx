@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import CardNew from '../cardNew/CardNew.jsx';
-import data from '../../../data/data.js';
+import data from '../../../data/data.js'; 
 
-const SliderNews = () => {
+const SliderNews = (props) => {
 
     const [allNews] = useState(data.news);
 
+    // Slider conf
     const settings = {
         dot: true,
         infinite: true,
@@ -18,11 +19,7 @@ const SliderNews = () => {
         slidesToShow: 4,
         slidesToScroll: 2,
         cssEase: "linear"
-    }
-
-    const changeNew = (news) => {
-        console.log(news)
-    }
+    } 
 
     return(
         <div className="news__container1 wow animate__fadeInRight" data-wow-duration="1.5s">
@@ -30,7 +27,14 @@ const SliderNews = () => {
                 {   
                     // Recorro las noticias
                     allNews.map((newI, i ) => 
-                    <CardNew key={i} title={newI.title} type={newI.type} date={newI.date} txt={newI.txt} bg={`newsBg${i}`} changeNew={changeNew} /> 
+                    <CardNew key={i}
+                        ident={i}
+                        url={newI.url}
+                        title={newI.title} 
+                        type={newI.type} 
+                        date={newI.date} 
+                        intro={newI.intro} 
+                        bg={`newsBg${i}`}  /> 
                     )
                 }
             </Slider>

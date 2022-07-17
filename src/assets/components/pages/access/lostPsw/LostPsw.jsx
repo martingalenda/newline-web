@@ -1,10 +1,9 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
-import lostPswTxt from './lostPass.json'; 
+import data from '../../../data/data.js'; 
 
 const LostPsw = () => {
     
-    const lostPsw = lostPswTxt.lostPsw;
+    const lostPsw = data.lostPsw;
 
     const {register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = (data) => { console.log(data) }

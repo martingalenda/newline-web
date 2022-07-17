@@ -72,8 +72,18 @@
     margin: 0.25em auto;
 }
 
+.form__signup, .access__remember, .form__login, .access__terms  {
+    display: inline-flex;
+    gap: 0.5em;
+    margin-top: 0.75em;
+    color: $scnd-DColor;
+    .access__redirect {
+        padding-bottom: 0.2em;
+    }
+}
 
+.access__terms, .access__remember {
+    margin-top: 1.5em;
+}
 
-
-
-/* #cb9d30 "actual"*/
+@include checkBoxDark(#9f8b62, #12151a);

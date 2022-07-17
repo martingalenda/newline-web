@@ -4,7 +4,9 @@
 /* ABSTRATCS IMPORTS */
 @import 'styles/_breakpoints',
         'styles/_customs',
-        'styles/_default';
+        'styles/_default',
+        'styles/_inputs';
+        
 
 /* COMPONENTS IMPORTS */
 @import 'components/globals/buttons/classicBtn/_buttonC', // Template Boton clásico
@@ -19,6 +21,7 @@
 
         'components/globals/navMain/_navMain', // Navegación principal
         'components/globals/navMain/subMenu/_subMenu', // SubMenu navegación
+        'components/globals/navMain/language/_lang', // Selección de idiomas
         
         'components/test/_anotaciones'; // TESTING TEST
 
@@ -51,5 +54,7 @@
 
         'components/pages/playBeta/_playBeta',
 
-        'components/pages/userPanel/_userPanel';
+        'components/pages/userPanel/_userPanel',
+
+        'components/pages/notFound/_notFound';
         

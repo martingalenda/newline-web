@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from "react-router-dom"; // Enrutado
-import logInTxt from './logIn.json';
+import data from '../../../data/data.js';
 import { useForm } from 'react-hook-form';
 
 const LogIn = () => {
 
-    const logIn = logInTxt.logIn;
+    const logIn = data.logIn;
 
     const {register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = (data) => { console.log(data) }
@@ -62,11 +61,13 @@ const LogIn = () => {
                             type="submit" 
                             value={logIn.logInBtn} />
                     </div>
-                    <span className="form__signup">{logIn.haventAcc}
-                        <Link to="/register">
-                            <span className="access__redirect">{logIn.register}</span>
-                        </Link>
-                    </span>
+                    <div className="access__remember">
+                            <div className="checkBox">
+                                <input id="checkOK" type="checkbox"/> 
+                                <label htmlFor="checkOK" className="label terms__btn"></label>
+                            </div>
+                            <span>{logIn.remember}</span>
+                    </div>
 
                 </form>
             </div>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import WOW from 'wowjs';
-import mapExt from './mapsExt.js'; // Complement
+import data from '../../../../data/data.js';
+import arenaImgs from './arenaImgs.js'; // Complement
 // Icons
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +11,8 @@ const ArenaExtend = (props)=> {
 
     const newWOW = () => {new WOW.WOW({live: false}).init();}
         newWOW()
+    
+    const mapExt = data.maps.ext
 
     const [maps, setMaps] = useState(props.map);
     const [bg, setBg] = useState("Bg0");
@@ -35,7 +38,7 @@ const ArenaExtend = (props)=> {
                 <nav className="container__media">
                     <ul className="media__list">
                         { 
-                        mapExt[maps].img.map((item, i) => 
+                        arenaImgs[maps].img.map((item, i) => 
                         <li key={i}> 
                             <img onClick={() => setBg(`Bg${i}`)} className={`list__imgs ${bg === `Bg${i}` ? 'activeBtn' : '' }`} src={item} alt={`${maps} Buttons`} />
                         </li>)

@@ -10,7 +10,7 @@ import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn.jsx';
 
 const About = () => {
 
-    const aboutNL = data.about
+    const aboutNL = data.about 
 
     const newWOW = () => {new WOW.WOW({live: false}).init();}
     newWOW()
@@ -36,8 +36,8 @@ const About = () => {
             
             <BetaBtn />
 
-            <ModalsT type={<PlayVideo/>} show={trailerShow} setShow={setTrailerShow} > 
-            </ModalsT>
+            <ModalsT type={<PlayVideo/>} show={trailerShow} setShow={setTrailerShow} />  
+
         </React.Fragment>
     );
 }

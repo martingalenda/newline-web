@@ -8,6 +8,18 @@
     width: max-content;
     font-size: 0.75em;
     font-weight: 600;
+    &-Updates {
+        background: rgba(70, 149, 42, 0.75); 
+    }
+    &-Curiosidades {
+        background: rgba(184, 98, 19, 0.75) 
+    }
+    &-Comunidad {
+        background: rgba(63, 86, 198, 0.75); 
+    }
+    &-Server {
+        background: rgba(9, 57, 129, 0.75); 
+    }
 }
 
 .cardNew {
@@ -37,18 +49,6 @@
         }
         .container__type {
             @include newType();
-            &-Updates {
-                background: rgba(70, 149, 42, 0.75); 
-            }
-            &-Curiosidades {
-                background: rgba(184, 98, 19, 0.75) 
-            }
-            &-Comunidad {
-                background: rgba(63, 86, 198, 0.75); 
-            }
-            &-Server {
-                background: rgba(9, 57, 129, 0.75); 
-            }
         }
         .container__date {
             font-weight: 600;
@@ -58,17 +58,19 @@
             line-height: 1.75em;
             font-size: 1.1em;
         }
-        .container__readMore {
-            @include btnTemplate (rgba($bg-DColor, .75), $main-DColor, $bg-DColor, $main-DColor, 66%, 2.5em );
-            position: absolute;
-            right: 0;
-            left: 0;
-            bottom: 1em;
-            margin: auto;
-            padding: 0;
-            transition: width 1.5s;
+        a {
+            .container__readMore {
+                @include btnTemplate (rgba($bg-DColor, .75), $main-DColor, $bg-DColor, $main-DColor, 66%, 2.5em );
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 1em;
+                margin: auto;
+                padding: 0;
+                transition: width 1.5s;
+            }
         }
-        &:hover > .container__readMore {
+        &:hover > a > .container__readMore {
             width: 100%;
             background: $bg-DColor;
         }

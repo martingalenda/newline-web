@@ -1,0 +1,31 @@
+.languages {
+    position: absolute;
+    background-color: #14151c;
+    top: $heightNav;
+    right: -2em;
+    &__list {
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        .list__item {
+            width: 4.5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5em;
+            color: $scnd-DColor;
+            cursor: pointer;
+            transition: color 1s; 
+            &:hover {
+                color: #fad081;  
+            }
+            img {
+                width: 1.4em;
+                height: 1em;
+            }
+        }
+    }
+
+
+}

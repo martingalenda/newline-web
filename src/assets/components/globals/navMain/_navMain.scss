@@ -49,16 +49,22 @@ $heightNav: 3.7em;
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    .user__language {
+    align-items: center;
+    gap: 2em;
+    .language__show {
         color: $scnd-DColor;
         font-size: 1.25em;  
-        padding: 0 1.5em;
         font-weight: 600;
         cursor: pointer;
-        transition: color 2s;
         &:hover {
             color: #fad081;
         }
+    }
+    .user__language {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
     }
 }
 
@@ -114,6 +120,7 @@ $heightNav: 3.7em;
     display: none;
     color: $scnd-DColor;
     width: 15em;
+    height: 100%;
     .logged__btn {
         height: 100%;
         width: 100%;

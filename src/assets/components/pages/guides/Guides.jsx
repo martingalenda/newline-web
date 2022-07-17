@@ -1,9 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { Link } from "react-router-dom";
 import WOW from 'wowjs';
 import guides from './guides.js';
 import logo from './media/logoGuides.png'
-import moreInfo from './media/moreInfo.png';
 import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn.jsx';
 
 const Guides = () => {
@@ -12,7 +11,7 @@ const Guides = () => {
         newWOW()
 
         return(
-            <React.Fragment>
+            <Fragment>
                 <section className="guides wow animate__fadeIn" data-wow-duration="1.5s">
 
                     <h2 className="guides__title">Guía de juego</h2>
@@ -30,19 +29,12 @@ const Guides = () => {
                                 </Link>
 
                             </li>) }
-
-                            <li className="buttons__imgs">
-                                <a href="https://discord.gg/vZPRWfBXdy" target="_blank" rel="noreferrer"> 
-                                    <span className="imgs__section">Más info</span> 
-                                    <img src={moreInfo} alt="Más info" />
-                                </a>
-                            </li>
                         </ol>
                     </nav>                        
                 </section>
 
                 <BetaBtn />
-            </React.Fragment>
+            </Fragment>
         );
 }
 

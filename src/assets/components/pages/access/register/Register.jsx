@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from "react-router-dom"; // Enrutado
 import { useForm } from 'react-hook-form';
-import regsTxt from './regs.json';
+import data from '../../../data/data.js';
 
 const Register = () => {
 
-    const regs = regsTxt.register;
+    const regs = data.register;
 
     const {register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = (data) => { console.log(data) }
@@ -120,10 +119,18 @@ const Register = () => {
                             {errors.rPassword?.type === 'maxLength' && `${regs.notPsw}`} 
 
                         </span>
-                        <label className="access__terms">
-                            <input type="checkbox" value="first_checkbox" required/> 
-                            Acepto los terminos y condiciones de uso
-                        </label>
+
+                        <div className="access__terms">
+                            <div className="checkBox">
+                                <input id="checkOK" type="checkbox" required/> 
+                                <label htmlFor="checkOK" className="label terms__btn"></label>
+                            </div>
+                            <span>{regs.accept}</span>
+                            <Link to="/terms">
+                                <span className="access__redirect">{regs.terms}</span>
+                            </Link>
+                        </div>
+                        
                         <div className="btnD-container">
                             <input 
                                 className="btnD-acc access__confirm" 

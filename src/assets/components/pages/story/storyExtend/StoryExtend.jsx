@@ -1,13 +1,12 @@
-import React from 'react';
 import WOW from 'wowjs';
 import chap1 from './media/chap1.png';
 import chap2 from './media/chap2.png';
 import chap3 from './media/chap3.jpg';
-import storyTxt from '../story.json';
+import data from '../../../data/data.js';
 
 const StoryExtend = () => {
 
-    const story = storyTxt.story;
+    const story = data.story;
 
     const newWOW = () => {new WOW.WOW({live: false}).init();}
     newWOW()

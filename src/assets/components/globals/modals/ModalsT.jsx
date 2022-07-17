@@ -4,15 +4,16 @@ import React from 'react';
 const ModalsT = ({type, show, setShow}) =>{
         return(
             <React.Fragment>
-                {show &&
-                <section className="modal">
-                    <div className="modal__close" onClick={() => setShow(!show)} />
-                    <div  className="modal__container">
+               {show &&
+                    <section className="modal">
+                        
+                        <div className="modal__close" onClick={() => setShow(!show)} />
+
                         {type}
-                    </div>
-                </section>
-                }
-            </React.Fragment>
+
+                    </section>
+                }  
+            </React.Fragment> 
         );
     
 }

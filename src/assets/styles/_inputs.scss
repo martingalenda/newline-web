@@ -1,0 +1,46 @@
+
+// CHECKBOX
+@mixin checkBoxDark($mainColor, $bgColor ) {
+    .checkBox {
+        position: relative;
+        display: flex;
+        align-items: center;
+        .label {
+            width: 2em;
+            height: 1em;
+            background: $bgColor;
+            border-radius: 1.1em;
+            border: 0.1em solid $mainColor;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 0.22em;
+            position: relative;
+            cursor: pointer;
+            transition: background, 1.5s;
+            &:after {
+                content: '';
+                position: absolute;
+                width: .5em;
+                height: .5em;
+                background: $mainColor;
+                border-radius: 50%;
+                transition: background, right, 1.5s;
+            }
+        }
+    }
+    
+    #checkOK {
+        position: absolute;
+        opacity: 0;
+        left: 0.5em;
+    }
+    #checkOK:checked~ .label {
+        background: $mainColor;
+    }
+    
+    #checkOK:checked~ .label:after {
+        background: $bgColor;
+        right: 0.1em;
+    }
+}

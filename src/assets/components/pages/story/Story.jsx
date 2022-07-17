@@ -1,13 +1,12 @@
-import React from 'react';
 import WOW from 'wowjs';
+import data from '../../data/data.js';
 import crown from './media/crown.png'
 import { Link } from "react-router-dom";
-import mainStory from './story.json';
 
 
 const Story = () => {
 
-    const story = mainStory.story;
+    const story = data.story;
 
     const newWOW = () => {new WOW.WOW({live: false}).init();}
     newWOW()

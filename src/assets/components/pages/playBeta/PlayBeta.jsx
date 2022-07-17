@@ -5,8 +5,8 @@ const PlayBeta = () => {
         return(
             <React.Fragment>
                 <section className="playBeta">
-                    PlayBeta
-                    <Anotaciones/>
+                    A continuacion componente de testeo:
+                    <Anotaciones title="nepe"/>
                 </section>
             </React.Fragment>
         );

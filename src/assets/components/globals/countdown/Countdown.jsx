@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import data from '../../data/data.js';
 
-const Countdown = () => { 
+const Countdown = ({date}) => { 
     
     const [timerDays, setTimerDays] = useState('00');
     const [timerHours, setTimerHours] = useState('00');
@@ -12,17 +12,17 @@ const Countdown = () => {
 
     const startTimer = () => {
 
-        interval = setInterval(() => {
+        interval = setInterval( () => {
 
             const now = new Date();
-            const remainTime = (new Date('April 06 2022 10:32:53 GMT-0500') - now + 1000) / 1000;
+            const remainTime = (new Date(date) - now + 1000) / 1000;
             const remainSeconds = ('0' + Math.floor(remainTime % 60)).slice(-2);
             const remainMinutes = ('0' + Math.floor(remainTime / 60 % 60)).slice(-2);
             const remainHours = ('0' + Math.floor(remainTime / 3600 % 24)).slice(-2);
             const remainDays = Math.floor(remainTime / (3600 * 24));
 
             if (remainTime <= 1) {
-                clearInterval(interval.current);
+                clearInterval(interval);
             } 
             else {
                 setTimerDays(remainDays);
@@ -37,7 +37,7 @@ const Countdown = () => {
     useEffect(() => {
         startTimer();
         return() => {
-            clearInterval(interval.current);
+            clearInterval(interval);
         };
     });
     
