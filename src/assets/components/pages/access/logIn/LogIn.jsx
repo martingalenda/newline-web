@@ -7,6 +7,10 @@ const LogIn = () => {
     const logIn = data.logIn;
 
     const {register, handleSubmit, formState: {errors}} = useForm();
+
+    // Se requiere el chequeo de si existe el usuario y si la contraseña es la correcta.
+    // Se requiere guardar el inicio de sesión del usuario, si el checkbox “rememberMe” es true
+    // Se requiere modificar la variable de estado del usuario logeado si el proceso es exitoso
     const onSubmit = (data) => { console.log(data) }
 
     return(
@@ -62,11 +66,17 @@ const LogIn = () => {
                             value={logIn.logInBtn} />
                     </div>
                     <div className="access__remember">
-                            <div className="checkBox">
-                                <input id="checkOK" type="checkbox"/> 
-                                <label htmlFor="checkOK" className="label terms__btn"></label>
-                            </div>
-                            <span>{logIn.remember}</span>
+                        <div className="checkBox">
+                            <input id="rememberMe" 
+                            className="disNone checkOK" 
+                            type="checkbox"
+                            {...register (
+                                "rememberMe"
+                            )}
+                            /> 
+                            <label htmlFor="rememberMe" className="label terms__btn"></label>
+                        </div>
+                        <span>{logIn.remember}</span>
                     </div>
 
                 </form>

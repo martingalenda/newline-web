@@ -30,16 +30,16 @@
         }
     }
     
-    #checkOK {
+    .checkOK {
         position: absolute;
         opacity: 0;
         left: 0.5em;
     }
-    #checkOK:checked~ .label {
+    .checkOK:checked~ .label {
         background: $mainColor;
     }
     
-    #checkOK:checked~ .label:after {
+    .checkOK:checked~ .label:after {
         background: $bgColor;
         right: 0.1em;
     }

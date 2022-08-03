@@ -25,7 +25,7 @@ import StoryExtend from './assets/components/pages/story/storyExtend/StoryExtend
 
 import Register from './assets/components/pages/access/register/Register.jsx';
 import LogIn from './assets/components/pages/access/logIn/LogIn.jsx';
-import LostPsw from './assets/components/pages/access/lostPsw/LostPsw.jsx';
+import LostPsw1Step from './assets/components/pages/access/lostPsw/LostPsw1Step.jsx';
 import ChangePsw from './assets/components/pages/access/changePsw/ChangePsw.jsx';
 
 import PlayBeta from './assets/components/pages/playBeta/PlayBeta.jsx';
@@ -54,7 +54,7 @@ function App() {
                 <Route path="/episode" element={<StoryExtend/>} />
                 <Route path="/register" element={<Register/>} />
                 <Route path="/login" element={<LogIn/>} />
-                <Route path="/lostpsw" element={<LostPsw/>} />
+                <Route path="/lostpsw" element={<LostPsw1Step/>} />
                 <Route path="/changepsw" element={<ChangePsw/>} />
                 <Route path="/playbeta" element={<PlayBeta/>} />
                 <Route path="/mypanel" element={<UserPanel/>} />
