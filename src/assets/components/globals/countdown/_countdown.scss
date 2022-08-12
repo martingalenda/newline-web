@@ -1,12 +1,13 @@
 .countdown {
     display:flex;
     font-weight: 600;
+    justify-content: center;
 }
 
 .countdown__item {
     display: flex;
     flex-direction: column;
-    margin: 1.5em auto;
+    margin: 1.5em 0.5em;
 }
 
 .item__txt, .num__days, .num__hours, .num__mins, .num__secs, .countdown__title  {

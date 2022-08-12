@@ -1,15 +1,15 @@
-import {useState} from 'react';
+import {useContext} from 'react';
+import LangContext from '../../../../context/LangContext';
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import CardNew from '../cardNew/CardNew.jsx';
-import data from '../../../data/data.js'; 
 
-const SliderNews = (props) => {
+const SliderNews = () => {
 
-    const [allNews] = useState(data.news);
+    const { texts } = useContext(LangContext);
 
     // Slider conf
     const settings = {
@@ -26,15 +26,16 @@ const SliderNews = (props) => {
             <Slider {...settings}>
                 {   
                     // Recorro las noticias
-                    allNews.map((newI, i ) => 
-                    <CardNew key={i}
-                        ident={i}
-                        url={newI.url}
-                        title={newI.title} 
-                        type={newI.type} 
-                        date={newI.date} 
-                        intro={newI.intro} 
-                        bg={`newsBg${i}`}  /> 
+                    texts.news.map((newI) => 
+                        <CardNew 
+                            key={newI.id}
+                            ident={newI.id}
+                            url={newI.url}
+                            title={newI.title} 
+                            type={newI.type} 
+                            date={newI.date} 
+                            intro={newI.intro} 
+                            bg={`newsBg${newI.id}`}  /> 
                     )
                 }
             </Slider>

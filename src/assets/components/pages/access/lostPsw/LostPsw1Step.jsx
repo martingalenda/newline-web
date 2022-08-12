@@ -1,51 +1,54 @@
 import { useForm } from 'react-hook-form';
-import data from '../../../data/data.js'; 
+import {useContext} from 'react';
+import LangContext from '../../../../context/LangContext';
 // import LostPsw2Step from './LostPsw2Step.jsx';
 
-const LostPsw1Step = () => {
+const LostPsw1Step = ({lostPswStep, setLPStep}) => {
     
-    const lostPsw = data.lostPsw;
+    const { texts } = useContext(LangContext);
 
     const {register, handleSubmit, formState: {errors}} = useForm();
 
     // Se requiere pasar al paso dos, y enviar el e-mail con el código de recuperación.
-    const onSubmit = (data) => { console.log(data) }
+    const onSubmit = (data) => { 
+        console.log(data)
+        setLPStep(lostPswStep = 2)
+    }
 
     return(
-        <section className="lostPsw access wow animate__fadeIn" data-wow-duration="3.5s">
-            <div className="access__container">
-                <h2 className="access__title">{lostPsw.title}</h2>
-                <form className="lostPsw__form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="lostPsw__form" onSubmit={handleSubmit(onSubmit)}>
 
-                    <div className="form__firstStep">
-                        <input 
-                            className="access__input" 
-                            type="email" 
-                            placeholder={lostPsw.email} 
-                            {...register (
-                                "email",
-                                { required: true,
-                                minLength: 6,
-                                maxLength: 40}
-                            )} />
-                        <span className="errorMsg">
-                            {errors.email?.type === 'required' && `${lostPsw.required}`}
-                            {errors.email?.type === 'minLength' && `${lostPsw.notEmail}`}
-                            {errors.email?.type === 'maxLength' && `${lostPsw.notEmail}`}
-                        </span>
-                        <div className="btnD-container">                            
-                            <input 
-                                className="btnD-acc access__confirm" 
-                                type="submit" 
-                                value={lostPsw.send} />
-                        </div>
-                    </div>
+            <div className="form__firstStep">
+                <input 
+                    className="access__input" 
+                    type="email" 
+                    placeholder={texts.lostPsw.email} 
+                    {...register (
+                        "email",
+                        { required: true,
+                        minLength: 6,
+                        maxLength: 40,
+                        pattern: /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/
+                        }
+                    )} />
 
-                </form>
+                <span className="errorMsg">
+                    {errors.email?.type === 'required' && `${texts.lostPsw.required}`}
+                    {errors.email?.type === 'minLength' && `${texts.lostPsw.notEmail}`}
+                    {errors.email?.type === 'maxLength' && `${texts.lostPsw.notEmail}`}
+                    {errors.email?.type === 'pattern' && `${texts.lostPsw.notEmail}`}
+                </span>
+                
+                <div className="btnD-container">                            
+                    <input 
+                        className="btnD-acc access__confirm" 
+                        type="submit" 
+                        value={texts.lostPsw.send} />
+                </div>
             </div>
-        </section>
-    );
 
+        </form>
+    );
 }
 
 export default LostPsw1Step;

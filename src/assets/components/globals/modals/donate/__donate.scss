@@ -1,0 +1,85 @@
+@include modalTemplate;
+
+.donations {
+    width: 33vw;
+    padding: 5em 0;
+    text-align: center;
+    background-image: url(./media/bg.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    border: 1px solid #fbfaf71a;
+    text-transform: uppercase;
+    h3 {
+        font-size: 1.4em;
+        font-weight: 600;
+        margin-bottom: 2.3em;
+        color: $hover-DColor;
+    }
+    .donation__form {
+        color: $scnd-DColor;
+        .btnD-container {
+            margin: auto;
+        }
+        @include btnD('Donate', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 17.5em);
+        .items__form {
+            display: flex;
+            font-weight: 600;
+            margin-bottom: 1.6em;
+            align-items: center;
+            justify-content: space-between;
+            .form__mount {
+                border: none;
+                font-weight: 600;
+                border-bottom: 0.1em solid $scnd-DColor;
+                width: 7.5em;
+                text-align: center;
+                &:focus-visible {
+                    outline: none;
+                    border-bottom: 0.1em solid $main-DColor;
+                    color: $main-DColor;
+                }
+            }
+            .form__coins {
+                width: 7.5em;
+                text-align: center;
+                font-weight: 600;
+                padding: 0.2em 0;
+                cursor: pointer;
+                border: 0.1em solid $scnd-DColor;
+                &:focus-visible {
+                    border: none;
+                    border: 0.1em solid $main-DColor;
+                }
+                option {
+                    background-color: $bg-DColor;
+                }
+            }
+            .rewards {
+                color: $hover-DColor;
+            }
+        }
+        .errorMsg {
+            text-transform: initial;
+            margin: -0.5em 0 1em;
+            color: #ff2626;
+        }
+        .access__terms {
+            text-transform: initial;
+            .terms__btn {
+                border: 0.1em solid $scnd-DColor;
+                &::after {
+                    background: $scnd-DColor
+                }
+            }
+            .checkOK:checked~ .label {
+                border: 0.1em solid #939292;
+                background: $scnd-DColor;
+            }
+            .checkOK:checked~ .label:after {
+                background: $bg-DColor;
+            }
+        }
+    }
+}
+

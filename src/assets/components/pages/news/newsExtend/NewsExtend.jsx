@@ -1,33 +1,34 @@
-import {useState} from 'react';
-//import {useParams} from 'react-router-dom';
+import {useState, useEffect, useContext} from 'react'; 
+import LangContext from '../../../../context/LangContext';
+import { useParams } from 'react-router';
 import WOW from 'wowjs';
 import Drake from './media/bgNewsExt.png';
 import CardNew from '../cardNew/CardNew.jsx';
-import data from '../../../data/data.js'; 
 
-const NewsExtend = (props) => {
+const NewsExtend = () => {
 
-    const newWOW = () => {new WOW.WOW({live: false}).init();}
-    newWOW()
+    useEffect(() => {
+        const newWOW = () => {new WOW.WOW({live: false}).init();}
+        newWOW()
+    }, []);
 
-    const announce = data.news
-    
-    // const {id} = useParams() // Aca recibiría la url, pero la esta recibiendo como props...
+    const { texts } = useContext(LangContext);
 
-    // Aca necesito recibir el id de la noticia desde el componente cardNew
+    let { id } = useParams()
 
-    const [newExtID] = useState(props.newID) // New extend ID - probablemente pueda no ser estado
+    // Aca necesito recibir el id de la noticia desde el componente cardNew, para poder imprimir el texto correspondiente al objeto json
+    const [newExtID] = useState(id) // New extend ID - probablemente pueda no ser estado
 
     // Validating next/prev infinite
     const prevNewID = (newExtID) => {
         let prevNewId = parseInt(newExtID) - 1
         if (prevNewId < 0)
-            prevNewId = announce.length - 1
+            prevNewId = texts.news.length - 1
         return(prevNewId)
     }
     const nextNewID = (newExtID) => {
         let nextNewId = parseInt(newExtID) + 1
-        if (nextNewId > (announce.length - 1))
+        if (nextNewId > (texts.news.length - 1))
             nextNewId = 0
         return(nextNewId)
     }
@@ -37,38 +38,39 @@ const NewsExtend = (props) => {
     const [prevID] = useState(prevNewID(newExtID)) // - probablemente pueda no ser estado
 
     return (
-
             <section className="newsExt wow animate__fadeIn" data-wow-duration="1.5s">
                 <div className="linesEffect"/>
                 <img className="newsExt__Drake" src={Drake} alt="Drake" />
 
                 <div className="newsExt__container">
-                    <h2 className="container__title">{announce[newExtID].title}</h2>
-                    <time className="container__date" dateTime={announce[newExtID].date}>{announce[newExtID].date}</time>
-                    <div className={`container__type container__type-${announce[newExtID].type}`}>
-                        <span>{announce[newExtID].type}</span>
+                    <h2 className="container__title">{texts.news[newExtID].title}</h2>
+                    <time className="container__date" dateTime={texts.news[newExtID].date}>{texts.news[newExtID].date}</time>
+                    <div className={`container__type container__type-${texts.news[newExtID].type}`}>
+                        <span>{texts.news[newExtID].type}</span>
                     </div>
-                    <div className="container__new"><p>{announce[newExtID].txt}</p></div>
+                    <div className="container__new"><p>{texts.news[newExtID].txt}</p></div>
                 </div>
                 
                 <div className="moreNews">   
                     <CardNew
-                            ident={prevID} 
-                            title={announce[prevID].title} 
-                            type={announce[prevID].type} 
-                            date={announce[prevID].date} 
-                            intro={announce[prevID].intro} 
-                            bg={`newsBg${[prevID]}`} />
+                        ident={prevID} 
+                        title={texts.news[prevID].title} 
+                        type={texts.news[prevID].type} 
+                        date={texts.news[prevID].date} 
+                        intro={texts.news[prevID].intro}
+                        url={texts.news[prevID].url}
+                        bg={`newsBg${[prevID]}`} />
                     <CardNew
-                            ident={nextID} 
-                            title={announce[nextID].title} 
-                            type={announce[nextID].type} 
-                            date={announce[nextID].date} 
-                            intro={announce[nextID].intro} 
-                            bg={`newsBg${[nextID]}`}  />
+                        ident={nextID} 
+                        title={texts.news[nextID].title} 
+                        type={texts.news[nextID].type} 
+                        date={texts.news[nextID].date} 
+                        intro={texts.news[nextID].intro}
+                        url={texts.news[nextID].url}
+                        bg={`newsBg${[nextID]}`}  />
                 </div>
             </section>
     );
 }
 
-export default NewsExtend;
+export default NewsExtend

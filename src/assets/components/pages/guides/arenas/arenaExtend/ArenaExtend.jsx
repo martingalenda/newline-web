@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import {useState, useContext} from 'react';
+import LangContext from '../../../../../context/LangContext';
 import WOW from 'wowjs';
-import data from '../../../../data/data.js';
 import arenaImgs from './arenaImgs.js'; // Complement
 // Icons
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -12,7 +12,7 @@ const ArenaExtend = (props)=> {
     const newWOW = () => {new WOW.WOW({live: false}).init();}
         newWOW()
     
-    const mapExt = data.maps.ext
+    const { texts } = useContext(LangContext);
 
     const [maps, setMaps] = useState(props.map);
     const [bg, setBg] = useState("Bg0");
@@ -24,7 +24,7 @@ const ArenaExtend = (props)=> {
 
     return (
 
-        <React.Fragment>
+        <>
         <section className={`mapsExtend ${maps}${bg} wow animate__fadeIn`} data-wow-duration="0.5s"> 
             <div className="mapsExtend__bg--opacity"/>
 
@@ -32,8 +32,8 @@ const ArenaExtend = (props)=> {
 
             <div className="mapsExtend__container">
 
-                <h2 className="container__title">{mapExt[maps].title}</h2>
-                <p className="container__text">{mapExt[maps].txt}</p>
+                <h2 className="container__title">{texts.maps.ext[maps].title}</h2>
+                <p className="container__text">{texts.maps.ext[maps].txt}</p>
 
                 <nav className="container__media">
                     <ul className="media__list">
@@ -49,7 +49,7 @@ const ArenaExtend = (props)=> {
             </div>
 
         </section>
-        </React.Fragment>
+        </>
     )
 }
 

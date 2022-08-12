@@ -17,10 +17,13 @@
         z-index: 105;
         bottom: 0;
         left: 0;
-        padding: 0.2em 0.95em;
         text-transform: uppercase;
         color: $scnd-DColor;
         font-size: 0.75em;
         font-weight: bold;
+        width: 11.5em;
+        height: 2.3em;
+        display: grid;
+        place-content: center;
     }
 }

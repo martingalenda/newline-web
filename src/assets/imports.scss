@@ -15,12 +15,13 @@
 
         'components/globals/countdown/_countdown', // Cuenta regresiva
 
-        'components/globals/modals/_modalsT', // Template modal
-        'components/globals/modals/classic/_modalC', // Modal Clásico
-        'components/globals/modals/playVideo/_playVideo', // Modal Player Video 
+        'components/globals/modals/_modal', // Template modal básico
+        'components/globals/modals/notifications/_notifications', // Modales de notificación
+        'components/globals/modals/donate/_donate', // Modales de donaciones
+        'components/globals/modals/playVideo/_playVideo', // Modal play Media
 
         'components/globals/navMain/_navMain', // Navegación principal
-        'components/globals/navMain/subMenu/_subMenu', // SubMenu navegación
+        'components/globals/navMain/logged/subMenu/_subMenu', // SubMenu navegación
         'components/globals/navMain/language/_lang', // Selección de idiomas
         
         'components/test/_anotaciones'; // TESTING TEST
@@ -33,9 +34,8 @@
         'components/pages/news/cardNew/_cardNew', // Tarjeta noticia
         'components/pages/news/newsExtend/_newsExtend', // Noticia extendida
 
-        'components/pages/about/_about', // ABOUT NL
-
         'components/pages/guides/_guides',
+        'components/pages/guides/about/_about', // ABOUT NL
         'components/pages/guides/gameModes/_gameModes',
         'components/pages/guides/heroes/_heroes',
         'components/pages/guides/arenas/_arenas',

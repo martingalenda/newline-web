@@ -1,6 +1,8 @@
-@mixin modalTemplate($width, $height) { 
+// Mixin del template básico de los modales
+
+@mixin modalTemplate() { 
     .modal {
-        position: fixed;
+        position: fixed; 
         top: 0;
         left: 0;
         bottom: 0;
@@ -18,13 +20,24 @@
             z-index: -5;
         }
         &__container {
-            width: $width;
-            height: $height;
             background-color: $bg-DColor;
+            position: relative;
             display: grid;
             place-items: center;
-            border: none;
             outline: none;
+            border-radius: 0.3em;
+            .modal__x {
+                position: absolute;
+                z-index: 5;
+                right: 1em;
+                top: 1em;
+                font-size: 1.3em;
+                cursor: pointer;
+                color: $scnd-DColor;
+                &:hover {
+                    color: $main-DColor;
+                }
+            }
             iframe {
                 height: 100%;
             }
@@ -32,4 +45,3 @@
     }
 }
 
-@include modalTemplate(62vw, 65.89vh);

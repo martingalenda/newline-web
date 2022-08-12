@@ -6,6 +6,8 @@ $scnd-DColor: rgba(251, 250, 247, 0.55);
 $hover-DColor: #cb9d30;
 $bg-DColor: #131416;
 $bg-DScndColor: #2b2e3c;
+$error: #ff2727e8;
+$success: #05ad05;
 
 @mixin mDegrade($degLine) {
     background: $degLine;

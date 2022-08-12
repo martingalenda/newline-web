@@ -11,10 +11,12 @@
     &-Updates {
         background: rgba(70, 149, 42, 0.75); 
     }
-    &-Curiosidades {
+    &-Curiosidades,
+    &-Curiosities {
         background: rgba(184, 98, 19, 0.75) 
     }
-    &-Comunidad {
+    &-Comunidad,
+    &-Community {
         background: rgba(63, 86, 198, 0.75); 
     }
     &-Server {
@@ -80,10 +82,12 @@
 .Updates:hover {
     border-top: 0.5em solid rgba(70, 149, 42, 0.75); 
 }
-.Curiosidades:hover {
+.Curiosidades:hover,
+.Curiosities:hover {
     border-top: 0.5em solid rgba(184, 98, 19, 0.75) 
 }
-.Comunidad:hover {
+.Comunidad:hover,
+.Community:hover {
     border-top: 0.5em solid rgba(63, 86, 198, 0.75); 
 }
 .Server:hover {
@@ -107,10 +111,4 @@
 }
 .newsBg5 {
     background-image: url(./media/newsBg5.png);
-}
-
-
-
-.saraza {
-    font-size: 20em;
 }

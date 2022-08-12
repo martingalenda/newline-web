@@ -5,11 +5,14 @@
     text-transform: uppercase;
     display: grid;
     place-content: center;
-    @include btnD('JoinBeta', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 19.5em);
     &__content {
       position: relative;
       z-index: 70;
       bottom: 1em;
+      @include btnD('JoinBeta', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 19.5em);
+      .btnD-container {
+        margin: auto;
+      }
     }
     &__bg--opacity {
       background: linear-gradient(251.4deg, rgb(84 51 42 / 66%) 18.83%, #7075a26b 49.66%, rgb(49 12 7 / 23%) 100%);

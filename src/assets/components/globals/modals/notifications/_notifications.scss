@@ -1,0 +1,52 @@
+@include modalTemplate;
+
+.notifications {
+    width: 33vw;
+    height: 33vh;
+    padding: 6em 0;
+    text-align: center;
+    background-image: url(./media/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    h2 {
+        font-size: 1.4em;
+        font-weight: 600;
+        margin-bottom: 1em;
+    }
+    p {
+        font-size: 1.1em;
+        line-height: 1.6em; 
+    }
+    .container__description {
+        padding: 0 4em;
+    }
+ }
+
+ 
+.error {
+    box-shadow: 0px 0px 12.1em #aa00001a;
+    h2 {
+        color: $error;
+    }
+    p {
+        color: #ff2727a3;
+    } 
+}
+.success {
+    box-shadow: 0px 0px 12.1em #0d1b00;
+    h2 {
+        color: $success;
+    }
+    p {
+        color: #08a608b8;
+    } 
+}
+.announce {
+    box-shadow: 0px 0px 12.1em #202020;
+    h2 {
+        color: $main-DColor;
+    }
+    p {
+        color: $scnd-DColor;
+    } 
+}
