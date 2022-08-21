@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom"; // Rutas del sitio
 import './assets/imports.scss'; // Sass Imports 
 
 /* Context */
-import { LangProvider } from "./assets/context/LangContext";
+import { LangProvider } from "./assets/context/LangContext.js";
 
 /* Global components: */
 import NavMain from './assets/components/globals/navMain/NavMain.jsx';

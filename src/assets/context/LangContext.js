@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import dataTxt from '../components/data/data.js'
 
-const LangContext = createContext()
+const LangContext = createContext() 
 
 
 let initialLanguage = "en"
@@ -9,6 +9,7 @@ let initialLanguage = "en"
 if (navigator.language === "es-419" || navigator.language === "es-AR") {
     initialLanguage = "es"
 } 
+
 
 const LangProvider = ({children}) => {
 
