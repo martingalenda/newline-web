@@ -56,6 +56,9 @@
                 }
             }
             .rewards {
+                color: #4df226;
+            }
+            .posession {
                 color: $hover-DColor;
             }
         }
@@ -78,6 +81,26 @@
             }
             .checkOK:checked~ .label:after {
                 background: $bg-DColor;
+            }
+        }
+    }
+    .terms_conditions {
+        display: none;
+        color: $scnd-DColor;
+        text-transform: none;
+        padding: 0 6em;
+        @include btnD('backTerms', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 12.5em);
+        .btnC-container {
+            margin: 3em auto 0;
+        }
+        p {
+            max-height: 16em;
+            display: grid;
+            overflow-y: scroll;
+            padding: 0 1em;
+            span {
+                font-weight: bold;
+                display: inline;
             }
         }
     }

@@ -1,10 +1,16 @@
-import { useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import WOW from 'wowjs';
 import LangContext from '../../../../context/LangContext';
 import ArenaExtend from './arenaExtend/ArenaExtend.jsx'; // Ext component
 import infernoBtn from './media/infernoBtn.png';
 import castlesBtn from './media/castlesBtn.png';
 
 const Arenas = () => {
+
+    useEffect(() => {
+        const newWOW = () => {new WOW.WOW({live: false}).init();}
+        newWOW()
+    }, []);
 
     let [map, setMap] = useState("maps");
 

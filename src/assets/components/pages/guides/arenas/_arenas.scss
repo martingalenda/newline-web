@@ -8,6 +8,7 @@
     place-content: center;
     text-align: center;
     text-shadow: 0.1em 0.2em 0.2em #121218;
+    overflow: hidden;
     &__container {
         margin-bottom: 3em;
         .container__title {

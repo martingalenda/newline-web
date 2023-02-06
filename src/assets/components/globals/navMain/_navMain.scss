@@ -28,9 +28,16 @@ $heightNav: 3.7em;
             }
         }
         .container__menu {
+            height: $heightNav;
             ol {
+                height: $heightNav;
+                align-items: center;
                 display: flex;
                 gap: 2.25em;
+                .guidesSubMenu {
+                    position: relative;
+                    height: $heightNav;
+                }
                 a {   
                     color: $scnd-DColor;
                     &:hover {
@@ -50,7 +57,6 @@ $heightNav: 3.7em;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 2em;
     .language__show {
         color: $scnd-DColor;
         font-size: 1.25em;  
@@ -65,13 +71,14 @@ $heightNav: 3.7em;
         align-items: center;
         height: 100%;
         position: relative;
+        width: 6em;
+        justify-content: center;
     }
 }
 
-// USUARIO DESLOGEADO:
+// ! USUARIO DESLOGEADO:
 .user__loggedOut {
     display: flex;
-    /* display: none; */
     height: inherit;
     align-items: center;
     .user__register, .user__login {
@@ -114,7 +121,7 @@ $heightNav: 3.7em;
     }
 }
 
-// USUARIO LOGEADO:
+// ! USUARIO LOGEADO:
 .user__logged {
     display: flex;
     color: $scnd-DColor;
@@ -141,7 +148,36 @@ $heightNav: 3.7em;
     }
 }
 
-
 .active {
     color: $main-DColor !important;
+}
+
+
+// ! SUBMENUS
+.subMenu {
+    position: absolute;
+    z-index: 90;
+    top: $heightNav;
+    background-color: #14151c;
+    text-align: center;
+    width: inherit;
+    a {
+     color: $scnd-DColor;
+    }
+    .list__item {
+        font-weight: 600;
+        padding: 0.45em 0;
+        border: 0.1em solid #1e1f26;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+        cursor: pointer;
+        transition: color, 1s;
+        &:first-child {
+            border-top: none;
+        }
+        &:hover {
+            color: #fad081;
+        }
+    }
 }

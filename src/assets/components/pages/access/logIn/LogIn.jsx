@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom"; // Enrutado
 import {useContext} from 'react';
 import LangContext from '../../../../context/LangContext';
+import UserContext from '../../../../context/UserContext';
 import { useForm } from 'react-hook-form';
 
 const LogIn = () => {
 
     const { texts } = useContext(LangContext);
+    const { logIn } = useContext(UserContext);
 
     const {register, handleSubmit, formState: {errors}} = useForm();
-    const onSubmit = (data) => { console.log(data) }
+
+    // Inicio de sesión FAKE (sin backend, sin validación)
+    const onSubmit = (data) => { 
+        // console.log(data)
+        logIn(data)
+    }
 
     return(
         <section className="logIn access wow animate__fadeIn" data-wow-duration="3.5s">
@@ -22,6 +29,7 @@ const LogIn = () => {
                         type="text" 
                         autoComplete="off" 
                         placeholder={texts.logIn.user} 
+                        autoFocus
                         {...register (
                             "user",
                             { required: true,

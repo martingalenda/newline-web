@@ -2,3 +2,7 @@
     margin: 3em auto 0;
 }
 
+.terms_conditions {
+    display: none;
+    @include btnD('backTerms', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 12.5em);
+}

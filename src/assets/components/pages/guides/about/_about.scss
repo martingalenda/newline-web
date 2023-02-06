@@ -32,6 +32,10 @@
         .changes__parraph {
             margin-bottom: 7em;
         }
+        @include btnD('playNow', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 17.5em);
+        .btnD-container {
+          margin: auto;
+        }
     }
 }
 

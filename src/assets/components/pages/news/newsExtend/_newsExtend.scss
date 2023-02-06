@@ -43,9 +43,16 @@
             color: rgba($bg-DColor, .65);
             margin-top: 8em;
             p {
-                margin: 2em 0;
+                margin: 11em 0 2em 0;
                 line-height: 1.75em;
-                font-size: 1.1em;
+                font-size: 1.3em;
+            }
+            u {
+                font-weight: 800;
+                color: green;
+            }
+            h2 {
+                font-size: 2em;
             }
         }
     }

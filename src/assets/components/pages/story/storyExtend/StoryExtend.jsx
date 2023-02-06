@@ -26,7 +26,7 @@ const StoryExtend = () => {
                         <img className="chap__img1" src={chap1} alt="Chapter 1" />
                         <h3 className="chap__num">{texts.story.chapter} I</h3>
                         <h2 className="chap__title">{texts.story.c1title}</h2>
-                        <p className="chap__txt">{texts.story.c1txt}</p>
+                        <p dangerouslySetInnerHTML={{__html: texts.story.c1txt}} className="chap__txt"></p>
                     </div>      
                         
                 </div>     
@@ -36,7 +36,7 @@ const StoryExtend = () => {
                         <img className="chap__img2" src={chap2} alt="Chapter 2" />
                         <h3 className="chap__num">{texts.story.chapter} II</h3>
                         <h2 className="chap__title">{texts.story.c2title}</h2>
-                        <p className="chap__txt">{texts.story.c2txt}</p>
+                        <p dangerouslySetInnerHTML={{__html: texts.story.c2txt}} className="chap__txt"></p>
                     </div>
                 </div>    
 
@@ -45,7 +45,7 @@ const StoryExtend = () => {
                         <img className="chap__img3" src={chap3} alt="Chapter 3" />
                         <h3 className="chap__num">{texts.story.chapter} III</h3>
                         <h2 className="chap__title">{texts.story.c3title}</h2>
-                        <p className="chap__txt">{texts.story.c3txt}</p>
+                        <p dangerouslySetInnerHTML={{__html: texts.story.c3txt}} className="chap__txt"></p>
                     </div>
                 </div>      
                           

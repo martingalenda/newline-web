@@ -2,18 +2,23 @@ import { Link } from "react-router-dom";
 import {useContext} from 'react';
 import LangContext from '../../../../context/LangContext';
 import { useForm } from 'react-hook-form';
+ 
 
-const Reg1Step = ({regStep, setRegStep}) => {
+const Reg1Step = ({regStep, setRegStep, openN1}) => {
+
 
     const { texts } = useContext(LangContext);
 
     const {register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = (data) => { 
-        console.log(data) 
+        //console.log(data) 
         setRegStep(regStep = 2)
-    } 
+        openN1()
+    }  
 
     return(
+        <>
+
             <form className="register__form" onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form__firstStep">
@@ -21,6 +26,7 @@ const Reg1Step = ({regStep, setRegStep}) => {
                         className="access__input" 
                         type="email"
                         placeholder={texts.register.email} 
+                        autoFocus
                         {...register (
                             "email",
                             { required: true,
@@ -91,6 +97,9 @@ const Reg1Step = ({regStep, setRegStep}) => {
                 </div>
 
             </form>
+
+
+        </>
     );
 
 }

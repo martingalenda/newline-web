@@ -37,11 +37,9 @@
     .btnD-container {
         margin: 2em auto 1em;
     } 
-    @include btnD('story', #17161c, rgba(#e3b252, .75), rgba(#e3b252, .99), rgba(#e3b252, .75), rgba(#e3b252, .75), rgba(#e3b252, .75),$bg-DColor, $bg-DColor, $bg-DColor, $bg-DColor, 18.5em);
+    @include btnD('story', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 19.5em);
     .container__leyend {
         font-size: 1.1em;
         color: rgba($main-DColor, .75)
     }
-
 }
-

@@ -1,13 +1,30 @@
 import {useContext} from 'react';
 import LangContext from '../../../../context/LangContext';
 import { useForm } from 'react-hook-form';
+import { Link } from "react-router-dom"; // Enrutado
+// import { useNavigate } from "react-router-dom"; 
+
+import Modal from "../../../globals/modals/Modal"
+import Notification from "../../../globals/modals/notifications/Notifications"
+import {useModals} from "../../../../hooks/useModals"
 
 const ChangePsw = () => {
     
     const { texts } = useContext(LangContext);
 
-    const {register, handleSubmit, formState: {errors}} = useForm();
-    const onSubmit = (data) => { console.log(data) }
+    const [isActiveN1, openN1, closeN1] = useModals()
+
+    const {register, handleSubmit, watch, formState: {errors}} = useForm();
+
+    // Referencia al valor introducido en el input (password) en tiempo real
+    const pw = watch('password')
+
+    // const navigate = useNavigate()
+    const onSubmit = (data) => { 
+        //console.log(data) 
+        openN1()
+        // navigate("/") 
+    }
 
     return(
         <section className="lostPsw access wow animate__fadeIn" data-wow-duration="3.5s">
@@ -19,7 +36,8 @@ const ChangePsw = () => {
                             className="access__input" 
                             type="password" 
                             autoComplete="off" 
-                            placeholder={texts.changePsw.aPsw} 
+                            placeholder={texts.changePsw.aPsw}
+                            autoFocus
                             {...register (
                                 "prevPsw",
                                 { required: true,
@@ -31,6 +49,10 @@ const ChangePsw = () => {
                             {errors.prevPsw?.type === 'minLength' && `${texts.changePsw.min} 5 ${texts.changePsw.chars}`}
                             {errors.prevPsw?.type === 'maxLength' && `${texts.changePsw.max} 25 ${texts.changePsw.chars}`}
                         </span>
+                        <Link to="/lostpsw">         
+                            <span className="form__lostPsw access__redirect">{texts.logIn.lostPsw}</span>
+                        </Link>
+
                         <input 
                             className="access__input" 
                             type="password" 
@@ -56,12 +78,15 @@ const ChangePsw = () => {
                                 "rPassword",
                                 { required: true,
                                 minLength: 5,
-                                maxLength: 25}
+                                maxLength: 25,
+                                validate: (value) => value === pw
+                                }
                             )} />
                         <span className="errorMsg">
                             {errors.rPassword?.type === 'required' && `${texts.changePsw.required}`}
                             {errors.rPassword?.type === 'minLength' && `${texts.changePsw.notPsw}`}
                             {errors.rPassword?.type === 'maxLength' && `${texts.changePsw.notPsw}`}
+                            {errors.rPassword?.type === 'validate' && `${texts.changePsw.invalidPsw}`}
                         </span>
                             <div className="btnD-container">      
                                 <input 
@@ -72,6 +97,13 @@ const ChangePsw = () => {
 
                 </form>
             </div>
+
+            {/* Notificación: Contraseña modificada de forma exitosa  */}
+            <Modal active={isActiveN1} close={closeN1}>
+                <Notification style={`success`} close={closeN1}> 
+                    <p>{texts.lostPsw.pwChanged}</p>
+                </Notification>
+            </Modal> 
         </section>
     );
 

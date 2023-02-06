@@ -1,9 +1,17 @@
-import React from 'react';
+import {useContext} from 'react';
+import LangContext from '../../../context/LangContext';
 
 const NotFound = () => {
+
+    const { texts } = useContext(LangContext)
+
     return (
         <section className="notFound">
-            <h2>Error 404</h2>
+            <div className="notFound__bg" />
+            <div className="notFound__msg">
+                <h2>Error 404</h2>
+                <p>{texts.notFound.txt}</p>
+            </div>
         </section>
     )
 }

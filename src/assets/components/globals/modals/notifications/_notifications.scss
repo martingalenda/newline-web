@@ -19,12 +19,23 @@
     }
     .container__description {
         padding: 0 4em;
+        .confirmation{
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+        .btnC-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2em;
+        }
     }
  }
 
- 
+  
 .error {
     box-shadow: 0px 0px 12.1em #aa00001a;
+    @include btnC('notification', none, #ff2727a3, #ff2727a3, $main-DColor, 13em, 3em );
     h2 {
         color: $error;
     }
@@ -34,6 +45,7 @@
 }
 .success {
     box-shadow: 0px 0px 12.1em #0d1b00;
+    @include btnC('notification', none, #08a608b8, #08a608b8, $main-DColor, 13em, 3em );
     h2 {
         color: $success;
     }
@@ -43,6 +55,7 @@
 }
 .announce {
     box-shadow: 0px 0px 12.1em #202020;
+    @include btnC('notification', none, $scnd-DColor, $scnd-DColor, $main-DColor, 13em, 3em );
     h2 {
         color: $main-DColor;
     }

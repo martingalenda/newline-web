@@ -3,6 +3,10 @@ import './assets/imports.scss'; // Sass Imports
 
 /* Context */
 import { LangProvider } from "./assets/context/LangContext.js";
+import { UserProvider } from "./assets/context/UserContext.js";
+
+/* Protected Routes */
+import { ProtectedAccess, ProtectedLogIn, ProtectedLogOut } from "./assets/components/ProtectedRoutes";
 
 /* Global components: */
 import NavMain from './assets/components/globals/navMain/NavMain.jsx';
@@ -29,13 +33,11 @@ import LogIn from './assets/components/pages/access/logIn/LogIn.jsx';
 import LostPsw from './assets/components/pages/access/lostPsw/LostPsw.jsx';
 import ChangePsw from './assets/components/pages/access/changePsw/ChangePsw.jsx';
 
-import PlayBeta from './assets/components/pages/playBeta/PlayBeta.jsx';
+import Premium from './assets/components/pages/premium/Premium.jsx';
 
 import UserPanel from './assets/components/pages/userPanel/UserPanel.jsx';
 
 import NotFound from './assets/components/pages/notFound/NotFound.jsx'
-
-
 
 function App() {
     return (
@@ -43,32 +45,51 @@ function App() {
         <>
 
             <LangProvider>
+                <UserProvider>
 
-                <NavMain />
+                    <NavMain />
 
-                <Routes>
-                    <Route path="/" element={<Hero/>} />
-                    <Route path="/home" element={<Hero/>} />
-                    <Route path="/news" element={<News/>} />
-                    <Route path="/news/:url" element={<NewsExtend/>} />
-                    <Route path="/guides" element={<Guides/>} />
-                    <Route path="/guides/about" element={<About/>} />
-                    <Route path="/guides/gamemodes" element={<GameModes/>} />
-                    <Route path="/guides/heroes" element={<Heroes/>} />
-                    <Route path="/guides/arenas" element={<Arenas/>} />
-                    <Route path="/guides/mobs" element={<Mobs/>} />
-                    <Route path="/guides/install" element={<Install/>} />
-                    <Route path="/story" element={<Story/>} />
-                    <Route path="/episode" element={<StoryExtend/>} />
-                    <Route path="/register" element={<Register/>} />
-                    <Route path="/login" element={<LogIn/>} />
-                    <Route path="/lostpsw" element={<LostPsw/>} />
-                    <Route path="/changepsw" element={<ChangePsw/>} />
-                    <Route path="/playbeta" element={<PlayBeta/>} />
-                    <Route path="/mypanel" element={<UserPanel/>} />
-                    <Route path="*" element={<NotFound/>} />
-                </Routes>
+                    <Routes>
+                        <Route path="/" element={<Hero/>} />
+                        <Route path="/home" element={<Hero/>} />
+                        <Route path="/news" element={<News/>} />
+                        <Route path="/news/:url" element={<NewsExtend/>} />
+                        <Route path="/guides" element={<Guides/>} />
+                        <Route path="/guides/about" element={<About/>} />
+                        <Route path="/guides/gamemodes" element={<GameModes/>} />
+                        <Route path="/guides/heroes" element={<Heroes/>} />
+                        <Route path="/guides/arenas" element={<Arenas/>} />
+                        <Route path="/guides/mobs" element={<Mobs/>} />
+                        <Route path="/guides/install" element={<Install/>} />
+                        <Route path="/story" element={<Story/>} />
+                        <Route path="/episode" element={<StoryExtend/>} />
+                        <Route path="/news/not_news" element={<StoryExtend/>} />
 
+                        {/* Si el usuario esta deslogeado, lo redirrecionamos a /logIn */}
+                        <Route element={<ProtectedLogIn redirectTo="/login"/>}>
+                            <Route path="/changepsw" element={<ChangePsw/>} />
+                            <Route path="/mypanel" element={<UserPanel/>} /> 
+                        </Route>
+
+                        {/* Si el usuario esta logeado, lo redirrecionamos a /myPanel */}
+                        <Route element={<ProtectedLogOut redirectTo="/mypanel"/>}>
+                            <Route path="/register" element={<Register/>} /> 
+                            <Route path="/login" element={<LogIn/>} />
+                        </Route>
+                        
+                        <Route path="/lostpsw" element={<LostPsw/>} />
+
+                        {/* Si el usuario ya posee el nivel de acceso beta, redirrecionamos a myPanel */}
+                        <Route path="/premium" element={
+                            <ProtectedAccess redirectTo="/mypanel">
+                                <Premium/>
+                            </ProtectedAccess>
+                        } /> 
+
+                        <Route path="*" element={<NotFound/>} />
+                    </Routes>
+
+                </UserProvider>
             </LangProvider>
 
         </>    

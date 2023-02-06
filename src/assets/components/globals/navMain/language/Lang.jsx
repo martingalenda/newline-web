@@ -3,13 +3,13 @@ import LangContext from '../../../../context/LangContext';
 import esFlag from '../media/langs/esFlag.png';
 import engFlag from '../media/langs/engFlag.png'; 
  
-const Lang = ({show}) => {
-
+const Lang = ({active}) => {
+   
     const { handleLanguageEN, handleLanguageES } = useContext(LangContext);
 
     return (
         <>
-            {show &&    
+            {active &&    
                 <nav className="languages">
                     <ol className="languages__list">
                         <li onClick={handleLanguageEN} className="list__item">

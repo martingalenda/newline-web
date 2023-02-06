@@ -1,13 +1,6 @@
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import useNews from '../../../../hooks/useNews.jsx';
 import { Link } from "react-router-dom"; 
 
 const CardNew = (props) => { 
-
-    const { texts } = useContext(LangContext);
-
-    const { setNewsIdent } = useNews();
 
     return ( 
         <div className={`cardNew ${props.bg} ${props.type}`}> 
@@ -17,12 +10,12 @@ const CardNew = (props) => {
                 <time className="container__date container__item" dateTime={props.date}>{props.date}</time>    
                 <p className="container__intro container__item">{props.intro}</p>
                 
-                <Link onClick={() => setNewsIdent(props.ident)} to={`/news/${props.url}`}>
-                    <button className="container__readMore">{texts.mainNews.readMore}</button>
+                <Link to={`/${props.url}`}>
+                    <button className="container__readMore">{props.btnTxt}</button>
                 </Link>
 
             </div> 
-        </div>
+        </div> 
     )
 }
 

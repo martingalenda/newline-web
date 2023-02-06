@@ -1,9 +1,8 @@
 import { useForm } from 'react-hook-form';
 import {useContext} from 'react';
 import LangContext from '../../../../context/LangContext';
-// import LostPsw2Step from './LostPsw2Step.jsx';
 
-const LostPsw1Step = ({lostPswStep, setLPStep}) => {
+const LostPsw1Step = ({lostPswStep, setLPStep, openN1}) => {
     
     const { texts } = useContext(LangContext);
 
@@ -11,18 +10,20 @@ const LostPsw1Step = ({lostPswStep, setLPStep}) => {
 
     // Se requiere pasar al paso dos, y enviar el e-mail con el código de recuperación.
     const onSubmit = (data) => { 
-        console.log(data)
+        // console.log(data)
+        openN1()
         setLPStep(lostPswStep = 2)
     }
 
     return(
         <form className="lostPsw__form" onSubmit={handleSubmit(onSubmit)}>
 
-            <div className="form__firstStep">
+            <div className="form__firstStep"> 
                 <input 
                     className="access__input" 
                     type="email" 
-                    placeholder={texts.lostPsw.email} 
+                    placeholder={texts.lostPsw.email}
+                    autoFocus
                     {...register (
                         "email",
                         { required: true,

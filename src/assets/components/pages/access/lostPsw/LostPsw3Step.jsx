@@ -1,17 +1,23 @@
 import { useForm } from 'react-hook-form';
 import {useContext} from 'react';
 import LangContext from '../../../../context/LangContext';
+// import { useNavigate } from "react-router-dom";
 
-const LostPsw3Step = ({lostPswStep, setLPStep}) => {
+const LostPsw3Step = ({lostPswStep, setLPStep, openN2}) => {
     
     const { texts } = useContext(LangContext);
 
-    const {register, handleSubmit, formState: {errors}} = useForm();
-
-    // Se requiere validar la repetición de contraseñas, actualizarla en la DB, e iniciar sesión.
+    const {register, handleSubmit, watch, formState: {errors}} = useForm();
+    
+    // Referencia al valor introducido en el input (password) en tiempo real
+    const pw = watch('password')
+    
+    // const navigate = useNavigate()
     const onSubmit = (data) => { 
-        console.log(data)
+        // console.log(data)
         setLPStep(lostPswStep = 1)
+        openN2()
+        //navigate("/login")
     }
 
     return(
@@ -22,7 +28,8 @@ const LostPsw3Step = ({lostPswStep, setLPStep}) => {
                     className="access__input" 
                     type="password" 
                     autoComplete="off" 
-                    placeholder={texts.lostPsw.nPsw} 
+                    placeholder={texts.lostPsw.nPsw}
+                    autoFocus
                     {...register (
                         "password",
                         { required: true,
@@ -46,9 +53,7 @@ const LostPsw3Step = ({lostPswStep, setLPStep}) => {
                         { required: true,
                         minLength: 5,
                         maxLength: 25,
-                        onBlur: (e) => {
-                            console.error("Necesito validar que ambas contraseñas coincidan")
-                            }
+                        validate: (value) => value === pw
                         }
                     )} />
 
@@ -56,6 +61,7 @@ const LostPsw3Step = ({lostPswStep, setLPStep}) => {
                     {errors.rPassword?.type === 'required' && `${texts.lostPsw.required}`}
                     {errors.rPassword?.type === 'minLength' && `${texts.lostPsw.notPsw}`}
                     {errors.rPassword?.type === 'maxLength' && `${texts.lostPsw.notPsw}`}
+                    {errors.rPassword?.type === 'validate' && `${texts.changePsw.invalidPsw}`}
                 </span>
 
                 <div className="btnD-container">      

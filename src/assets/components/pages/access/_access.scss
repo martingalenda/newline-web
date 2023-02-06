@@ -86,4 +86,16 @@
     margin-top: 1.5em;
 }
 
+.code__container {
+    display: flex;
+    flex-direction: column;
+    .resendCode {
+        cursor: pointer;
+        width: max-content;
+        align-self: end;
+        margin: 0.37em 0.3em 0 0;
+        font-size: 0.85em;
+    }
+}
+
 @include checkBoxDark(#9f8b62, #12151a);

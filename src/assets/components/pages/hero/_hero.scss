@@ -9,7 +9,7 @@
       position: relative;
       z-index: 70;
       bottom: 1em;
-      @include btnD('JoinBeta', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 19.5em);
+      @include btnD('access', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 19.5em);
       .btnD-container {
         margin: auto;
       }

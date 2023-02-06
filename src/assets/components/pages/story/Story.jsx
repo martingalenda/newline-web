@@ -2,7 +2,8 @@ import {useEffect, useContext} from 'react';
 import LangContext from '../../../context/LangContext';
 import WOW from 'wowjs';
 import crown from './media/crown.png'
-import { Link } from "react-router-dom";
+import ButtonC from '../../globals/buttons/classicBtn/ButtonC';
+import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn';
 
 const Story = () => {
 
@@ -22,14 +23,10 @@ const Story = () => {
                 <img className="container__logoEp1" src={crown} alt="crown" />
                 <h4 className="container__epNum">{texts.story.episode}</h4>
                 <h3 className="container__epTitle">{texts.story.title}</h3>
-                <Link to="/episode">
-                    <div className="btnD-container">
-                        <button className="btnD-story container__goChaps">{texts.story.btn}</button>
-                    </div>
-                </Link>
+                <ButtonC btnClass="story" text={texts.story.btn} link="/episode"/>
                 <span className="container__leyend">... {texts.story.leyend} ...</span>
             </div>
-            
+            <BetaBtn/>
         </section>
     );
 }

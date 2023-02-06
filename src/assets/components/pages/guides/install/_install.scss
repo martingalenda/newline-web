@@ -1,5 +1,28 @@
 .install {
     height: 100vh;
+    text-align: center;
+    background-color: #FFE7AB;
+    text-transform: uppercase;
     display: grid;
     place-content: center;
+    color: $bg-DColor;
+    &__bg--opacity {
+      background: linear-gradient(219deg, #fff9f8db 18.83%, #c4c5d452 49.66%, #ffffffe0 100%);
+      position: absolute;
+      z-index: 60;
+      width: 100%; 
+      height: 100vh;
+      left: 0;
+      top: 0;
+    }
+    &__bg {
+      position: absolute;
+      opacity: 95%;
+      z-index: 50;
+      top: -$heightNav;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+    } 
 }

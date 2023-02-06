@@ -1,0 +1,28 @@
+
+.news__container1 {
+    width: 120em;
+    height: 30em;
+    margin-left: 33em;
+    .slick-next {
+        display: none !important;
+    }     
+    .slick-prev {
+        left: -150px !important;
+        @include r2k {
+            left: -112px !important;
+        }
+        @include fhd {
+            left: -75px !important;
+        }
+        &:before {
+            font-size: 72px !important;
+            @include r2k {
+                font-size: 54px !important;
+            }
+            @include fhd {
+                font-size: 36px !important;
+            }
+        }
+    }
+}
+

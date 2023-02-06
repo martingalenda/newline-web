@@ -21,17 +21,18 @@
 }
 
 // Classic Btn
-@mixin btnC ($name, 
-                $bgColor: none, 
-                $txtColor: #000, 
-                $HBgColor : $txtColor, 
-                $HTxtColor: $bgColor, 
-                $width: 19.5em, 
-                $height: 3em ) {
+@mixin btnC ($name,  
+             $bgColor: none, 
+             $txtColor: #000,
+             $HBgColor : $txtColor, 
+             $HTxtColor: #fff, 
+             $width: 19.5em, 
+             $height: 3em ) {
     .btnC-#{$name} {
         @include btnTemplate($bgColor, $txtColor, $HBgColor, $HTxtColor, $width, $height );
         border: 0.1em solid $txtColor;
         &:hover {
+            color: $HTxtColor;
             border: 0.1em solid $HTxtColor;
         }
     }
@@ -39,18 +40,18 @@
 
 // Btn Degrade
 @mixin btnD ($name, 
-                $bgColor: none, 
-                $txtColor: $bg-DColor,
-                $borderD1Color: #c9bda3,
-                $borderD2Color: #b69d6b,
-                $txtD1Color: #cdcdcd,
-                $txtD2Color: #7e724a,
-                $txtD1HColor: #131416,
-                $txtD2HColor: #3d3410,
-                $HBgColor : $txtColor, 
-                $HTxtColor: $bgColor, 
-                $width: 19.5em, 
-                $height: 3em ) {
+             $bgColor: none, 
+             $txtColor: $bg-DColor, 
+             $borderD1Color: #c9bda3,
+             $borderD2Color: #b69d6b,
+             $txtD1Color: #cdcdcd,
+             $txtD2Color: #7e724a,
+             $txtD1HColor: #131416,
+             $txtD2HColor: #3d3410,
+             $HBgColor : $txtColor, 
+             $HTxtColor: $bgColor, 
+             $width: 19.5em, 
+             $height: 3em ) {
     .btnD-container {
         background: $bgColor;
         width: $width;

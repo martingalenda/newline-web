@@ -1,0 +1,68 @@
+.heroes__slider {
+    position: fixed;
+    z-index: 25;
+    margin: auto;
+    width: 34vw;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: grab;
+    .race__img {
+
+        margin: auto;
+        position: relative;
+        bottom: -5em;
+    }
+    .race__btn {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 10em;
+        height: 3em;
+        margin: auto;
+        cursor: pointer;
+        border: 0.1em solid #B3B6BB;
+        border-bottom: none;
+        background: $main-DColor;
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+    .slick-next {
+        right: -150px !important;
+        @include r2k {
+            right: -112px !important;
+        }
+        @include fhd {
+            right: -75px !important;
+        }
+        &:before {
+            font-size: 72px !important;
+            @include r2k {
+                font-size: 54px !important;
+            }
+            @include fhd {
+                font-size: 36px !important;
+            }
+        }
+    }
+    .slick-prev {
+        left: -150px !important;
+        @include r2k {
+            left: -112px !important;
+        }
+        @include fhd {
+            left: -75px !important;
+        }
+        &:before {
+            font-size: 72px !important;
+            @include r2k {
+                font-size: 54px !important;
+            }
+            @include fhd {
+                font-size: 36px !important;
+            }
+        }
+    }
+        
+}

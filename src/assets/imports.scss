@@ -1,5 +1,5 @@
 /* FUENTES */
-@import 'fonts/_bfort.scss';
+@import 'fonts/_bfort.scss'; 
 
 /* ABSTRATCS IMPORTS */
 @import 'styles/_breakpoints',
@@ -12,6 +12,7 @@
 @import 'components/globals/buttons/classicBtn/_buttonC', // Template Boton clásico
         'components/globals/buttons/betaBtn/_betaBtn', // Boton Beta Access (fixed bottom)
         'components/globals/buttons/playBtn/_playBtn', // Boton Play video
+        'components/globals/buttons/fixedAction/_fixedAction', // Boton Fixed noticias
 
         'components/globals/countdown/_countdown', // Cuenta regresiva
 
@@ -21,40 +22,44 @@
         'components/globals/modals/playVideo/_playVideo', // Modal play Media
 
         'components/globals/navMain/_navMain', // Navegación principal
-        'components/globals/navMain/logged/subMenu/_subMenu', // SubMenu navegación
-        'components/globals/navMain/language/_lang', // Selección de idiomas
-        
-        'components/test/_anotaciones'; // TESTING TEST
+        'components/globals/navMain/guidesSubMenu/_guidesSubMenu', // Navegación principal
+        'components/globals/navMain/language/_lang'; // Selección de idiomas
+
 
 /* PAGES IMPORTS */
-@import 'components/pages/hero/_hero', // MAIN ARRIVAL - INDEX / HOME
+@import 'components/pages/hero/_hero', // ! MAIN ARRIVAL - INDEX / HOME
 
-        'components/pages/news/_news', // ANUNCIOS
-        'components/pages/news/slider/_slider', // Slider noticias
+        'components/pages/news/_news', // ! ANUNCIOS
+        'components/pages/news/slider/_sliderNews', // Slider noticias
         'components/pages/news/cardNew/_cardNew', // Tarjeta noticia
         'components/pages/news/newsExtend/_newsExtend', // Noticia extendida
 
-        'components/pages/guides/_guides',
-        'components/pages/guides/about/_about', // ABOUT NL
-        'components/pages/guides/gameModes/_gameModes',
-        'components/pages/guides/heroes/_heroes',
-        'components/pages/guides/arenas/_arenas',
-        'components/pages/guides/arenas/arenaExtend/_arenaExtend',
-        'components/pages/guides/mobs/_mobs',
-        'components/pages/guides/install/_install',
+        'components/pages/guides/_guides', // ! GUÍA DE JUEGO
+        'components/pages/guides/about/_about', // ? Sobre NL
+        'components/pages/guides/gameModes/_gameModes', // ? Modos de juego
+        'components/pages/guides/heroes/_heroes', // ? Heroes
+        'components/pages/guides/heroes/modalHeroes/_mHeroes', // Modal Heroes 
+        'components/pages/guides/heroes/slider/_sliderHeroes', // Slider Heroes
+        'components/pages/guides/arenas/_arenas', // ? Arenas
+        'components/pages/guides/arenas/arenaExtend/_arenaExtend', // Extensión de arena
+        'components/pages/guides/mobs/_mobs', // ? Modal Npcs
+        'components/pages/guides/install/_install', // ? Guía de instalación
+        'components/pages/guides/install/box/installBox', // Box steps de instalación
 
-        'components/pages/story/_story', // Story arrival
-        'components/pages/story/storyExtend/_storyExtend', // Episodio 1
+        'components/pages/story/_story', // ! STORY (arrival)
+        'components/pages/story/storyExtend/_storyExtend', // Episodio 1/2 & 3
 
-        'components/pages/access/_access', 
-        'components/pages/access/register/_register', 
-        'components/pages/access/logIn/_logIn', 
-        'components/pages/access/lostPsw/_lostPsw', 
-        'components/pages/access/changePsw/_changePsw', 
+        'components/pages/access/_access',  // ! ACCESO DE USUARIO
+        'components/pages/access/register/_register', // ? Registro
+        'components/pages/access/logIn/_logIn',  // ? Inicio de sesión
+        'components/pages/access/lostPsw/_lostPsw', // ? Perdida de pw
+        'components/pages/access/changePsw/_changePsw', // ? Cambio de contraseña
 
-        'components/pages/playBeta/_playBeta',
+        'components/pages/premium/_premium', // ! ACCESO PREMIUM AL BETA
+        'components/pages/premium/package/_package', // package box
 
-        'components/pages/userPanel/_userPanel',
+        'components/pages/userPanel/_userPanel', // ! PANEL DE USUARIO
+        'components/pages/userPanel/userProfile/_userProfile', // user box
 
-        'components/pages/notFound/_notFound';
+        'components/pages/notFound/_notFound'; // ! NOT FOUND
         

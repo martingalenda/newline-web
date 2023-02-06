@@ -1,8 +1,7 @@
 import {useEffect, useContext} from 'react'; 
 import LangContext from '../../../context/LangContext';
 import WOW from 'wowjs';
-import SliderNews from './slider/Slider.jsx';
-import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn.jsx';
+import SliderNews from './slider/SliderNews.jsx';
 
 const News = () => {
 
@@ -14,14 +13,11 @@ const News = () => {
     }, []);
 
     return (
-        <>
-            <section className="news wow animate__fadeIn" data-wow-duration="1.5s">
-                <div className="linesEffect"/>
-                <h2 className="news__title">{texts.mainNews.title}</h2>
-                <SliderNews/>
-            </section>
-            <BetaBtn />
-        </>
+        <section className="news wow animate__fadeIn" data-wow-duration="1.5s">
+            <div className="linesEffect"/>
+            <h2 className="news__title">{texts.mainNews.title}</h2>
+            <SliderNews/>
+        </section>
     );
 }
 
