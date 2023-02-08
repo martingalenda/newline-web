@@ -1,25 +1,27 @@
-import {useContext} from 'react';
-import LangContext from '../../../context/LangContext';
-import UserContext from '../../../context/UserContext';
-import { Link, NavLink } from "react-router-dom"; // Enrutado
-import logoFlag from './media/flagLogo.png';
-import UserLogged from './logged/UserLogged.jsx';
-import UserLoggedOut from './loggedOut/UserLoggedOut.jsx';
-import Lang from './language/Lang.jsx';
-import {useModals} from "../../../hooks/useModals"
-import GuidesSubMenu from "./guidesSubMenu/GuidesSubMenu"
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    import { Link, NavLink } from "react-router-dom"; // Enrutado
+// ? IMGS
+    import logoFlag from './media/flagLogo.png';
+    // fa-icons:
+    import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+    import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
+// ? COMPONENTS:
+    import UserLogged from './logged/UserLogged.jsx';
+    import UserLoggedOut from './loggedOut/UserLoggedOut.jsx';
+    import {useModals} from "../../../hooks/useModals"
+    import GuidesSubMenu from "./guidesSubMenu/GuidesSubMenu"
+    import Lang from './language/Lang.jsx';
 
-/* FA ICONS */ 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faGlobeAmericas} from '@fortawesome/free-solid-svg-icons';
  
 const NavMain = () => {
 
-    const { texts } = useContext(LangContext); 
-    const { user } = useContext(UserContext);
+    const { texts } = useSelector(state => state.languages)
+    const { nick } = useSelector(state => state.users)
+
     const [isActiveLang, openLang, closeLang] = useModals()
     const [isActiveGuidesSubMenu, openGuidesSubMenu, closeGuidesSubMenu] = useModals()
-
 
         return(
             <nav className="navMain">
@@ -44,9 +46,7 @@ const NavMain = () => {
                             <li className='menu__item'> <NavLink to="/story" activeclassname="active"> {texts.navMain.story} </NavLink></li>
                             <li className='menu__item'> <a href="https://discord.gg/MAgX8rzWKU" target='_blank' rel='noreferrer'>{texts.navMain.community} </a></li>
                         </ol>
-                        
-                    </div>     
-                                
+                    </div>                
                     
                     <div className='container__user'>
 
@@ -57,7 +57,7 @@ const NavMain = () => {
                             <Lang active={isActiveLang}/>    
                         </div>
 
-                        { !user.nick ? <UserLoggedOut/> : <UserLogged/> }
+                        { !nick ? <UserLoggedOut/> : <UserLogged/> }
                     </div>    
 
                 </div>

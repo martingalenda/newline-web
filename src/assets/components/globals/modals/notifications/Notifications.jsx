@@ -1,10 +1,13 @@
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import ButtonC from '../../buttons/classicBtn/ButtonC';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
 
+// ? COMPONENT:
+    import ButtonC from '../../buttons/classicBtn/ButtonC';
+
+    
 const Notifications = ({children, style, close, isConfirmation, actionConfirm = () => {} }) => {
 
-    const { texts } = useContext(LangContext); 
+    const {texts} = useSelector(state => state.languages)
 
         return( 
             <article className={`modal__container notifications ${style}`}>

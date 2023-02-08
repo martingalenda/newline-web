@@ -1,5 +1,7 @@
-import {forwardRef, useEffect } from 'react';
-import WOW from 'wowjs';
+// ? REACT:
+    import {forwardRef, useEffect } from 'react';
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
 
 const InstallBox = (props, ref) => {
 

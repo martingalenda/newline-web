@@ -1,8 +1,11 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlus, faArrowUp} from '@fortawesome/free-solid-svg-icons';
-import { useState, useEffect } from 'react';
-import {useNavigate} from 'react-router-dom'
+// ? REACT:
+    import { useState, useEffect } from 'react';
+    import {useNavigate} from 'react-router-dom'
+// ? Icons:
+    import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+    import {faPlus, faArrowUp} from '@fortawesome/free-solid-svg-icons';
 
+    
 const FixedAction = () => {
     const [scrollY, setScrollY] = useState(0)
     const [icon, setIcon] = useState(faPlus)

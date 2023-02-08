@@ -1,18 +1,29 @@
-import { useState, useContext, useEffect } from 'react';
-import LangContext from '../../../../context/LangContext';
-import UserContext from '../../../../context/UserContext';
-import ButtonC from '../../buttons/classicBtn/ButtonC';
-import { useForm } from 'react-hook-form';
-import { useRef } from "react";
-import { Link } from "react-router-dom"; 
+// ? REACT:
+    import { useState, useEffect } from 'react';
+    import { useRef } from "react";
 
-import { helpHttp } from '../../../../helpers/helpHttp';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
 
+// ? USE-FORM:
+    import { useForm } from 'react-hook-form';
+
+// ? RUTAS:
+    import { Link } from "react-router-dom"; 
+
+// ? PETICIÓN HTTP:
+    import { helpHttp } from '../../../../helpers/helpHttp';
+
+// ? COMPONENTS:
+    import ButtonC from '../../buttons/classicBtn/ButtonC';
+
+
+    
 const Donate = ({close}) =>{
 
     // ? Estados globales textos y usuarios:
-        const { texts } = useContext(LangContext);
-        const { user } = useContext(UserContext);
+        const {texts} = useSelector(state => state.languages)
+        const {coins} = useSelector(state => state.users)
 
     // ? Estados locales:
         const [price, setPrice] = useState(0); // Valor actual de la moneda escogida
@@ -129,7 +140,7 @@ const Donate = ({close}) =>{
 
                     <div className="items__form">
                         <span>{texts.modals.donate.posession}</span>
-                        <span className="posession">{user.coins} NLCoins</span>
+                        <span className="posession">{coins} NLCoins</span>
                     </div>
 
                     <span className="errorMsg">

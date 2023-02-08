@@ -1,12 +1,14 @@
-import {useContext} from 'react';
-import { Link } from 'react-router-dom';
-import LangContext from '../../../context/LangContext';
-import Package from './package/Package'
-import Countdown from '../../globals/countdown/Countdown.jsx';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    import { Link } from 'react-router-dom';
+// ? COMPONENTS:
+    import Package from './package/Package'
+    import Countdown from '../../globals/countdown/Countdown.jsx';
 
 const Premium = () => { 
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     return(
         <>

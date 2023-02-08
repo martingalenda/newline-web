@@ -1,8 +1,9 @@
 // Este componente representa al template más básico de los modales
 // Se renderiza en el nodo html "modals" usando Portals de React
 
-import {useEffect} from 'react'
-import ReactDOM from 'react-dom';
+// ? REACT:
+    import {useEffect} from 'react'
+    import ReactDOM from 'react-dom';
 
 const Modals = ({children, active, close}) => { 
 

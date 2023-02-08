@@ -1,22 +1,26 @@
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import esFlag from '../media/langs/esFlag.png';
-import engFlag from '../media/langs/engFlag.png'; 
+// ? IMGS:
+    import esFlag from '../media/langs/esFlag.png';
+    import engFlag from '../media/langs/engFlag.png'; 
+
+// ? REDUX
+    import {useDispatch} from 'react-redux'
+    import { setLangEN, setLangES } from '../../../../redux/reducers/lang';
+
  
 const Lang = ({active}) => {
    
-    const { handleLanguageEN, handleLanguageES } = useContext(LangContext);
+    const dispatch = useDispatch()
 
     return (
         <>
             {active &&    
                 <nav className="languages">
                     <ol className="languages__list">
-                        <li onClick={handleLanguageEN} className="list__item">
+                        <li onClick={() => dispatch(setLangEN())} className="list__item">
                             <span>ENG</span>
                             <img src={engFlag} alt="English"/>
                         </li>
-                        <li onClick={handleLanguageES} className="list__item">
+                        <li onClick={() => dispatch(setLangES())} className="list__item">
                             <span>ES</span>
                             <img src={esFlag} alt="Español"/>
                         </li>

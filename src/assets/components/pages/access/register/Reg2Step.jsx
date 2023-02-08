@@ -1,13 +1,19 @@
-import {useContext, useState} from 'react';
-import LangContext from '../../../../context/LangContext';
-import { Link /*,  useNavigate */ } from "react-router-dom"; 
-import { useRef } from "react";
-import { useForm } from 'react-hook-form';
-import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
+// ? REACT:
+    import { useState} from 'react';
+    import { useRef } from "react";
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    import { Link /*,  useNavigate */ } from "react-router-dom"; 
+// ? USE-FORM:
+    import { useForm } from 'react-hook-form';
+// ? COMPONENTS:
+    import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
  
+    
 const Reg2Step = ({regStep, setRegStep, openN2}) => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     const [title, setTitle] = useState(texts.register.terms)
 

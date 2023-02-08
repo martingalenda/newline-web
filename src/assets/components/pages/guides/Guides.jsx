@@ -1,14 +1,21 @@
-import { useEffect, useContext } from 'react';
-import LangContext from '../../../context/LangContext';
-import { Link } from "react-router-dom";
-import WOW from 'wowjs';
-import guides from './guides.js';
-import logo from './media/logoGuides.png'
-import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn.jsx';
+// ? REACT:
+    import { useEffect } from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    import { Link } from "react-router-dom";
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
+// ? REDIRECCION (Complement)
+    import guides from './guides.js';
+// ? IMG:
+    import logo from './media/logoGuides.png'
+// ? COMPONENTS:
+    import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn.jsx';
 
 const Guides = () => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}

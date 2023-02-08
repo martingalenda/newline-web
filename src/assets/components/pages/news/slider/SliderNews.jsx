@@ -1,15 +1,16 @@
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? SLIDER:
+    import Slider from "react-slick";
+    import "slick-carousel/slick/slick.css";
+    import "slick-carousel/slick/slick-theme.css";
+// ? COMPONENTS:
+    import CardNew from '../cardNew/CardNew.jsx';
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import CardNew from '../cardNew/CardNew.jsx';
 
 const SliderNews = () => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     // Slider conf
     const settings = {

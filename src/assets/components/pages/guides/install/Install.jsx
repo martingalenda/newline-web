@@ -1,16 +1,21 @@
-import { useContext, useRef} from 'react';
-import LangContext from '../../../../context/LangContext';
-import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
-import installBg from './media/installBg.mp4'
-import InstallBox from './box/InstallBox'
-import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn';
-import Modal from '../../../globals/modals/Modal.jsx'
-import PlayVideo from '../../../globals/modals/playVideo/PlayVideo.jsx';
-import {useModals} from '../../../../hooks/useModals'
+// ? REACT:
+    import { useRef } from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? COMPONENTS:
+    import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
+    import installBg from './media/installBg.mp4'
+    import InstallBox from './box/InstallBox'
+    import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn';
+// ? MODALS:
+    import Modal from '../../../globals/modals/Modal.jsx'
+    import PlayVideo from '../../../globals/modals/playVideo/PlayVideo.jsx';
+    import {useModals} from '../../../../hooks/useModals'
+
 
 const Install = () => {
     
-    const { texts } = useContext(LangContext); 
+    const {texts} = useSelector(state => state.languages)
 
     const [isActiveTutorial, openTutorial, closeTutorial] = useModals();
 

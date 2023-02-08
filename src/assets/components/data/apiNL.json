@@ -1,0 +1,19 @@
+{ 
+    "users": [
+        {
+            "userName": "Bepson",
+            "pw": "saraza",
+            "nick": "Bepi",
+            "email": "bepi@gmail.com",
+            "avatar": "null",
+            "access": 100,
+            "coins": 200,
+            "accLvl": 100,
+            "userRank": "Vagabond",
+            "clan": "None",
+            "clanRank": "None",
+            "alliance": "None",
+            "allianceRank": "None"
+        }
+    ]
+}

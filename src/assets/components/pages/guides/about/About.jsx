@@ -1,18 +1,23 @@
-import { useEffect, useContext} from 'react';
-import WOW from 'wowjs';
-import LangContext from '../../../../context/LangContext';
-import PlayBtn from '../../../globals/buttons/playBtn/PlayBtn.jsx';
-import Modal from '../../../globals/modals/Modal.jsx'
-import PlayVideo from '../../../globals/modals/playVideo/PlayVideo.jsx';
-import {useModals} from '../../../../hooks/useModals'
-import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn.jsx'; 
-import AboutBottom from './AboutBottom';
+// ? REACT:
+    import { useEffect} from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? WOW-ANIMATION:
+    import WOW from 'wowjs';
+// ? COMPONENTS:
+    import PlayBtn from '../../../globals/buttons/playBtn/PlayBtn.jsx';
+    import PlayVideo from '../../../globals/modals/playVideo/PlayVideo.jsx';
+    import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn.jsx'; 
+    import AboutBottom from './AboutBottom';
+// ? MODALS:
+    import Modal from '../../../globals/modals/Modal.jsx'
+    import {useModals} from '../../../../hooks/useModals'
 
 const About = () => {
 
     const [isActiveTrailer, openTrailer, closeTrailer] = useModals();
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}

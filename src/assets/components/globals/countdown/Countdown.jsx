@@ -1,5 +1,8 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
-import LangContext from '../../../context/LangContext';
+// ? REACT:
+    import React, { useEffect, useRef, useState } from 'react';
+
+// ? REDUX:
+    import { useSelector } from 'react-redux';
 
 const Countdown = ({date, bgActive}) => { 
     
@@ -8,7 +11,7 @@ const Countdown = ({date, bgActive}) => {
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     let interval = useRef()
 

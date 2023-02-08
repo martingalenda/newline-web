@@ -1,13 +1,24 @@
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom"; // Rutas del sitio
+// ? REACT:
+  import ReactDOM from 'react-dom';
 
-/* -------- */
-import App from './App';
+// ? ROUTES:
+  import { BrowserRouter } from "react-router-dom"; // Rutas del sitio
+
+// ? REDUX:
+  import { Provider } from 'react-redux' // Importamos el provedor del estado global
+  import store from "./assets/redux/storage"
+
+// ? APP (GLOBAL COMPONENT):
+  import App from './App';
+
+
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -1,20 +1,41 @@
-import { Link } from "react-router-dom"; // Enrutado
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import UserContext from '../../../../context/UserContext';
-import { useForm } from 'react-hook-form';
+// ? REDUX:
+    import { useSelector, useDispatch } from 'react-redux';
+    import {logIn} from '../../../../redux/reducers/users'
+// ? RUTAS:
+    import { Link } from "react-router-dom";
+    import { useNavigate } from "react-router-dom";
+// ? USE-FORM:
+    import { useForm } from 'react-hook-form';
+
 
 const LogIn = () => {
 
-    const { texts } = useContext(LangContext);
-    const { logIn } = useContext(UserContext);
+    const {texts} = useSelector(state => state.languages) 
+    const dispatch = useDispatch()
 
     const {register, handleSubmit, formState: {errors}} = useForm();
 
+    const navigate = useNavigate()
     // Inicio de sesión FAKE (sin backend, sin validación)
     const onSubmit = (data) => { 
         // console.log(data)
-        logIn(data)
+        navigate('/home')
+        dispatch(logIn({
+            rememberMe: data.rememberMe,
+            userName: data.user,
+            pw: data.psw,
+            nick: "Beep",
+            avatar: null,
+            access: 0,
+            coins: 100,
+            accLvl: 0,
+            userRank: "Vagabond",
+            clan: "None",
+            clanRank: "None",
+            alliance: "None",
+            allianceRank: "None"
+        }))
+        window.location.reload(true)
     }
 
     return(

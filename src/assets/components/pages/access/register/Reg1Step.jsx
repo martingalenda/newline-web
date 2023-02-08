@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom"; 
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import { useForm } from 'react-hook-form';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    import { Link } from "react-router-dom"; 
+// ? USE-FORM:
+    import { useForm } from 'react-hook-form';
  
 
 const Reg1Step = ({regStep, setRegStep, openN1}) => {
 
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     const {register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = (data) => { 

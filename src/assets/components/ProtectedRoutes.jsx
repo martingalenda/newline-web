@@ -1,13 +1,12 @@
-import {useContext} from 'react';
-import UserContext from '../context/UserContext.js';
+import { useSelector } from 'react-redux';
 import {Navigate, Outlet} from 'react-router-dom'
 
 // ? Si el usuario esta deslogeado, lo redirrecionamos ...
 export const ProtectedLogIn = ({children, redirectTo="/"}) => {
 
-    const {user} = useContext(UserContext);
+    const {nick} = useSelector(state => state.users);
 
-    if (!user.nick) {
+    if (!nick) {
         return <Navigate to={redirectTo}/>
     }
     return children ? children : <Outlet/>
@@ -16,9 +15,9 @@ export const ProtectedLogIn = ({children, redirectTo="/"}) => {
 // ? Si el usuario esta logeado, lo redireccionamos ...
 export const ProtectedLogOut = ({children, redirectTo="/"}) => {
 
-    const {user} = useContext(UserContext);
+    const {nick} = useSelector(state => state.users);
 
-    if (user.nick) {
+    if (nick) {
         return <Navigate to={redirectTo}/>
     }
     return children ? children : <Outlet/>
@@ -27,9 +26,9 @@ export const ProtectedLogOut = ({children, redirectTo="/"}) => {
 // ? Si el usuario ya posee el nivel de acceso beta, redirrecionamos ...
 export const ProtectedAccess = ({children, redirectTo="/"}) => {
 
-    const {user} = useContext(UserContext);
+    const {access} = useSelector(state => state.users);
 
-    if (user.access >= 10) {
+    if (access >= 10) {
         return <Navigate to={redirectTo}/>
     }
     return children ? children : <Outlet/>

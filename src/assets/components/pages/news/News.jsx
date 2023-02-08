@@ -1,11 +1,16 @@
-import {useEffect, useContext} from 'react'; 
-import LangContext from '../../../context/LangContext';
-import WOW from 'wowjs';
-import SliderNews from './slider/SliderNews.jsx';
+// ? REACT:
+    import {useEffect} from 'react'; 
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
+// ? COMPONENTS:
+    import SliderNews from './slider/SliderNews.jsx';
+
 
 const News = () => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
     
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}

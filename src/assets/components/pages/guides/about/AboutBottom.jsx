@@ -1,15 +1,18 @@
-import { useEffect, useContext } from 'react';
-import WOW from 'wowjs';
-import LangContext from '../../../../context/LangContext';
-
-import bg_intro_br from './media/bg_intro_br.png';
-import bg_intro_bl from './media/bg_intro_bl.png';
-
-import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
+// ? REACT:
+    import { useEffect } from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
+// ? IMGS:
+    import bg_intro_br from './media/bg_intro_br.png';
+    import bg_intro_bl from './media/bg_intro_bl.png';
+// ? COMPONENTS:
+    import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
 
 const AboutBottom = () => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}

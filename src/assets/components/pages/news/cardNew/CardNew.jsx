@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"; 
+// ? RUTAS:
+    import { Link } from "react-router-dom"; 
 
 const CardNew = (props) => { 
 

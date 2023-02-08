@@ -1,13 +1,20 @@
-import { useEffect, useState, useContext} from 'react'; 
-import {useParams} from 'react-router'
-import LangContext from '../../../../context/LangContext';
-import NotFound from '../../notFound/NotFound'
-import WOW from 'wowjs';
-import Drake from './media/bgNewsExt.png';
-import CardNew from '../cardNew/CardNew.jsx';
-import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn';
-import FixedAction from '../../../globals/buttons/fixedAction/FixedAction'
+// ? REACT:
+    import { useEffect, useState} from 'react'; 
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    import {useParams} from 'react-router'
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
+// ? COMPONENTS:
+    import NotFound from '../../notFound/NotFound'
+    import CardNew from '../cardNew/CardNew.jsx';
+    import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn';
+    import FixedAction from '../../../globals/buttons/fixedAction/FixedAction'
+// ? IMG:
+    import Drake from './media/bgNewsExt.png';
 
+    
 const NewsExtend = () => {
 
     useEffect(() => {
@@ -15,7 +22,7 @@ const NewsExtend = () => {
         newWOW()
     }, []);
 
-    const { texts } = useContext(LangContext)
+    const {texts} = useSelector(state => state.languages)
 
     // Obtenemos el url y el ID de la noticia
     let {url} = useParams();

@@ -1,13 +1,18 @@
-import {useEffect, useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import WOW from 'wowjs';
-import chap1 from './media/chap1.png';
-import chap2 from './media/chap2.png';
-import chap3 from './media/chap3.jpg';
+// ? REACT:
+    import {useEffect} from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
+// ? IMG:
+    import chap1 from './media/chap1.png';
+    import chap2 from './media/chap2.png';
+    import chap3 from './media/chap3.jpg';
+
 
 const StoryExtend = () => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}

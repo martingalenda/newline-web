@@ -1,9 +1,9 @@
-import {useContext} from 'react';
-import LangContext from '../../../context/LangContext';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
 
 const NotFound = () => {
 
-    const { texts } = useContext(LangContext)
+    const {texts} = useSelector(state => state.languages)
 
     return (
         <section className="notFound">

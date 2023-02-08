@@ -1,24 +1,37 @@
 // ! SUBMENU DE USUARIO LOGEADO
 
-import {useContext} from 'react';
-import LangContext from '../../../../../context/LangContext';
-import UserContext from '../../../../../context/UserContext';
-import { Link } from "react-router-dom";
+// ? REDUX:
+    import { useSelector, useDispatch } from 'react-redux';
+    import {logOut} from '../../../../../redux/reducers/users'
+    
+// ? RUTAS:
+    import { Link } from "react-router-dom";
+    import { useNavigate } from "react-router-dom";
 
-import Modal from "../../../../globals/modals/Modal"
-import Donate from "../../../../globals/modals/donate/Donate"
-import {useModals} from "../../../../../hooks/useModals"
- 
+// ? MODALES:
+    import Modal from "../../../../globals/modals/Modal"
+    import Donate from "../../../../globals/modals/donate/Donate"
+    import {useModals} from "../../../../../hooks/useModals"
+
+
 const SubMenu = ({active, close}) => { 
 
-    const { texts } = useContext(LangContext);
-    let { logOut } = useContext(UserContext);
+    const {texts} = useSelector(state => state.languages) 
+    const dispatch = useDispatch()
+
     const [isActiveDonate, openDonate, closeDonate] = useModals()
 
     /* Fuerza el cierre del subMenu, al abrir el modal donaciones */
     const handleClickDonate = () => {
         close()
         openDonate()
+    }
+
+    const navigate = useNavigate()
+    const closeSession = () => {
+        navigate('/')
+        dispatch(logOut())
+        window.location.reload(true)
     }
  
     return (
@@ -38,7 +51,7 @@ const SubMenu = ({active, close}) => {
                         <li className="list__item">{texts.navMain.subMenu.support}</li>
                     </a>
                     
-                    <li onClick={() => logOut()} className="list__item">{texts.navMain.subMenu.logOut}</li>
+                    <li onClick={() => closeSession()} className="list__item">{texts.navMain.subMenu.logOut}</li>
 
                 </ol>
             </nav> 

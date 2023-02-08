@@ -1,11 +1,13 @@
-import { useForm } from 'react-hook-form';
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-// import { useNavigate } from "react-router-dom";
+// ? USE-FORM:
+    import { useForm } from 'react-hook-form';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    // import { useNavigate } from "react-router-dom";
 
 const LostPsw3Step = ({lostPswStep, setLPStep, openN2}) => {
     
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     const {register, handleSubmit, watch, formState: {errors}} = useForm();
     

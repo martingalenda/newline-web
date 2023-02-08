@@ -1,16 +1,23 @@
-import {useState, useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import LostPsw1Step from './LostPsw1Step.jsx';
-import LostPsw2Step from './LostPsw2Step.jsx';
-import LostPsw3Step from './LostPsw3Step.jsx'; 
+// ? REACT:
+    import {useState} from 'react';
 
-import Modal from "../../../globals/modals/Modal"
-import Notification from "../../../globals/modals/notifications/Notifications"
-import {useModals} from "../../../../hooks/useModals"
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+
+// ? SUB-COMPONENTES
+    import LostPsw1Step from './LostPsw1Step.jsx';
+    import LostPsw2Step from './LostPsw2Step.jsx';
+    import LostPsw3Step from './LostPsw3Step.jsx'; 
+
+// ? MODALES:
+    import Modal from "../../../globals/modals/Modal"
+    import Notification from "../../../globals/modals/notifications/Notifications"
+    import {useModals} from "../../../../hooks/useModals"
+
 
 const LostPsw = () => {
     
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     const [lostPswStep, setLostPswStep] = useState(1);
     const [isActiveN1, openN1, closeN1] = useModals()

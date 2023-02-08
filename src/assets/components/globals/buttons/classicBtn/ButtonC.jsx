@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+// ? RUTAS:
+    import { Link } from "react-router-dom";
 
 const ButtonC = ({link = "#", btnClass, text, myOnClick, myTarget, myRel, myHref}) => {
     return (

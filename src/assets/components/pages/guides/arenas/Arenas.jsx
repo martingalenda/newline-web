@@ -1,9 +1,15 @@
-import { useEffect, useState, useContext } from 'react';
-import WOW from 'wowjs';
-import LangContext from '../../../../context/LangContext';
-import ArenaExtend from './arenaExtend/ArenaExtend.jsx'; // Ext component
-import infernoBtn from './media/infernoBtn.png';
-import castlesBtn from './media/castlesBtn.png';
+// ? REACT:
+    import { useEffect, useState } from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
+// ? COMPONENTS:
+    import ArenaExtend from './arenaExtend/ArenaExtend.jsx'; // Extended arena
+// ? IMG:
+    import infernoBtn from './media/infernoBtn.png';
+    import castlesBtn from './media/castlesBtn.png';
+
 
 const Arenas = () => {
 
@@ -14,7 +20,7 @@ const Arenas = () => {
 
     let [map, setMap] = useState("maps");
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     if(map === "maps") 
         return (

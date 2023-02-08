@@ -1,13 +1,15 @@
 // ! SUBMENU DE GUÍA DE JUEGO
 
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import { Link } from "react-router-dom";
-import guides from '../../../pages/guides/guides';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? RUTAS:
+    import { Link } from "react-router-dom";
+    // Data redireccionamiento
+    import guides from '../../../pages/guides/guides';
  
 const SubMenu = ({active}) => { 
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
  
     return (
         <>

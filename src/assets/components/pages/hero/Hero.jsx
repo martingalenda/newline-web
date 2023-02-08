@@ -1,21 +1,25 @@
-import {useEffect, useContext} from 'react';
-import LangContext from '../../../context/LangContext';
-import UserContext from '../../../context/UserContext';
-import WOW from 'wowjs';
-import introVideo from './media/intro.mp4';
-import Countdown from '../../globals/countdown/Countdown.jsx';
-import ButtonC from '../../globals/buttons/classicBtn/ButtonC.jsx';
+// ? REACT:
+    import {useEffect} from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? WOW ANIMATION:
+    import WOW from 'wowjs';
+// ? MEDIA:
+    import introVideo from './media/intro.mp4';
+// ? COMPONENTS:
+    import Countdown from '../../globals/countdown/Countdown.jsx';
+    import ButtonC from '../../globals/buttons/classicBtn/ButtonC.jsx';
 
+    
 const Hero = () => {
 
-    // Carga de WOW.js animation
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}
         newWOW()
     }, []);
 
-    const { texts } = useContext(LangContext);
-    const { user } = useContext(UserContext);
+    const {texts} = useSelector(state => state.languages)
+    const {access} = useSelector(state => state.users)
 
         return(
             <section className="hero wow animate__fadeIn" data-wow-duration="1.5s">
@@ -23,7 +27,7 @@ const Hero = () => {
                     <div className="hero__content wow animate__fadeIn" data-wow-duration="2.5s" >
                         <Countdown bgActive="true" date={'March 12 2023 10:32:53 GMT-0500'}/>
                         { 
-                            user.access >= 10 ?
+                            access >= 10 ?
                             <ButtonC btnClass="access" text={texts.hero.btnTxt2} link="/mypanel"/>
                             :
                             <ButtonC btnClass="access" text={texts.hero.btnTxt} link="/premium"/>

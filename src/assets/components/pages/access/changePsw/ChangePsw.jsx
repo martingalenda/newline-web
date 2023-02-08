@@ -1,17 +1,19 @@
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import { useForm } from 'react-hook-form';
-import { Link } from "react-router-dom"; // Enrutado
-// import { useNavigate } from "react-router-dom"; 
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? USE-FORM:
+    import { useForm } from 'react-hook-form';
+// ? RUTAS:
+    import { Link } from "react-router-dom"; 
+    // import { useNavigate } from "react-router-dom"; 
+// ? MODALES:
+    import Modal from "../../../globals/modals/Modal"
+    import Notification from "../../../globals/modals/notifications/Notifications"
+    import {useModals} from "../../../../hooks/useModals"
 
-import Modal from "../../../globals/modals/Modal"
-import Notification from "../../../globals/modals/notifications/Notifications"
-import {useModals} from "../../../../hooks/useModals"
 
 const ChangePsw = () => {
-    
-    const { texts } = useContext(LangContext);
 
+    const {texts} = useSelector(state => state.languages)
     const [isActiveN1, openN1, closeN1] = useModals()
 
     const {register, handleSubmit, watch, formState: {errors}} = useForm();

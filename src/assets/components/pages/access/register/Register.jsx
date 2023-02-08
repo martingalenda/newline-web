@@ -1,15 +1,19 @@
-import {useState, useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import Reg1Step from './Reg1Step.jsx';
-import Reg2Step from "./Reg2Step.jsx";
- 
-import Modal from "../../../globals/modals/Modal"
-import Notification from "../../../globals/modals/notifications/Notifications"
-import {useModals} from "../../../../hooks/useModals"
+// ? REACT:
+    import {useState} from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? SUB-COMPONENTES:
+    import Reg1Step from './Reg1Step.jsx';
+    import Reg2Step from "./Reg2Step.jsx";
+// ? MODALES:
+    import Modal from "../../../globals/modals/Modal"
+    import Notification from "../../../globals/modals/notifications/Notifications"
+    import {useModals} from "../../../../hooks/useModals"
 
+    
 const Register = () => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     const [regStep, setRegStep] = useState(1);
     const [isActiveN1, openN1, closeN1] = useModals()

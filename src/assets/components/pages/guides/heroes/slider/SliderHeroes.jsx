@@ -1,17 +1,22 @@
-import {useContext, useState, /* useEffect */} from 'react';
-import LangContext from '../../../../../context/LangContext';
+// ? REACT
+  import { useState, /* useEffect */} from 'react';
+// ? REDUX:
+  import { useSelector } from 'react-redux';
+// ? SLIDER:
+  import Slider from "react-slick";
+  import "slick-carousel/slick/slick.css";
+  import "slick-carousel/slick/slick-theme.css";
+  import sliderImgs from './sliderImgs';
+  
+// ? MODALS:
+  import Modal from '../../../../globals/modals/Modal'
+  import MHeroes from '../modalHeroes/MHeroes'
+  import {useModals} from '../../../../../hooks/useModals'
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import sliderImgs from './sliderImgs';
-import Modal from '../../../../globals/modals/Modal'
-import MHeroes from '../modalHeroes/MHeroes'
-import {useModals} from '../../../../../hooks/useModals'
 
 const SliderHeroes = () => {
 
-    const { texts } = useContext(LangContext);
+  const {texts} = useSelector(state => state.languages)
 
     let [race, setRace] = useState(0)
     const [isActiveHeroes, /* openHeroes, */ closeHeroes] = useModals();

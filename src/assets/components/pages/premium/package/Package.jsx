@@ -1,17 +1,16 @@
-import {useContext} from 'react';
-import LangContext from '../../../../context/LangContext';
-import UserContext from '../../../../context/UserContext';
-import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
-
-import Modal from "../../../globals/modals/Modal"
-import Donate from "../../../globals/modals/donate/Donate"
-import Notification from "../../../globals/modals/notifications/Notifications"
-import {useModals} from "../../../../hooks/useModals"
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? MODALS:
+    import Modal from "../../../globals/modals/Modal"
+    import Donate from "../../../globals/modals/donate/Donate"
+    import Notification from "../../../globals/modals/notifications/Notifications"
+    import {useModals} from "../../../../hooks/useModals"
+    import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
 
 const Package = ({type, price, btnTxt}) => {
 
-    const { texts } = useContext(LangContext);
-    const { user } = useContext(UserContext);
+    const {texts} = useSelector(state => state.languages) 
+    const {nick, coins} = useSelector(state => state.users) 
 
     const [isActiveDonate, openDonate, closeDonate] = useModals()
     const [isActiveN1, openN1, closeN1] = useModals()
@@ -20,7 +19,7 @@ const Package = ({type, price, btnTxt}) => {
     // Si el usuario está logeado... Chequea si posee las NCoims correspondientes para adquirir el paquete seleccionado
     // Caso contrario, redirecciona a /login
     const buyPackage = (price) => {
-        (user.coins >= price) ? openN2() : openN1()
+        (coins >= price) ? openN2() : openN1()
     }
 
     // El usuario confirma que desea adquirir las NCoins necesarias para la compra.
@@ -42,7 +41,7 @@ const Package = ({type, price, btnTxt}) => {
                     }
                 </ol>
                 {
-                    (user.nick) ? 
+                    (nick) ? 
                     <ButtonC myOnClick={() => buyPackage(price)} btnClass="premiumAccess" text={btnTxt}/> 
                     :
                     <ButtonC link="/login" myTarget="_blank" myRel="noreferrer" btnClass="premiumAccess" text={btnTxt}/>

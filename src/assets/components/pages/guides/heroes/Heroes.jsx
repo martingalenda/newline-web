@@ -1,12 +1,17 @@
-import {useContext, useEffect} from 'react';
-import WOW from 'wowjs';
-import LangContext from '../../../../context/LangContext';
-import SliderHeroes from './slider/SliderHeroes';
-import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn';
+// ? REACT:
+    import { useEffect} from 'react';
+// ? REDUX:
+    import { useSelector } from 'react-redux';
+// ? WOW ANIMATIONS:
+    import WOW from 'wowjs';
+// ? COMPONENTS:
+    import SliderHeroes from './slider/SliderHeroes';
+    import BetaBtn from '../../../globals/buttons/betaBtn/BetaBtn';
  
+    
 const Heroes = () => {
 
-    const { texts } = useContext(LangContext);
+    const {texts} = useSelector(state => state.languages)
 
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}
