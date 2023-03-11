@@ -2,6 +2,7 @@
     position: absolute;
     background-color: #14151c;
     top: $heightNav;
+    z-index: 20;
     &__list {
         padding: 1em;
         display: flex;

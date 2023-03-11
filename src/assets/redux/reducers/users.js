@@ -3,7 +3,6 @@ import {createSlice} from '@reduxjs/toolkit';
 // Estado inicial:
     const initialUser = {
         userName: null,
-        pw: null,
         nick: null,
         avatar: null,
         access: 0,
@@ -29,49 +28,56 @@ export const users = createSlice({
     name: 'user',
     initialState: userProfile,
     reducers: {
-        logIn: (state, action) => {   
-            if (action.payload.rememberMe) {
-                localStorage.setItem("user",
-                    JSON.stringify({
-                        userName: action.payload.userName,
-                        pw: action.payload.pw,
-                        nick: action.payload.nick,
-                        avatar: action.payload.avatar,
-                        access: 100,
-                        coins: 9999,
-                        accLvl: 100,
-                        userRank: "Hero",
-                        clan: "NewOrder",
-                        clanRank: action.payload.clanRank,
-                        alliance: "NewEmpire",
-                        allianceRank: action.payload.allianceRank
-                    })
-                )
-                state = JSON.parse(localStorage.getItem("user"))
-            } else {
-                sessionStorage.setItem("user",
-                    JSON.stringify({ 
-                        userName: action.payload.userName,
-                        pw: action.payload.pw,
-                        nick: action.payload.nick,
-                        avatar: action.payload.avatar,
-                        access: action.payload.access,
-                        coins: action.payload.coins,
-                        accLvl: action.payload.accLvl,
-                        userRank: action.payload.userRank,
-                        clan: action.payload.clan,
-                        clanRank: action.payload.clanRank,
-                        alliance: action.payload.alliance,
-                        allianceRank: action.payload.allianceRank
-                    })
-                )
-                state = JSON.parse(sessionStorage.getItem("user"))
+        logIn: (state, action) => {  
+             
+            const userData = {
+                userName: action.payload.userName,
+                nick: action.payload.nick,
+                avatar: action.payload.avatar,
+                access: action.payload.access,
+                coins: action.payload.coins,
+                accLvl: action.payload.accLvl,
+                userRank: action.payload.userRank,
+                clan: action.payload.clan,
+                clanRank: action.payload.clanRank,
+                alliance: action.payload.alliance,
+                allianceRank: action.payload.allianceRank
             }
+
+            if (action.payload.rememberMe) {
+                localStorage.setItem("user", JSON.stringify(userData))
+               // state = JSON.parse(localStorage.getItem("user"))
+            } else {
+                sessionStorage.setItem("user", JSON.stringify(userData))
+                //state = JSON.parse(sessionStorage.getItem("user"))
+            }
+            
+            state.userName = action.payload.userName
+            state.nick = action.payload.nick
+            state.avatar = action.payload.avatar
+            state.access = action.payload.access
+            state.coins = action.payload.coins
+            state.accLvl = action.payload.accLvl
+            state.userRank = action.payload.userRank
+            state.clan = action.payload.clan
+            state.clanRank = action.payload.clanRank
+            state.alliance = action.payload.alliance
+            state.allianceRank = action.payload.allianceRank
         },
         logOut: (state) => {
             localStorage.removeItem("user")
             sessionStorage.removeItem("user")
-            state = initialUser
+            state.userName = ""
+            state.nick = ""
+            state.avatar = ""
+            state.access = ""
+            state.coins = ""
+            state.accLvl = ""
+            state.userRank = ""
+            state.clan = ""
+            state.clanRank = ""
+            state.alliance = ""
+            state.allianceRank = ""
         }
     }
 })

@@ -9,6 +9,15 @@
     background-position-y: $heightNav;
     color: $bg-DColor;
     text-align: center;
+    @include r2k {
+        background-size: cover;
+    }
+    @include hd {
+        height: 115vh;
+    }
+    @include lg {
+        height: 100vh;
+    }
     &--coming, .countdown__custom {
         text-transform: uppercase;
         position: absolute;
@@ -25,7 +34,7 @@
         margin: auto;
         padding: 0.5em 0;
         @include r2k {
-            top: 11.55em;
+            top: 5.75em;
         }
         @include fhd {
             top: 8.8em;
@@ -43,7 +52,21 @@
         margin-top: 9em;
         display: grid;
         @include fhd {
-            margin-top: 10em;
+            margin-top: 16em;
+        }
+        @include hd {
+            margin-top: 21em;
+        }
+        .countdown__custom {
+            @include r2k {
+                display: none;
+            }
+            @include fhd {
+                display: block;
+            }
+            @include hd {
+                display: none;
+            }
         }
         .package--container {
             margin-top: 3.5em;
@@ -62,6 +85,12 @@
         width: max-content;
         margin: auto;
         font-size: 1.2em;
+        @include r2k {
+            margin-bottom: 6.1em;
+        }
+        @include hd {
+            margin-bottom: 14em;
+        }
         &:hover {
             color: $main-DColor;
             border-bottom: 0.1em solid $main-DColor;

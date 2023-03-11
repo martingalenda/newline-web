@@ -8,10 +8,16 @@ $play-hover: #ffffff;
     bottom: -4.4em;
     z-index: 1;
     @include r2k {
-        bottom: -7.65em;
+        bottom: -3.65em;
     }
     @include fhd {
         bottom: -6.3em;
+    }
+    @include hd {   
+        bottom: -2.75em;
+    }
+    @include lg {   
+        bottom: -1.1em;
     }
     .playBtn {
         width: 5em;

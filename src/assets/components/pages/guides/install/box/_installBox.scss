@@ -1,6 +1,6 @@
 .install__box {
     position: relative;
-    z-index: 100;
+    z-index: 15;
     width: 33em;
     height: 33em;
     background: #f9f2efab;
@@ -11,6 +11,10 @@
     display: grid;
     place-content: center;
     @include btnC('installSteps', #fef8f6f2,#131416,#13131399 ,#faf3f0,20.5em,3em);
+    @include hd {
+        width: 30em;
+        top: 1.35em;
+    }
     .btnC-installSteps {
         margin: auto;
     }
@@ -37,6 +41,9 @@
         font-size: 26em;
         z-index: 90;
         color: #fdedc080;
+        @include hd {
+            bottom: 0.33em;
+        }
     }
 }
 

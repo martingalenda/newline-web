@@ -1,5 +1,102 @@
 .races__container {
-    width: 40vw;
+    width: 57vw;
     height: 60vh;
-    background: $bg-DColor;
+    background: {
+        image: url(./media/modalHeroBg.png);
+        size: cover;
+        repeat: no-repeat;
+    }
+    border-radius: 2%;
+    .container__hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 6em 7.5em;
+        height: 100%;
+        h3 {
+            font-size: 1.25em;
+            font-weight: 600;
+        }
+        span {
+            color: #C8C9B0;
+        }
+        p {
+            color: $scnd-DColor;
+            margin-bottom: 0.2em;
+        }
+        .hero__select {
+            .select__class {
+                h2 {
+                    font-size: 1.5em;
+                    font-weight: 600;
+                }
+            }
+            .select__race {
+                margin-top: 1em; 
+                span {
+                    font-size: 1.25em;
+                    font-weight: 600;
+                }
+            }
+            .select__class, .select__race {
+                display: flex;
+                max-width: 22em;
+                align-items: center;
+                gap: 0.6em;
+                .change__btn {
+                    cursor: pointer;
+                    width: min-content;
+                    &:hover {
+                        color: $hover-DColor;
+                    }
+                }
+            }
+        }
+        .hero__details {
+            display: flex;
+            margin: 1.5em 0;
+            .details__right {
+                margin-left: 2em;
+            }
+            .details__left, .details__right {
+                div {
+                    display: flex;
+                }
+            }
+        }
+        .hero__about, .hero__skills {
+            h3 {
+                margin-bottom: 0.75em;
+            }
+        }
+        .hero__about {
+            margin: 0.5em 0;
+            max-width: 26em;  
+        }
+        .hero__skills {
+            margin-top: 1.5em;
+            img {
+                cursor: crosshair;
+                width: 2.1em;
+                border-radius: 16%;
+                border: 0.1em solid $bg-DScndColor;
+            }
+            .skills__pasive {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1em;
+                gap: 1em;
+            }
+            .skills__active {
+                display: flex;
+                gap: 1em;
+                img {
+                    filter: grayscale(100%);
+                    &:hover {
+                        filter: none;
+                    }
+                }
+            }
+        }
+    }
 }

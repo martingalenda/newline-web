@@ -59,10 +59,13 @@ html {
     scroll-behavior: smooth;
     font-size: 2em;
     @include r2k {
-        font-size: 1.25em;
+        font-size: 1.5em;
     }
     @include fhd {
         font-size: 1em;
+    }
+    @include hd {
+        font-size: 0.9em;
     }
 }
   

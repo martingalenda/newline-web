@@ -6,7 +6,8 @@
     import { useNavigate } from "react-router-dom";
 // ? USE-FORM:
     import { useForm } from 'react-hook-form';
-
+// ? PETICIÓN HTTP:
+    import { helpHttp } from '../../../../helpers/helpHttp';
 
 const LogIn = () => {
 
@@ -16,26 +17,37 @@ const LogIn = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
 
     const navigate = useNavigate()
+
     // Inicio de sesión FAKE (sin backend, sin validación)
     const onSubmit = (data) => { 
         // console.log(data)
-        navigate('/home')
-        dispatch(logIn({
-            rememberMe: data.rememberMe,
-            userName: data.user,
-            pw: data.psw,
-            nick: "Beep",
-            avatar: null,
-            access: 0,
-            coins: 100,
-            accLvl: 0,
-            userRank: "Vagabond",
-            clan: "None",
-            clanRank: "None",
-            alliance: "None",
-            allianceRank: "None"
-        }))
-        window.location.reload(true)
+        const localFakeApi = "http://localhost:3000/users"
+        const checkUser = async () => {
+            const usersData = await helpHttp().get(localFakeApi)
+            const isValidUser = await usersData.find(user => data.user === user.userName )
+            if (isValidUser) {
+                if (isValidUser.pw === data.psw) {
+                    dispatch(logIn({
+                        rememberMe: data.rememberMe,
+                        userName: isValidUser.userName,
+                        nick: isValidUser.nick,
+                        avatar: isValidUser.avatar,
+                        access: isValidUser.access,
+                        coins: isValidUser.coins,
+                        accLvl: isValidUser.accLvl,
+                        userRank: isValidUser.userRank,
+                        clan: isValidUser.clan,
+                        clanRank: isValidUser.clanRank,
+                        alliance: isValidUser.alliance,
+                        allianceRank: isValidUser.allianceRank
+                    }))
+                    navigate('/home')
+                }
+            } else {
+                console.log("Datos incorrectos")
+            }
+        }
+        checkUser()
     }
 
     return(

@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     margin: 1.5em 0.5em;
+    align-items: center;
 }
 
 .item__txt, .num__days, .num__hours, .num__mins, .num__secs, .countdown__title  {
@@ -17,6 +18,17 @@
     font-size: 2.25em;
     font-weight: 600;
     line-height: 1em;
+    @include hd {
+        font-size: 1.6em;
+    }
+    @include lg {
+        font-size: 1.9em;
+    }
+}
+.item__txt {
+    @include hd {
+        font-size: 0.9em;
+    }
 }
 
 .item__num {
@@ -28,4 +40,11 @@
     height: 1.7em;
     display: grid;
     place-items: center;
+    @include hd {
+        font-size: 1.75em;
+    }
+    @include lg {
+        font-size: 2em;
+        line-height: 1em;
+    }
 }

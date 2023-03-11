@@ -1,25 +1,21 @@
 // ? REACT
-  import { useState, /* useEffect */} from 'react';
+  import {useState} from 'react';
+// ? MODALS:
+  import Modal from '../../../../globals/modals/Modal'
+  import MHeroes from '../modalHeroes/MHeroes'
+  import {useModals} from '../../../../../hooks/useModals'
 // ? REDUX:
   import { useSelector } from 'react-redux';
 // ? SLIDER:
   import Slider from "react-slick";
   import "slick-carousel/slick/slick.css";
   import "slick-carousel/slick/slick-theme.css";
-  import sliderImgs from './sliderImgs';
-  
-// ? MODALS:
-  import Modal from '../../../../globals/modals/Modal'
-  import MHeroes from '../modalHeroes/MHeroes'
-  import {useModals} from '../../../../../hooks/useModals'
-
+// ? COMPONENT:
+  import HeroSlide from './heroSlide/HeroSlide'
 
 const SliderHeroes = () => {
 
-  const {texts} = useSelector(state => state.languages)
-
-    let [race, setRace] = useState(0)
-    const [isActiveHeroes, /* openHeroes, */ closeHeroes] = useModals();
+    const {texts} = useSelector(state => state.languages)
 
     // Slider conf
     const settings = {
@@ -32,33 +28,38 @@ const SliderHeroes = () => {
         cssEase: "linear"
     } 
 
-/*     useEffect(() => {
-        console.log(race)
-        openHeroes() 
-    },[race]) */
+     let [race, setRace] = useState([])
+     const [isActiveHeroes, openHeroes, closeHeroes] = useModals()
 
+     const setModal = (raceData) => {
+       setRace(raceData)
+       openHeroes()
+     }
+ 
+ 
     return(
       <>
         <div className="heroes__slider" >
             <Slider {...settings}> 
               {
-                texts.heroes.races.map((heroeI, i) => 
-                  <div key={heroeI.id}>
-                    <img className="race__img wow animate__fadeInUp" src={sliderImgs[i]} data-wow-duration="1.5s" alt="Heroe"/>
-                    <button onClick={() => setRace(race = i[0])} className="race__btn">
-                      {heroeI.race}
-                    </button>
-                  </div>
+                texts.heroes.races.map((raceData, i) => 
+                  <HeroSlide
+                    key={raceData.id}
+                    race={raceData}
+                    id={raceData.id}
+                    setModal={setModal}
+                  />
                 )
               }
             </Slider>
         </div>
 
         <Modal active={isActiveHeroes} close={closeHeroes}>
-          <MHeroes
-            race={race}
-          />
-        </Modal>
+            <MHeroes
+                race={race}
+                setRace={setRace}
+            />
+        </Modal> 
       </>
     );
 }

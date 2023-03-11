@@ -1,0 +1,36 @@
+.navMobile {
+    display: none;
+    position: fixed;
+    height: $heightNav;
+    width: 100%;
+    padding: 0 3em;
+    text-transform: uppercase;
+    z-index: 100;
+    background: {
+        color: $bg-DScndColor;
+        image: url(../navMain/media/navBg.png);
+        size: cover;
+        position-x: 3em;
+    }
+    @include md {
+        display: flex;
+        align-items: center;
+    }
+    .nl__logo {
+        width: 2.2em;
+        position: absolute;
+        z-index: 110;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .menu__btn {
+        font-size: 1.6em;
+        color: $scnd-DColor;
+        width: 1em;
+        cursor: pointer;
+        &:hover {
+            color: $main-DColor;
+        }
+    }
+}

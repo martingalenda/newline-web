@@ -55,6 +55,12 @@
     .btnD-container {
         background: $bgColor;
         width: $width;
+        @include hd {
+            font-size: 0.9em;
+        }
+        @include lg {
+            font-size: 1em;
+        }
         &:hover {
             background: linear-gradient(180deg, $borderD1Color 0, $borderD2Color 121%);
         }

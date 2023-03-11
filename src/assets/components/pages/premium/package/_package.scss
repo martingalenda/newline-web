@@ -21,6 +21,9 @@ $hero-SColor: #dfa81c;
     text-shadow: 0.05em 0.05em 1.3em #fcf6e6;
     color: #211b05ad;
     position: relative;
+    @include hd {
+        width: 20em;
+    }
     &__logo {
         position: absolute;
         width: 7em;

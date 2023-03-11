@@ -10,10 +10,16 @@
       z-index: 70;
       bottom: 1em;
       @include btnD('access', #19191a, #ffedb7, #ffedb7, #ffa115f5, #ffedb7,  #ffa115f5, #19191a, #19191a,#ffa115f5, #19191a, 19.5em);
+      @include hd {
+        margin-top: -2em;
+      }
       .btnD-container {
         margin: auto;
+        @include hd {
+          width: 19em;
+        }
       }
-    }
+    } 
     &__bg--opacity {
       background: linear-gradient(251.4deg, rgb(84 51 42 / 66%) 18.83%, #7075a26b 49.66%, rgb(49 12 7 / 23%) 100%);
       position:absolute;
@@ -32,5 +38,22 @@
       bottom: 0;
       right: 0;
       overflow: hidden;
+      .hero__video {
+        @include lg {
+          min-width: 144vw;
+        }
+        @include md {
+          display: none;
+        }
+      }
     } 
+  }
+
+  .bg__active {
+    @include md {
+      background: url(./media/heroBg.png);
+      background-position-y: $heightNav;
+      background-repeat: no-repeat;
+      background-position-x: -39.5em;
+    }
   }

@@ -14,11 +14,17 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-out;
         z-index: 0;
+        @include lg {
+            width: 33em;
+        }
     }
     &__container {
         color: $bg-DColor;
         width: 52%;
         margin: auto;
+        @include lg {
+            width: 60%;
+        }
         .container__title,
         .container__date,
         .container__type {
@@ -28,12 +34,16 @@
         .container__title {
             font-size: 2em;
             margin: 9em 0 1.5em;
+            @include hd {
+                position: relative;
+                z-index: 5;
+            }
         }
         .container__date  { 
             font-size: 1.2em;
             display: block;
             margin: 0.5em 0;
-            color: rgba($bg-DColor, .75)
+            color: rgba($bg-DColor, .75);
         }
         .container__type {
             @include newType();
@@ -80,8 +90,38 @@
     margin: auto;
     width: 52%;
     padding: 5em 0;
+    place-items: center;
+    @include hd {
+        display: flex;
+        flex-direction: column;
+    }
     .cardNew {
         width: 30em;
+        cursor:auto;
+        @include r2k {
+            width: 27em;
+        }
+        @include fhd {
+            width: 30em;
+        }
+        @include hd {
+            width: 40em;
+            height: 22.75em;
+            background-size: cover;
+            margin-bottom: 0.25em;
+        }
+        &__container {
+            @include hd {
+                padding: 0.5em 2.4em;
+            }
+            .container__intro {
+                margin-bottom: 0;
+            }
+        }
+        .container__item {
+            margin-top: 1.55em;
+            
+        }
     }
 }
 

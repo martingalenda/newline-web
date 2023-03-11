@@ -167,36 +167,634 @@ const data = {
             "title": "Héroes",
             "leyend": "Las leyendas nunca mueren ...",
             "leyend2": "Nuestros héroes mucho menos",
+            "race": "Raza",
+            "mainRole": "Rol",
+            "weapon": "Arma",
+            "difficulty": "Dificultad",
+            "armor": "Armadura",
+            "about": "Sobre",
+            "skills": "Habilidades",
             "races": [
-                {
-                    "id": "0",
-                    "race": "Humanos"
+                { 
+                    "id": 0,
+                    "ref": "humans",
+                    "name": "Humanos",
+                    "active": true,
+                    "humans": [
+                        {
+                            "id": 0,
+                            "ref": "gladiator",
+                            "active": true,
+                            "gladiator": {                           
+                                "name": "Gladiator",
+                                "rol": "Asesino",
+                                "difficulty": "Moderada",
+                                "weapon": "Duals Swords",
+                                "armor": "Light",
+                                "about": 'Experto en combates a corta distancia. <br/> " Soy héroe de muchos... rival de muy pocos " ',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "Aumenta daño físico respecto a su vida faltante.", 
+                                    },
+                                    { 
+                                        "f1": "Double Sonic Slash",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Triple Sonic Slash",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Jump Attack",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Final Secret",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Sonic Flash",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Riposte Stance",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Weapon Blockade",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Sonic Star",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "treasureHunter",
+                            "active": true,
+                            "treasureHunter": {
+                                "name": "Treasure Hunter",
+                                "rol": "Asesino",
+                                "difficulty": "Moderada",
+                                "weapon": "Dagger",
+                                "armor": "Light",
+                                "about": ' Un asecho constante entre las tinieblas. <br/> " Te daré una ventaja, no descuides tu espalda "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "100% de daño critico atacando las espaldas.", 
+                                    },
+                                    { 
+                                        "f1": "Deadly Blow",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Backstab",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Kick",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Hide",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Power Bluff",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Posion Zone",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Angel of Death",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Final evasion",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "ref": "bishop",
+                            "active": true,
+                            "bishop": {
+                                "name": "Bishop",
+                                "rol": "Soporte - Mago",
+                                "difficulty": "Moderada",
+                                "weapon": "Blunt",
+                                "armor": "Robe",
+                                "about": ' Sanador por excelencia, la vida ante la muerte. <br/> " Cuando todo parezca perdido, seré la salvación "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": " Aumenta la reg. de mana en estado pasivo.", 
+                                    },
+                                    { 
+                                        "f1": "Trance",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Divine Resistance",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Radiant Purge",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Progressive Heal",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Panic Heal",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Brillant Heal",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Balance Life",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Turn to Stone",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                    ]
                 },
                 {
-                    "id": "1",
-                    "race": "Orcos"
+                    "id": 1,
+                    "ref": "elfs",
+                    "name": "Elfos",
+                    "active": true,
+                    "elfs": [
+                        {
+                            "id": 0,
+                            "ref": "plainsWalker",
+                            "active": true,
+                            "plainsWalker": {
+                                "name": "Plains Walker",
+                                "rol": "Asesino",
+                                "difficulty": "Moderada",
+                                "weapon": "Dagger",
+                                "armor": "Light",
+                                "about": 'Espía por excelencia, maestro del terreno. <br/> " El viento es mi canción, mi daga es la justicia "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "Aumenta su movimiento en estado crítico.", 
+                                    },
+                                    { 
+                                        "f1": "Blinding Blow",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Silent Step",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Shadow Dash",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Throw Poison Needle",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Uppercut",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Reverse",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Mischief",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Shadow Step",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "templeKnight",
+                            "active": true,
+                            "templeKnight": {
+                                "name": "Temple Knight",
+                                "rol": "Tanque",
+                                "difficulty": "Fácil",
+                                "weapon": "Sword",
+                                "armor": "Heavy",
+                                "about": ' Tanque especializado en resistencia magica. <br/>" De nada vale el mago cuando conoces sus trucos "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "Bonus sostenido de defensa mágica.", 
+                                    },
+                                    { 
+                                        "f1": "Power Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Shield Bash",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Mass Freezing Strike",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Magic Barrier",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Touch of Life",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Angelic Archon",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Chain Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Templar's Will",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "ref": "spellSinger",
+                            "active": true,
+                            "spellSinger": {
+                                "name": "Spellsinger",
+                                "rol": "Mago",
+                                "difficulty": "Fácil",
+                                "weapon": "Mague Sword",
+                                "armor": "Robe",
+                                "about": ' Aquamantic, with the fluidity of the waves. <br/>"The storm is my lament, the ocean my empire "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "Resistencia adicional sostenida contra el fuego.", 
+                                    },
+                                    { 
+                                        "f1": "Surrender to Water",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Hydro Blast",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Greater Heal",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Throne of Ice",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Touch of Life",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Magical evasion",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Cancellation",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Double Casting",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "2",
-                    "race": "Elfos"
+                    "id": 2,
+                    "ref": "darkElfs",
+                    "name": "Elfos Oscuros",
+                    "active": true,
+                    "darkElfs": [
+                        {
+                            "id": 0,
+                            "ref": "bladeDancer",
+                            "active": true,
+                            "bladeDancer": {
+                                "name": "Blade dancer",
+                                "rol": "Soporte - Tanque",
+                                "difficulty": "Moderada",
+                                "weapon": "Dual swords",
+                                "armor": "Heavy",
+                                "about": '',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Sting",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Dance of Mystic",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Dance of the Warrior",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Dance of Protection",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Lightning Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Massive Slow",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Dance of Medusa",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Dance of Shadows",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "spellHowler",
+                            "active": true,
+                            "spellHowler": {
+                                "name": "Spellhowler",
+                                "rol": "Mago",
+                                "difficulty": "Fácil",
+                                "weapon": "Big Blunt",
+                                "armor": "Robe",
+                                "about": "Especialista en energías oscuras.",
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "f1",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "f2",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "f3",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "f4",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "f5",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "f6",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: f7",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: f8",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "3",
-                    "race": "Enanos"
+                    "id": 3,
+                    "ref": "orcs",
+                    "name": "Orcos",
+                    "active": true,
+                    "orcs": [
+                        {
+                            "id": 0,
+                            "ref": "tyrant",
+                            "active": true,
+                            "tyrant": {
+                                "name": "Tyrant",
+                                "rol": "Guerrero",
+                                "difficulty": "Fácil",
+                                "weapon": "Garras",
+                                "armor": "Light",
+                                "about": '',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Feral Puma Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Hawk Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Feral Ogre Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Stunning Fist",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Distant Fury",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Feral Bear Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Zealot",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Force Barrier",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "destroyer",
+                            "active": true,
+                            "destroyer": {
+                                "name": "Destroyer",
+                                "rol": "Guerrero",
+                                "difficulty": "Moderada",
+                                "weapon": "Bigblunt",
+                                "armor": "Heavy",
+                                "about": '',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Fatal Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Guts",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Final Duel",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Demolition Impact",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Rush",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Eruption",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Frenzy",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Ignore Death",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                    ]
                 },
                 {
-                    "id": "4",
-                    "race": "Elfos Oscuros"
+                    "id": 4,
+                    "ref": "dwarfs",
+                    "name": "Enanos",
+                    "active": true,
+                    "dwarfs": [
+                        {
+                            "id": 0,
+                            "ref": "bountyHunter",
+                            "active": true,
+                            "bountyHunter": {
+                                "name": "Bounty Hunter",
+                                "rol": "Tirador",
+                                "difficulty": "Fácil",
+                                "weapon": "CrossBow",
+                                "armor": "Light",
+                                "about": ' " Frasco chico, sorpresa grande "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Feral Puma Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Hawk Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Feral Ogre Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Stunning Fist",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Distant Fury",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Feral Bear Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Zealot",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Force Barrier",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                    ]
                 },
                 {
-                    "id": "5",
-                    "race": "Kamael"
+                    "id": 5,
+                    "ref": "kamael",
+                    "name": "Kamael",
+                    "active": false,
+                    "kamael": [
+
+                    ]
                 },
                 {
-                    "id": "6",
-                    "race": "Ertheia"
-                }
-            ],
+                    "id": 6,
+                    "ref": "ertheia",
+                    "name": "Ertheia",
+                    "active": false,
+                    "ertheia": [
+
+                    ]
+                },
+            ]
         },
         "maps": {
             "title": "Arenas exclusivas",
@@ -505,7 +1103,7 @@ const data = {
                 "url": "news/nlteam",
                 "title": "Newline Team",
                 "intro": "United by passion for an extraordinary game, and eager to make history. We invite you to meet the members of this great work team. We tell you about our vision and mission.",
-                "txt": " Somos Newline, y en ese nombre llevamos toda nuestra esencia. Empatía, pasión, compromiso, experiencia, y entre otras tantas, una de las que sentímos más importantes: <u>Positividad</u>, ante todo!<br>Esta postura auto-impuesta en todos nosotros es la que nos permite seguir superandonos, tanto individual, como colectivamente. Somos conscientes, sin estas aptitudes, no estaríamos hoy acá.<br><br><br><img src='/img/test.jpg' alt='Martin Galenda' title='Project Manager'> <br><br><h2>Misión</h2><br> <ul><li>- Brindarle diversión a todos nuestros usuarios, pudiendo albergar a la comunidad entera de L2.</li><li>- Ofrecer diversas jugabilidades. Para el usuario casual, o competitivo</li><li>- Brindarle diversión a todos nuestros usuarios, albergando a la comunidad entera en distintos servidores.</li><li>- Brindarle diversión a todos nuestros usuarios, albergando a la comunidad entera en distintos servidores.</li><li>- Brindarle diversión a todos nuestros usuarios, albergando a la comunidad entera en distintos servidores.</li></ul> - <br><br><br><h2>Visión</h2> - <br><br><br><h2>El equipo</h2><br>Un grupo de fanaticos unidos por un sueño. Presentemos al equipo, y vayanse preparando, que en cualquier momento empiezo a entrevistarlos!<br><br><h3>Dirección</h3><br>- Redline - CEO - ARG<br>- Batsheva - COE - ES <br>" ,
+                "txt": " Somos Newline, y en ese nombre llevamos toda nuestra esencia. Empatía, pasión, compromiso, experiencia, y entre otras tantas, una de las que sentímos más importantes: <u>Positividad</u>, ante todo!<br>Esta postura auto-impuesta en todos nosotros es la que nos permite seguir superandonos, tanto individual, como colectivamente. Somos conscientes, sin estas aptitudes, no estaríamos hoy acá.<br><br><br><img src='/img/news/test.jpg' alt='Martin Galenda' title='Project Manager'> <br><br><h2>Misión</h2><br> <ul><li>- Brindarle diversión a todos nuestros usuarios, pudiendo albergar a la comunidad entera de L2.</li><li>- Ofrecer diversas jugabilidades. Para el usuario casual, o competitivo</li><li>- Brindarle diversión a todos nuestros usuarios, albergando a la comunidad entera en distintos servidores.</li><li>- Brindarle diversión a todos nuestros usuarios, albergando a la comunidad entera en distintos servidores.</li><li>- Brindarle diversión a todos nuestros usuarios, albergando a la comunidad entera en distintos servidores.</li></ul> - <br><br><br><h2>Visión</h2> - <br><br><br><h2>El equipo</h2><br>Un grupo de fanaticos unidos por un sueño. Presentemos al equipo, y vayanse preparando, que en cualquier momento empiezo a entrevistarlos!<br><br><h3>Dirección</h3><br>- Redline - CEO - ARG<br>- Batsheva - COE - ES <br>" ,
                 "type": "Curiosities" ,
                 "date": " 10.21.2017 ",
                 "btnTxt": " Keep reading "
@@ -530,36 +1128,634 @@ const data = {
             "title": "Heroes",
             "leyend": "Leyends never die ...",
             "leyend2": "Much less our heroes",
+            "race": "Race",
+            "mainRole": "Role",
+            "weapon": "Weapon",
+            "difficulty": "Difficulty",
+            "armor": "Armor",
+            "about": "About",
+            "skills": "Skills",
             "races": [
-                {
-                    "id": "0",
-                    "race": "Humans"
+                { 
+                    "id": 0,
+                    "ref": "humans",
+                    "name": "Humans",
+                    "active": true,
+                    "humans": [
+                        {
+                            "id": 0,
+                            "ref": "gladiator",
+                            "active": true,
+                            "gladiator": {
+                                "name": "Gladiator",
+                                "rol": "Assassin",
+                                "difficulty": "Moderate",
+                                "weapon": "Duals Swords",
+                                "armor": "Light",
+                                "about": 'Close range combat expert. <br/> " I am a hero of many... rival of very few "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasive",
+                                        "description": "Increases physical damage based on missing health.", 
+                                    },
+                                    { 
+                                        "f1": "Double Sonic Slash",
+                                        "description": "Te parte la one", 
+                                    },
+                                    { 
+                                        "f2": "Triple Sonic Slash",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Jump Attack",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Final Secret",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Sonic Flash",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Riposte Stance",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Weapon Blockade",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Sonic Star",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "treasureHunter",
+                            "active": true,
+                            "treasureHunter": {
+                                "name": "Treasure Hunter",
+                                "rol": "Assassin",
+                                "difficulty": "Moderate",
+                                "weapon": "Dagger",
+                                "armor": "Light",
+                                "about": ' A constant stalking in the darkness. <br/> " I will give you a head start, dont neglect your back "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasive",
+                                        "description": "100% critical damage attacking the backs.", 
+                                    },
+                                    { 
+                                        "f1": "Deadly Blow",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Backstab",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Kick",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Hide",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Power Bluff",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Posion Zone",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Angel of Death",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Final evasion",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "ref": "bishop",
+                            "active": true,
+                            "bishop": {
+                                "name": "Bishop",
+                                "rol": "Support - Mague",
+                                "difficulty": "Moderate",
+                                "weapon": "Blunt",
+                                "armor": "Robe",
+                                "about": 'Healer par excellence, life before death. <br/> " When everything seems lost, I will be salvation "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": " Increases reg. mana in passive state.", 
+                                    },
+                                    { 
+                                        "f1": "Trance",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Divine Resistance",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Radiant Purge",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Progressive Heal",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Panic Heal",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Brillant Heal",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Balance Life",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Turn to Stone",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "1",
-                    "race": "Orcs"
+                    "id": 1,
+                    "ref": "elfs",
+                    "name": "Elfs",
+                    "active": true,
+                    "elfs": [
+                        {
+                            "id": 0,
+                            "ref": "plainsWalker",
+                            "active": true,
+                            "plainsWalker": {
+                                "name": "Plains Walker",
+                                "rol": "Assassin",
+                                "difficulty": "Moderate",
+                                "weapon": "Dagger",
+                                "armor": "Light",
+                                "about": 'Spy par excellence, terrain master. <br/> " The wind is my song, my dagger is justice "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasive",
+                                        "description": "Increases your movement in critical state.", 
+                                    },
+                                    { 
+                                        "f1": "Blinding Blow",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Silent Step",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Shadow Dash",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Throw Poison Needle",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Uppercut",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Reverse",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Mischief",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Shadow Step",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "templeKnight",
+                            "active": true,
+                            "templeKnight": {
+                                "name": "Temple Knight",
+                                "rol": "Tank",
+                                "difficulty": "Easy",
+                                "weapon": "Sword",
+                                "armor": "Heavy",
+                                "about": "",
+                                "skills": [
+                                    { 
+                                        "f0": "Pasive",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Power Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Shield Bash",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Mass Freezing Strike",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Magic Barrier",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Touch of Life",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Angelic Archon",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Chain Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Templar's Will",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "ref": "spellSinger",
+                            "active": true,
+                            "spellSinger": {
+                                "name": "Spellsinger",
+                                "rol": "Mague",
+                                "difficulty": "Easy",
+                                "weapon": "Mague Sword",
+                                "armor": "Robe",
+                                "about": ' Acuamante, con la fluidez del oleaje. <br/>" La tormenta es mi lamento, el océano mi imperio "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "Resistencia adicional sostenida contra el fuego.", 
+                                    },
+                                    { 
+                                        "f1": "Surrender to Water",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Hydro Blast",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f3": "Greater Heal",
+                                        "description": "",
+                                    },
+                                    { 
+                                        "f4": "Throne of Ice",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Touch of Life",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Magical evasion",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Cancellation",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Double Casting",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "2",
-                    "race": "Elfs"
+                    "id": 2,
+                    "ref": "darkElfs",
+                    "name": "Dark Elfs",
+                    "active": true,
+                    "darkElfs": [
+                        {
+                            "id": 0,
+                            "ref": "bladeDancer",
+                            "active": true,
+                            "bladeDancer": {
+                                "name": "Blade dancer",
+                                "rol": "Support - Tank",
+                                "difficulty": "Moderate",
+                                "weapon": "Dual swords",
+                                "armor": "Heavy",
+                                "about": '',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Sting",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Dance of Mystic",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Dance of the Warrior",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Dance of Protection",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Lightning Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Massive Slow",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Dance of Medusa",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Dance of Shadows",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "spellHowler",
+                            "active": true,
+                            "spellHowler": {
+                                "name": "Spellhowler",
+                                "rol": "Mague",
+                                "difficulty": "Easy",
+                                "weapon": "Big Blunt",
+                                "armor": "Robe",
+                                "about": "",
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "f1",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "f2",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "f3",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "f4",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "f5",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "f6",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: f7",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: f8",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "3",
-                    "race": "Dwarfs"
+                    "id": 3,
+                    "ref": "orcs",
+                    "name": "Orcs",
+                    "active": true,
+                    "orcs": [
+                        {
+                            "id": 0,
+                            "ref": "tyrant",
+                            "active": true,
+                            "tyrant": {
+                                "name": "Tyrant",
+                                "rol": "Warrior",
+                                "difficulty": "Easy",
+                                "weapon": "Fists",
+                                "armor": "Light",
+                                "about": '',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Feral Puma Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Hawk Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Feral Ogre Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Stunning Fist",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Distant Fury",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Feral Bear Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Zealot",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Force Barrier",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "ref": "destroyer",
+                            "active": true,
+                            "destroyer": {
+                                "name": "Destroyer",
+                                "rol": "Warrior",
+                                "difficulty": "Moderate",
+                                "weapon": "Bigblunt",
+                                "armor": "Heavy",
+                                "about": '',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Fatal Strike",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Guts",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Final Duel",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Demolition Impact",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Rush",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Eruption",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Frenzy",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Ignore Death",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                    ]
                 },
                 {
-                    "id": "4",
-                    "race": "Dark Elfs"
+                    "id": 4,
+                    "ref": "dwarfs",
+                    "name": "Dwarfs",
+                    "active": true,
+                    "dwarfs": [
+                        {
+                            "id": 0,
+                            "ref": "bountyHunter",
+                            "active": true,
+                            "bountyHunter": {
+                                "name": "Bounty Hunter",
+                                "rol": "Tirador",
+                                "difficulty": "Fácil",
+                                "weapon": "CrossBow",
+                                "armor": "Light",
+                                "about": ' " Frasco chico, sorpresa grande "',
+                                "skills": [
+                                    { 
+                                        "f0": "Pasiva",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f1": "Feral Puma Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f2": "Hawk Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f3": "Feral Ogre Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f4": "Stunning Fist",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f5": "Distant Fury",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f6": "Feral Bear Cry",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f7": "Ultimate: Zealot",
+                                        "description": "", 
+                                    },
+                                    { 
+                                        "f8": "Ultimate: Force Barrier",
+                                        "description": "", 
+                                    }
+                                ]  
+                            }
+                        },
+                    ]
                 },
                 {
-                    "id": "5",
-                    "race": "Kamael"
+                    "id": 5,
+                    "ref": "kamael",
+                    "name": "Kamael",
+                    "active": false,
+                    "kamael": [
+
+                    ]
                 },
                 {
-                    "id": "6",
-                    "race": "Ertheia"
-                }
-            ],
+                    "id": 6,
+                    "ref": "ertheia",
+                    "name": "Ertheia",
+                    "active": false,
+                    "ertheia": [
+
+                    ]
+                },
+            ]
         },
         "maps": {
             "title": "Exclusive arenas",

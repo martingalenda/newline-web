@@ -18,9 +18,27 @@ const SliderNews = () => {
         infinite: true,
         speed: 800,
         slidesToShow: 4,
-        slidesToScroll: 2,
-        cssEase: "linear"
-    } 
+        slidesToScroll: 3,
+        cssEase: "linear",
+        responsive: [
+            {
+              breakpoint: 1285,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+
+              }
+            },
+            {
+              breakpoint: 640,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+    }
+
 
     return(
         <div className="news__container1 wow animate__fadeInRight" data-wow-duration="1.5s">

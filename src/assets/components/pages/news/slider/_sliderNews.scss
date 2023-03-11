@@ -3,9 +3,31 @@
     width: 120em;
     height: 30em;
     margin-left: 33em;
+    @include r2k {
+        width: 117em;
+    }
+    @include hd {
+        width: 55em;
+        margin-left: 2.8em;
+    }
+    @include hd {
+        width: 55em;
+        margin-left: 2.65em;
+        margin-top: 2em;
+    }
     .slick-next {
         display: none !important;
-    }     
+        @include hd {
+            display: block !important;
+            right: -32.5px !important;
+        }
+        &:before {
+            text-shadow: 0px 0px 0.2em #4d4e4e;
+            @include hd {
+                font-size: 36px !important;
+            }
+        }
+    }      
     .slick-prev {
         left: -150px !important;
         @include r2k {
@@ -16,6 +38,7 @@
         }
         &:before {
             font-size: 72px !important;
+            text-shadow: 0px 0px 0.2em #4d4e4e;
             @include r2k {
                 font-size: 54px !important;
             }

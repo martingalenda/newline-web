@@ -11,6 +11,16 @@
         background: #090a0e30;
         padding: 5em 6em;
         font-size: 1.1em;
+        @include r2k {
+            margin-top: 2em;
+        }
+        @include fhd {
+            margin-top: 0;
+        }
+        @include hd {
+            margin-top: 3em;
+            padding: 4em 6em;
+        }
         .access__title {
             font-size: 2em;
             line-height: 2em;

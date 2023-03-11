@@ -1,5 +1,5 @@
 // ? REACT:
-    import {useEffect} from 'react';
+    import { useEffect} from 'react';
 // ? REDUX:
     import { useSelector } from 'react-redux';
 // ? WOW ANIMATION:
@@ -22,7 +22,8 @@ const Hero = () => {
     const {access} = useSelector(state => state.users)
 
         return(
-            <section className="hero wow animate__fadeIn" data-wow-duration="1.5s">
+            <section className="hero wow animate__fadeIn bg__active"
+             data-wow-duration="1.5s">
                 
                     <div className="hero__content wow animate__fadeIn" data-wow-duration="2.5s" >
                         <Countdown bgActive="true" date={'March 12 2023 10:32:53 GMT-0500'}/>
@@ -36,7 +37,9 @@ const Hero = () => {
 
                     {/* Background effect - video degradé */}
                     <div className="hero__bg--opacity"></div>
-                    <div className="hero__bg"> <video autoPlay loop muted src={introVideo} type="video/mp4" ></video> </div>
+                    <div className="hero__bg"> 
+                    <video className="hero__video" autoPlay loop muted src={introVideo} type="video/mp4" />   
+                    </div>
     
             </section>
         );

@@ -36,13 +36,24 @@
     border-radius: 0.4em;
     position: relative;
     transition: border-top .5s;
+    @include r2k {
+        width: 26em;
+    }
+    @include fhd {
+        width: 27em;
+        height: 28.25em;
+    }
+    @include hd {
+        height: 27.75em; 
+        width: 25em;
+    }
     &:hover {
         border-top: 0.5em solid rgba(136, 25, 138, 0.75); 
     }
     &__container {
         padding: 2.4em;
         .container__item {
-            margin-bottom: 1.25em;
+            margin-bottom: 1.2em;
         }
         .container__title {
             color: $bg-DColor;
@@ -57,9 +68,15 @@
         }
         .container__intro {
             text-align: center;
-            margin-top: 2.25em;
+            margin-top: 2.5em;
             line-height: 1.75em;
             font-size: 1.1em;
+            @include r2k {
+                margin-top: 2.2em;
+            }
+            @include hd {
+                margin-top: 1em;
+            }
         }
         a {
             .container__readMore {

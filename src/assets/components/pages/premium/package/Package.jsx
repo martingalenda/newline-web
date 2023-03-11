@@ -31,7 +31,7 @@ const Package = ({type, price, btnTxt}) => {
     return (
         <>
             <div className={`package package-${type}`}>
-            <img className="package__logo" src={`img/${type}.png`} alt={type}/>
+            <img className="package__logo" src={`img/premium/${type}.png`} alt={type}/>
                 <ol className="package__rewards">
                     {
                         // Recorro las recompenzas de los paquetes premium

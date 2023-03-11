@@ -2,7 +2,7 @@
   import ReactDOM from 'react-dom';
 
 // ? ROUTES:
-  import { BrowserRouter } from "react-router-dom"; // Rutas del sitio
+  import { BrowserRouter as Router} from "react-router-dom"; // Modulo principal de ReactRouter
 
 // ? REDUX:
   import { Provider } from 'react-redux' // Importamos el provedor del estado global
@@ -15,9 +15,9 @@
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router>
       <App />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

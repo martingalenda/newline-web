@@ -31,8 +31,7 @@ const SubMenu = ({active, close}) => {
     const closeSession = () => {
         navigate('/')
         dispatch(logOut())
-        window.location.reload(true)
-    }
+    }   
  
     return (
         <>

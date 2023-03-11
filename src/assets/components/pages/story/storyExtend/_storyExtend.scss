@@ -40,6 +40,9 @@
         &:first-child {
             background: linear-gradient(180deg, #0e0f14 2%, transparent 17%, #0e0f14 100%);
         }
+        @include lg {
+            padding: 11em 20% 0;
+        }
     }
 }
 
@@ -73,5 +76,8 @@
     color: rgba($main-DColor, .75);
     &::first-letter {
         font-size: 2em;
+    }
+    @include hd {
+        margin: 16em 0 0;
     }
 }

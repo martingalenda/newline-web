@@ -6,6 +6,7 @@
 
 // ? GLOBAL COMPONENTS
     import NavMain from './assets/components/globals/navMain/NavMain.jsx';
+    import NavMobile from './assets/components/globals/navMobile/NavMobile.jsx';
 
 // ? PAGES:
     // Index:
@@ -47,6 +48,7 @@ function App() {
         <>
 
             <NavMain />
+            <NavMobile />
 
             <Routes>
                 <Route path="/" element={<Hero/>} />
@@ -71,11 +73,11 @@ function App() {
                 </Route>
 
                 {/* Si el usuario esta logeado, lo redirrecionamos a /myPanel */}
-                <Route element={<ProtectedLogOut redirectTo="/mypanel"/>}>
+                <Route element={<ProtectedLogOut redirectTo="/"/>}>
                     <Route path="/register" element={<Register/>} /> 
                     <Route path="/login" element={<LogIn/>} />
                 </Route>
-                
+
                 <Route path="/lostpsw" element={<LostPsw/>} />
 
                 {/* Si el usuario ya posee el nivel de acceso beta, redirrecionamos a myPanel */}

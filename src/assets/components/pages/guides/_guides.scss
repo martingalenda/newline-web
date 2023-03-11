@@ -8,9 +8,12 @@
     background-position: bottom;
     background-size: contain;
     text-transform: uppercase;
+    @include lg {
+        background-size: cover;
+    }
     &__title, &__leyend {
         color: $bg-DColor;
-    }
+    } 
     &__title {
         font-size: 2.5em;
         line-height: 2em;
@@ -32,12 +35,28 @@
         top: 0;
         margin-right: 0.9em;
         @include r2k {
-            top: -1.4em;
+            top: -2.8em;
             gap: 0.1em;
+            left: 0.1em;
         }
         @include fhd {
             top: -1.85em;
             gap: 0.1em;
+            left: 0;
+        }
+        @include hd {
+            top: -3.95em;
+            left: 0.15em;
+        }
+        @include lg {
+            top: -2.7em;
+            left: 0.05em;
+        }
+        :first-child {
+            @include hd {
+                position: relative;
+                left: 0.025em;
+            }
         }
         .buttons__imgs {
             opacity: 70%;
@@ -47,14 +66,26 @@
             filter: saturate(40%);
             cursor: pointer;
             @include r2k {
-                width: 12.6em;
+                width: 10.5em;
             }
             @include fhd {
                 width: 11.85em;
             }
+            @include hd {
+                width: 8.75em;
+            }
+            @include lg {
+                width: 10.65em;
+            }
             &:hover {
                 opacity: 100%;
                 filter: saturate(100%);
+            }
+            &:last-child {
+                @include lg {
+                    position: relative;
+                    left: -0.1em;
+                }
             }
             .imgs__section {
                 position: absolute;
@@ -70,6 +101,9 @@
                 width: 92%;
                 margin: auto;
                 transition: background 1s;
+                @include hd {
+                    font-size: 0.8em;
+                }
             }
             &:hover .imgs__section {
                 background: rgba($bg-DColor, .8);

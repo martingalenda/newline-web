@@ -13,6 +13,9 @@ $heightNav: 3.7em;
     left: 0;
     right: 0;
     text-transform: uppercase; 
+    @include md {
+        display: none;
+    }
     &__container {
         width: 80%;
         height: 100%;
@@ -20,11 +23,17 @@ $heightNav: 3.7em;
         align-items: center;
         margin: auto;
         gap: 0 2.5em;
+        @include lg {
+            width: 87%;
+        }
         .container__logo {
             margin: auto;
             a {
                 width: 9em;
                 cursor: pointer;
+                @include hd {
+                    width: 7em;
+                }
             }
         }
         .container__menu {
@@ -92,6 +101,9 @@ $heightNav: 3.7em;
         background: linear-gradient(180deg, #ffedb7 0, #ffb23ff5 121%);
         border-radius: 0.15em;
         cursor: pointer;
+        @include hd {
+            font-size: 0.9em;
+        }
         &:hover {
             background: none;
             background: linear-gradient(180deg, #fce6b4 0, #fc8704e6 121%);
