@@ -2,6 +2,7 @@ import sliderImgs from '../sliderImgs';
 
 const HeroSlide = ({race, setModal, id}) => {
 
+    //console.log("hero div")
     return(
         <>
             <div className="hero__race">
@@ -12,6 +13,6 @@ const HeroSlide = ({race, setModal, id}) => {
             </div>
         </>
     )
-}
+} 
 
 export default HeroSlide 

@@ -16,7 +16,8 @@ const Heroes = () => {
     useEffect(() => {
         const newWOW = () => {new WOW.WOW({live: false}).init();}
         newWOW()
-    }, []);
+      //  console.log("wow iniciado")
+    }, []); 
 
     return (
         <>

@@ -27,7 +27,6 @@ const NavMain = () => {
             <nav className="navMain">
                 
                 <div className="navMain__container" >
-
                     <div className="container__logo">
                         <Link to="/home">
                             <img className='logo__flag' src={logoFlag} alt="logo" />

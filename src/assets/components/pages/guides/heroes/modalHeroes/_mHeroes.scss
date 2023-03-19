@@ -1,6 +1,7 @@
 .races__container {
     width: 57vw;
     height: 60vh;
+    position: relative;
     background: {
         image: url(./media/modalHeroBg.png);
         size: cover;
@@ -14,53 +15,27 @@
         padding: 6em 7.5em;
         height: 100%;
         h3 {
-            font-size: 1.25em;
-            font-weight: 600;
+           font-weight: 400;
+           font-size: 1.2em;
+           color: #998f66;
         }
         span {
-            color: #C8C9B0;
+            color: #dbdbdb;
         }
         p {
             color: $scnd-DColor;
             margin-bottom: 0.2em;
         }
-        .hero__select {
-            .select__class {
-                h2 {
-                    font-size: 1.5em;
-                    font-weight: 600;
-                }
-            }
-            .select__race {
-                margin-top: 1em; 
-                span {
-                    font-size: 1.25em;
-                    font-weight: 600;
-                }
-            }
-            .select__class, .select__race {
-                display: flex;
-                max-width: 22em;
-                align-items: center;
-                gap: 0.6em;
-                .change__btn {
-                    cursor: pointer;
-                    width: min-content;
-                    &:hover {
-                        color: $hover-DColor;
-                    }
-                }
-            }
-        }
         .hero__details {
             display: flex;
             margin: 1.5em 0;
-            .details__right {
-                margin-left: 2em;
-            }
-            .details__left, .details__right {
-                div {
-                    display: flex;
+                .details__right {
+                    margin-left: 2em;
+                }
+                .details__left, .details__right {
+                    div {
+                        display: flex;
+                    }
                 }
             }
         }
@@ -72,6 +47,9 @@
         .hero__about {
             margin: 0.5em 0;
             max-width: 26em;  
+            i {
+                font-style: italic;
+            }
         }
         .hero__skills {
             margin-top: 1.5em;
@@ -89,7 +67,7 @@
             }
             .skills__active {
                 display: flex;
-                gap: 1em;
+                gap: 1.2em;
                 img {
                     filter: grayscale(100%);
                     &:hover {
@@ -98,5 +76,30 @@
                 }
             }
         }
-    }
+        .control__modal {
+            position: absolute;
+            top: 2em;
+            right: 3em;
+            display: flex;
+            gap: 1em;
+            .next__race, .close__modal, .next__hero {
+                width: 3em;
+                height: 3em;
+                background-color: rgb(54 54 54);
+                border-radius: 100%;
+                border: 0.1em solid #3a3a3a;
+                cursor: pointer;
+                transition: border 1s;
+                &:hover {
+                    border: 0.1em solid $scnd-DColor;
+                }
+            }
+            .hero__icon, .race__icon, .close__icon {
+                font-size: 1.4em;
+                margin-top: 0.1em;
+                color: $scnd-DColor;
+            }
+        }
 }
+
+

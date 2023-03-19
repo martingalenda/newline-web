@@ -1,0 +1,29 @@
+.select_class {
+    width: 14em;
+    text-align: center;
+    font-weight: 600;
+    padding: 0.2em 0;
+    cursor: pointer;
+    background-color: #242526;
+    border: 0.1em solid rgb(48 48 48);
+    height: 2.2em;
+    font-size: 1.1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    &::-ms-expand {
+        display: none;
+    }
+    &:focus-visible {
+        outline: 0.1em solid rgb(64 60 46);
+        border: 0.1em solid rgba(251, 250, 247, 0.55);
+    }
+    .hero__option {
+        background-color: #242526;
+        color: $scnd-DColor;
+        &:hover {
+            background: white;
+        }
+    }
+}

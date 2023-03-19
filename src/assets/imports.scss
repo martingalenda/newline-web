@@ -24,6 +24,7 @@
         'components/globals/navMain/_navMain', // Navegación principal
         'components/globals/navMobile/_navMobile', // Navegación mobile
         'components/globals/navMain/guidesSubMenu/_guidesSubMenu', // Navegación principal
+        'components/globals/tooltip/_muiTooltip', // Tooltip MUI
         'components/globals/navMain/language/_lang'; // Selección de idiomas
 
 
@@ -41,10 +42,11 @@
         'components/pages/guides/heroes/_heroes', // ? Heroes
         'components/pages/guides/heroes/modalHeroes/_mHeroes', // Modal Heroes 
         'components/pages/guides/heroes/slider/_sliderHeroes', // Slider Heroes
-        'components/pages/guides/heroes/slider/heroSlide/heroSlide', // Slide Hero
+        'components/pages/guides/heroes/slider/heroSlide/_heroSlide', // Slide Hero
+        'components/pages/guides/heroes/modalHeroes//selectClass/_selectClass', // Select class
         'components/pages/guides/arenas/_arenas', // ? Arenas
         'components/pages/guides/arenas/arenaExtend/_arenaExtend', // Extensión de arena
-        'components/pages/guides/mobs/_mobs', // ? Modal Npcs
+        'components/pages/guides/boosts/_boosts', // ? Modal Boosts
         'components/pages/guides/install/_install', // ? Guía de instalación
         'components/pages/guides/install/box/installBox', // Box steps de instalación
 

@@ -15,7 +15,7 @@ const Premium = () => {
             <section className="premium">
                 <div className="premium--container">
                     {/* <span className="premium--coming">{texts.premium.main.coming}</span> */}
-                    <Countdown date={'March 12 2023 10:32:53 GMT-0500'}/>
+                    <Countdown date={'March 27 2023 10:32:53 GMT-0500'}/>
                     <h2 className="premium--title">{texts.premium.main.title}</h2>
                     <h2 className="premium--subTitle">{texts.premium.main.subTitle}</h2>
 

@@ -26,7 +26,7 @@ const Hero = () => {
              data-wow-duration="1.5s">
                 
                     <div className="hero__content wow animate__fadeIn" data-wow-duration="2.5s" >
-                        <Countdown bgActive="true" date={'March 12 2023 10:32:53 GMT-0500'}/>
+                        <Countdown bgActive="true" date={'March 27 2023 10:32:53 GMT-0500'}/>
                         { 
                             access >= 10 ?
                             <ButtonC btnClass="access" text={texts.hero.btnTxt2} link="/mypanel"/>

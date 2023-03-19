@@ -25,7 +25,7 @@ const SliderHeroes = () => {
         speed: 900,
         slidesToShow: 1,
         slidesToScroll: 1,
-        cssEase: "linear"
+        cssEase: "linear" 
     } 
 
      let [race, setRace] = useState([])
@@ -35,7 +35,6 @@ const SliderHeroes = () => {
        setRace(raceData)
        openHeroes()
      }
- 
  
     return(
       <>
@@ -58,6 +57,7 @@ const SliderHeroes = () => {
             <MHeroes
                 race={race}
                 setRace={setRace}
+                close={closeHeroes}
             />
         </Modal> 
       </>

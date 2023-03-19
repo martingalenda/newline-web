@@ -22,7 +22,7 @@
         import GameModes from './assets/components/pages/guides/gameModes/GameModes.jsx';
         import Heroes from './assets/components/pages/guides/heroes/Heroes.jsx';
         import Arenas from './assets/components/pages/guides/arenas/Arenas.jsx';
-        import Mobs from './assets/components/pages/guides/mobs/Mobs.jsx';
+        import Boosts from './assets/components/pages/guides/boosts/Boosts.jsx';
         import Install from './assets/components/pages/guides/install/Install.jsx';
 
     // Historia:
@@ -53,14 +53,14 @@ function App() {
             <Routes>
                 <Route path="/" element={<Hero/>} />
                 <Route path="/home" element={<Hero/>} />
+                <Route path="/guides/about" element={<About/>} />
                 <Route path="/news" element={<News/>} />
                 <Route path="/news/:url" element={<NewsExtend/>} />
                 <Route path="/guides" element={<Guides/>} />
-                <Route path="/guides/about" element={<About/>} />
                 <Route path="/guides/gamemodes" element={<GameModes/>} />
                 <Route path="/guides/heroes" element={<Heroes/>} />
                 <Route path="/guides/arenas" element={<Arenas/>} />
-                <Route path="/guides/mobs" element={<Mobs/>} />
+                <Route path="/guides/boosts" element={<Boosts/>} />
                 <Route path="/guides/install" element={<Install/>} />
                 <Route path="/story" element={<Story/>} />
                 <Route path="/episode" element={<StoryExtend/>} />
