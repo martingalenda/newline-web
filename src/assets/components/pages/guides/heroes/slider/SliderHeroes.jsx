@@ -1,4 +1,4 @@
-// ? REACT
+// ? REACT 
   import {useState} from 'react';
 // ? MODALS:
   import Modal from '../../../../globals/modals/Modal'
@@ -13,10 +13,10 @@
 // ? COMPONENT:
   import HeroSlide from './heroSlide/HeroSlide'
 
-const SliderHeroes = () => {
+const SliderHeroes = ({stopWow, setStopWow}) => {
 
     const {texts} = useSelector(state => state.languages)
-
+ 
     // Slider conf
     const settings = {
         dot: true,
@@ -39,26 +39,28 @@ const SliderHeroes = () => {
     return(
       <>
         <div className="heroes__slider" >
-            <Slider {...settings}> 
-              {
-                texts.heroes.races.map((raceData, i) => 
-                  <HeroSlide
-                    key={raceData.id}
-                    race={raceData}
-                    id={raceData.id}
-                    setModal={setModal}
-                  />
-                )
-              }
-            </Slider>
+          <Slider {...settings}> 
+            {
+              texts.heroes.races.map((raceData, i) => 
+                <HeroSlide
+                  key={raceData.id}
+                  race={raceData}
+                  id={raceData.id}
+                  setModal={setModal}
+                  stopWow={stopWow}
+                  setStopWow={setStopWow}
+                />
+              )
+            }
+          </Slider>
         </div>
 
         <Modal active={isActiveHeroes} close={closeHeroes}>
-            <MHeroes
-                race={race}
-                setRace={setRace}
-                close={closeHeroes}
-            />
+          <MHeroes
+              race={race}
+              setRace={setRace}
+              close={closeHeroes}
+          />
         </Modal> 
       </>
     );

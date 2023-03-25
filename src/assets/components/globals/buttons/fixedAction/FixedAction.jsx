@@ -38,7 +38,7 @@ const FixedAction = () => {
             :
             navigate("/news")
     }
-
+ 
     return (
         <>
             <div onClick={() => handleClick()} className="fixedAction">   

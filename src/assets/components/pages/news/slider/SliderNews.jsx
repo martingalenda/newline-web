@@ -7,11 +7,10 @@
 // ? COMPONENTS:
     import CardNew from '../cardNew/CardNew.jsx';
 
-
 const SliderNews = () => {
 
     const {texts} = useSelector(state => state.languages)
-
+ 
     // Slider conf
     const settings = {
         dot: true,
@@ -38,7 +37,6 @@ const SliderNews = () => {
             }
           ]
     }
-
 
     return(
         <div className="news__container1 wow animate__fadeInRight" data-wow-duration="1.5s">

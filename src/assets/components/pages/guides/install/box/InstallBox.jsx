@@ -1,14 +1,10 @@
 // ? REACT:
-    import {forwardRef, useEffect } from 'react';
-// ? WOW ANIMATION:
-    import WOW from 'wowjs';
+    import {forwardRef} from 'react';
+
 
 const InstallBox = (props, ref) => {
 
-    useEffect(() => {
-        const newWOW = () => {new WOW.WOW({live: false}).init();}
-        newWOW()
-    }, []);
+
 
     return (
         <div  ref={ref} className={`install__box wow ${props.wowAnimation} step${props.step}`} data-wow-duration="1.5s">

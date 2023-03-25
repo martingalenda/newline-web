@@ -15,7 +15,7 @@
     import { helpHttp } from '../../../../helpers/helpHttp';
 
 // ? COMPONENTS:
-    import ButtonC from '../../buttons/classicBtn/ButtonC';
+    import ClassicBtn from '../../buttons/classicBtn/ClassicBtn';
 
 
     
@@ -180,7 +180,7 @@ const Donate = ({close}) =>{
 
                 <div ref={terms} className="terms_conditions">
                     <p className="terms_coinditions--text" dangerouslySetInnerHTML={{__html: texts.modals.donate.terms}}></p>
-                    <ButtonC myOnClick={() => backTerms()} btnClass="backTerms" text="OK"/>
+                    <ClassicBtn myOnClick={() => backTerms()} btnClass="backTerms" text="OK"/>
                 </div>
 
 

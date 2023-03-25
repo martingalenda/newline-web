@@ -8,7 +8,7 @@
 // ? USE-FORM:
     import { useForm } from 'react-hook-form';
 // ? COMPONENTS:
-    import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
+    import ClassicBtn from '../../../globals/buttons/classicBtn/ClassicBtn';
  
     
 const Reg2Step = ({regStep, setRegStep, openN2}) => {
@@ -144,7 +144,7 @@ const Reg2Step = ({regStep, setRegStep, openN2}) => {
             <div ref={terms} className="terms_conditions">
                 <h3>{title}</h3>
                 <p className="terms_coinditions--text" dangerouslySetInnerHTML={{__html: texts.modals.donate.terms}}></p>  
-                <ButtonC myOnClick={() => backTerms()} btnClass="backTerms" text="OK"/>         
+                <ClassicBtn myOnClick={() => backTerms()} btnClass="backTerms" text="OK"/>         
             </div>
         </>
     );

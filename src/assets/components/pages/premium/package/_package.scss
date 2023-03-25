@@ -52,7 +52,26 @@ $hero-SColor: #dfa81c;
 .package-noble {
     border-image: linear-gradient(90deg, #5e1f00 0, #9b2800);
     border-image-slice: 1;
-    @include btnD('premiumAccess', #19191a, $noble-MColor, $noble-MColor, $noble-SColor, $noble-MColor,  $noble-SColor, #19191a, #19191a,$noble-SColor, #19191a, 17.5em);
+        &:hover {
+            .btnD-premiumAccess {
+            text-shadow: 0.1em 0.1em 0.7em #fbd3d0;
+            }
+        }
+    @include btnD('premiumAccess',
+     linear-gradient(180deg, #6a2408 0, #84270e 121%),
+      linear-gradient(180deg, #f6d1c9 0%, #f6d1c9 100%),
+       none,
+        none, 
+        #f6d1c9,
+        #f6d1c9,
+          #f6d1c9,
+           #f6d1c9,
+           none,
+            none,
+             17.5em);
+             .btnD-premiumAccess {
+                border: 0.1em solid #68220f !important;
+             }
     li {
         &:first-child {
             color: $noble-MColor;
@@ -70,7 +89,26 @@ $hero-SColor: #dfa81c;
 .package-baron {
     border-image: linear-gradient(90deg, #434343 0, #a8a8a8);
     border-image-slice: 1;
-    @include btnD('premiumAccess', #19191a, $baron-MColor, #a6a6a6, #ffffffc9, #797979,  $baron-SColor, #19191a, #19191a,$baron-SColor, #19191a, 17.5em);
+    &:hover {
+        .btnD-premiumAccess {
+            text-shadow: 0.1em 0.1em 0.7em #ededed;
+        }
+    }
+    @include btnD('premiumAccess',
+     linear-gradient(180deg, #434343 0, #646464 121%),
+      linear-gradient(180deg, #dddddd 0%, #dddddd 100%),
+       none,
+        none,
+        #dddddd, 
+        #dddddd,
+           #dddddd,
+            #dddddd,
+            none,
+             none,
+              17.5em);
+                .btnD-premiumAccess {
+                    border: 0.1em solid #3e3e3e !important;
+                }
     li {
         &:first-child {
             color: $baron-MColor;
@@ -84,11 +122,30 @@ $hero-SColor: #dfa81c;
         border-image-slice: 1;
     }
 }
-
+ 
 .package-hero {
     border-image: linear-gradient(90deg, #db9500 0, #ffeead);
     border-image-slice: 1;
-    @include btnD('premiumAccess', #19191a, $hero-MColor, #db9500, #ffeead, #ffecc3,  $hero-SColor, #19191a, #19191a,$hero-SColor, #19191a, 17.5em);
+    &:hover {
+        .btnD-premiumAccess {
+        text-shadow: 0.1em 0.1em 0.7em #fffed8;
+        }
+    }
+    @include btnD('premiumAccess',
+     linear-gradient(180deg, #da962c 0, #daa54d 121%),
+      linear-gradient(180deg, #feebae 0%, #feebae 100%),
+       none,
+        none,
+        #feebae,
+         #feebae,
+         #feebae,
+         #feebae,
+            none,
+              none,
+               17.5em);
+               .btnD-premiumAccess {
+                    border: 0.1em solid #b47724 !important;
+               }
     li {
         &:first-child {
             color: $hero-SColor;

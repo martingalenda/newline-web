@@ -3,13 +3,14 @@
 // ? REDUX:
   import { useSelector } from 'react-redux';
 // ? Icons:
-import CloseIcon from '@mui/icons-material/Close';
-import FingerprintIcon from '@mui/icons-material/Fingerprint';
+  import CloseIcon from '@mui/icons-material/Close';
+  import FingerprintIcon from '@mui/icons-material/Fingerprint';
 // ? COMPONENTS:
   import MuiTooltip from '../../../../globals/tooltip/MuiTooltip';
   import SelectClass from './selectClass/SelectClass'
 // ? REACT MUI:
   import Zoom from '@mui/material/Zoom';
+
 
 const MHeroes = ({race, setRace, close}) => {
 
@@ -21,7 +22,7 @@ const MHeroes = ({race, setRace, close}) => {
     const initialHero = data[race[0]][race[1]][0][initialRef] // Objeto de la clase seleccionada
     
     let [classId, setClassId] = useState(0)
-    const [classRef, setClassRef] = useState(initialRef)
+    const [classRef, setClassRef] = useState(initialRef) 
     const [hero, setHero] = useState(initialHero)
 
     const [checked, setChecked] = useState(false) // Animacion zoom icons
@@ -45,9 +46,17 @@ const MHeroes = ({race, setRace, close}) => {
 
     useEffect(() => {
        setHero(data[race[0]][race[1]][classId][classRef])
-       setChecked(true)
+       setChecked(false)
+       setTimeout(() => {
+        setChecked(true);
+      }, 0);
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[classRef, checked]) 
+    },[classRef]) 
+
+    // useEffect(() => {
+    //   const descriptionTxt = hero.about.split("")
+    //   console.log(descriptionTxt)
+    // },[hero])
 
   return (
     <div className="races__container">
@@ -78,12 +87,13 @@ const MHeroes = ({race, setRace, close}) => {
           <div className="hero__skills">
             <h3>{texts.heroes.skills}</h3>
             <div className="skills__pasive">
-              <img src={`../img/heroesSkills/${classRef}/p.jpg`} style={{cursor: 'initial'}} alt="icon pasive"/>
+                <img src={`../img/heroesSkills/${classRef}/p.jpg`} style={{cursor: 'initial'}} alt="icon pasive"/>
               <p>{hero.skills[0].description}</p>
             </div>
 
             <div className="skills__active">
              {
+              checked !== false &&
                hero.skills.map((skill, i) => 
                 !skill.f0 &&        
                   <MuiTooltip key={i} tData={

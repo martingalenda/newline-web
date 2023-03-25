@@ -2,7 +2,7 @@
     import { useSelector } from 'react-redux';
 
 // ? COMPONENT:
-    import ButtonC from '../../buttons/classicBtn/ButtonC';
+    import ClassicBtn from '../../buttons/classicBtn/ClassicBtn';
 
     
 const Notifications = ({children, style, close, isConfirmation, actionConfirm = () => {} }) => {
@@ -18,12 +18,12 @@ const Notifications = ({children, style, close, isConfirmation, actionConfirm = 
                         isConfirmation ?
                         (
                             <div className="confirmation">
-                                <ButtonC myOnClick={() => actionConfirm()} btnClass="notification" text={texts.modals.confirmation.confirm}/>
-                                <ButtonC myOnClick={() => close()} btnClass="notification" text={texts.modals.confirmation.cancel}/>
+                                <ClassicBtn myOnClick={() => actionConfirm()} btnClass="notification" text={texts.modals.confirmation.confirm}/>
+                                <ClassicBtn myOnClick={() => close()} btnClass="notification" text={texts.modals.confirmation.cancel}/>
                             </div>
                         ) :
                         (
-                            <ButtonC myOnClick={() => close()} btnClass="notification" text="OK"/>
+                            <ClassicBtn myOnClick={() => close()} btnClass="notification" text="OK"/>
                         )
                     }
 

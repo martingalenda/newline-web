@@ -1,37 +1,31 @@
-// ? REACT:
-    import {useEffect} from 'react';
 // ? REDUX:
-    import { useSelector } from 'react-redux';
+    import {useSelector} from 'react-redux';
 // ? WOW ANIMATION:
-    import WOW from 'wowjs';
+    import useWow from '../../../hooks/useWow';
 // ? IMG:
     import crown from './media/crown.png'
 // ? COMPONENTS:
-    import ButtonC from '../../globals/buttons/classicBtn/ButtonC';
-    import BetaBtn from '../../globals/buttons/betaBtn/BetaBtn';
+    import ClassicBtn from '../../globals/buttons/classicBtn/ClassicBtn';
+    import PremiumBtn from '../../globals/buttons/premiumBtn/PremiumBtn';
+
 
 const Story = () => {
 
-    const {texts} = useSelector(state => state.languages)
+    useWow()
 
-    useEffect(() => {
-        const newWOW = () => {new WOW.WOW({live: false}).init();}
-        newWOW()
-    }, []);
+    const {texts} = useSelector(state => state.languages)
     
     return(
         <section className="story wow animate__fadeIn" data-wow-duration="1.5s">
-
             <div className="story__bg--opacity"/>
-
             <div className="story__container">
                 <img className="container__logoEp1" src={crown} alt="crown" />
                 <h4 className="container__epNum">{texts.story.episode}</h4>
                 <h3 className="container__epTitle">{texts.story.title}</h3>
-                <ButtonC btnClass="story" text={texts.story.btn} link="/episode"/>
+                <ClassicBtn btnClass="story" text={texts.story.btn} link="/episode"/>
                 <span className="container__leyend">... {texts.story.leyend} ...</span>
             </div>
-            <BetaBtn/>
+            <PremiumBtn/>
         </section>
     );
 }

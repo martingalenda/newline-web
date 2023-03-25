@@ -1,4 +1,4 @@
-.betaBtn {
+.premiumBtn {
     position: fixed;
     bottom: 0;
     left: 0; 
@@ -7,7 +7,7 @@
     @include hd {
         display: none;
     }
-    &:hover > .betaBtn__txt{
+    &:hover > .premiumBtn__txt{
         color: $hover-DColor;
         transition-property: color;
         transition-duration: 1.5s;

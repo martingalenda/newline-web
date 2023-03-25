@@ -5,7 +5,7 @@
     import Donate from "../../../globals/modals/donate/Donate"
     import Notification from "../../../globals/modals/notifications/Notifications"
     import {useModals} from "../../../../hooks/useModals"
-    import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
+    import ClassicBtn from '../../../globals/buttons/classicBtn/ClassicBtn';
 
 const Package = ({type, price, btnTxt}) => {
 
@@ -16,7 +16,7 @@ const Package = ({type, price, btnTxt}) => {
     const [isActiveN1, openN1, closeN1] = useModals()
     const [isActiveN2, openN2, closeN2] = useModals()
 
-    // Si el usuario está logeado... Chequea si posee las NCoims correspondientes para adquirir el paquete seleccionado
+    // Si el usuario está logeado... Chequea si posee las NCoins correspondientes para adquirir el paquete seleccionado
     // Caso contrario, redirecciona a /login
     const buyPackage = (price) => {
         (coins >= price) ? openN2() : openN1()
@@ -31,7 +31,7 @@ const Package = ({type, price, btnTxt}) => {
     return (
         <>
             <div className={`package package-${type}`}>
-            <img className="package__logo" src={`img/premium/${type}.png`} alt={type}/>
+                <img className="package__logo" src={`img/premium/${type}.png`} alt={type}/>
                 <ol className="package__rewards">
                     {
                         // Recorro las recompenzas de los paquetes premium
@@ -42,9 +42,9 @@ const Package = ({type, price, btnTxt}) => {
                 </ol>
                 {
                     (nick) ? 
-                    <ButtonC myOnClick={() => buyPackage(price)} btnClass="premiumAccess" text={btnTxt}/> 
+                    <ClassicBtn myOnClick={() => buyPackage(price)} btnClass="premiumAccess" text={btnTxt}/> 
                     :
-                    <ButtonC link="/login" myTarget="_blank" myRel="noreferrer" btnClass="premiumAccess" text={btnTxt}/>
+                    <ClassicBtn link="/login" myTarget="_blank" myRel="noreferrer" btnClass="premiumAccess" text={btnTxt}/>
                 }
                 
             </div>

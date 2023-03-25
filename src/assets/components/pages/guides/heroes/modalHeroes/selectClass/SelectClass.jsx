@@ -19,6 +19,9 @@ const SelectClass = ({racesData, raceSelect, setHero, setId}) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[heroSelects, isMount])
 
+    // const filteredHeroes = racesData[raceSelect[0]][raceSelect[1]].filter(hero => hero.ref !== heroSelects.split(",")[0]);
+    // console.log(filteredHeroes)
+
     return (
 
         <form className="hero__select">

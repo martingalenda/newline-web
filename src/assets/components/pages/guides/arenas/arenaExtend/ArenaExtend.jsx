@@ -1,9 +1,9 @@
 // ? REACT:
-    import {useEffect, useState} from 'react';
+    import {useState} from 'react';
 // ? REDUX:
-    import { useSelector } from 'react-redux';
+    import {useSelector} from 'react-redux';
 // ? WOW ANIMATIONS:
-    import WOW from 'wowjs';
+    import useWow from '../../../../../hooks/useWow.jsx';
 // ? IMGS (Complemento)
     import arenaImgs from './arenaImgs.js';
 // ? ICONS:
@@ -11,45 +11,42 @@
     import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
     import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 // ? COMPONENTS:
-    import BetaBtn from '../../../../globals/buttons/betaBtn/BetaBtn';
+    import PremiumBtn from '../../../../globals/buttons/premiumBtn/PremiumBtn';
 
 
-const ArenaExtend = (props)=> {
+const ArenaExtend = ({arena, setArena})=> {
 
     const {texts} = useSelector(state => state.languages)
 
-    const [maps, setMaps] = useState(props.map);
     const [bg, setBg] = useState("Bg0");
 
-    useEffect(() => {
-        const newWOW = () => {new WOW.WOW({live: false}).init();}
-        newWOW()
-    }, [bg, maps]);
-
+    useWow(arena)
+ 
     // Botones para cambiar de mapa (Inferno/Castles)
-    const infernoBtn = <button className="chInferno" onClick={() => setMaps("castles")}> <FontAwesomeIcon icon={faArrowLeft}/> Castles </button>;
-    const castlesBtn = <button className="chCastles" onClick={() => setMaps("inferno")}> Inferno <FontAwesomeIcon icon={faArrowRight}/> </button>;
-    const btnChangeMap = maps === "inferno" ?  infernoBtn : castlesBtn;
+    // ! Optimizar
+    const infernoBtn = <button className="chInferno" onClick={() => setArena("castles")}> <FontAwesomeIcon icon={faArrowLeft}/> Castles </button>;
+    const castlesBtn = <button className="chCastles" onClick={() => setArena("inferno")}> Inferno <FontAwesomeIcon icon={faArrowRight}/> </button>;
+    const btnChangeMap = arena === "inferno" ?  infernoBtn : castlesBtn;
 
     return (
 
         <>
-            <section className={`mapsExtend ${maps}${bg} wow animate__fadeIn`} data-wow-duration="0.5s"> 
+            <section className={`mapsExtend ${arena}${bg} wow animate__fadeIn`} data-wow-duration="1.5s"> 
                 <div className="mapsExtend__bg--opacity"/>
         
                 {btnChangeMap}
         
                 <div className="mapsExtend__container">
         
-                    <h2 className="container__title">{texts.maps.ext[maps].title}</h2>
-                    <p className="container__text">{texts.maps.ext[maps].txt}</p>
+                    <h2 className="container__title">{texts.maps.ext[arena].title}</h2>
+                    <p className="container__text">{texts.maps.ext[arena].txt}</p>
         
                     <nav className="container__media">
                         <ul className="media__list">
                             { 
-                            arenaImgs[maps].img.map((item, i) => 
+                            arenaImgs[arena].img.map((item, i) => 
                             <li key={i}> 
-                                <img onClick={() => setBg(`Bg${i}`)} className={`list__imgs ${bg === `Bg${i}` ? 'activeBtn' : '' }`} src={item} alt={`${maps} Buttons`} />
+                                <img onClick={() => setBg(`Bg${i}`)} className={`list__imgs ${bg === `Bg${i}` ? 'activeBtn' : '' }`} src={item} alt={`${arena} button`} />
                             </li>)
                             }
                         </ul>
@@ -57,7 +54,7 @@ const ArenaExtend = (props)=> {
                         
                 </div>
             </section>
-            <BetaBtn />
+            <PremiumBtn />
         </>
     )
 }

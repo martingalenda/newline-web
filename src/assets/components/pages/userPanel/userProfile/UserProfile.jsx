@@ -3,7 +3,7 @@
 // ? REDUX:
     import { useSelector } from 'react-redux';
 // ? MODALS:
-    import ButtonC from '../../../globals/buttons/classicBtn/ButtonC';
+    import ClassicBtn from '../../../globals/buttons/classicBtn/ClassicBtn';
     import Modal from "../../../globals/modals/Modal"
     import Donate from "../../../globals/modals/donate/Donate"
     import {useModals} from "../../../../hooks/useModals"
@@ -64,9 +64,9 @@ const UserProfile = () => {
                     </div>
 
                     <div className="actions">
-                        { (access < 10) && <ButtonC btnClass="changePsw" text={texts.userPanel.premium} link="/premium"/> }
-                        <ButtonC btnClass="changePsw" text={texts.navMain.subMenu.downloadNl} link="/guides/install"/>
-                        <ButtonC btnClass="changePsw" text={texts.changePsw.title} link="/changepsw"/>
+                        { (access < 10) && <ClassicBtn btnClass="changePsw" text={texts.userPanel.premium} link="/premium"/> }
+                        <ClassicBtn btnClass="changePsw" text={texts.navMain.subMenu.downloadNl} link="/guides/install"/>
+                        <ClassicBtn btnClass="changePsw" text={texts.changePsw.title} link="/changepsw"/>
                     </div>
 
                 </ol>

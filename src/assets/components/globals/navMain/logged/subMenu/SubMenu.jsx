@@ -58,7 +58,7 @@ const SubMenu = ({active, close}) => {
             }
             <Modal active={isActiveDonate} close={closeDonate}> 
                 <Donate close={closeDonate}/> 
-            </Modal> 
+            </Modal>  
         </>
     )
 }

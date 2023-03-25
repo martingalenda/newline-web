@@ -11,33 +11,27 @@
 // ? PAGES:
     // Index:
         import Hero from './assets/components/pages/hero/Hero.jsx';
-
     // Noticias:
         import News from './assets/components/pages/news/News.jsx';
         import NewsExtend from './assets/components/pages/news/newsExtend/NewsExtend.jsx';
-
     // Guía de juego:
         import Guides from './assets/components/pages/guides/Guides.jsx';
         import About from './assets/components/pages/guides/about/About.jsx';
-        import GameModes from './assets/components/pages/guides/gameModes/GameModes.jsx';
+        import Gameplay from './assets/components/pages/guides/gameplay/Gameplay.jsx';
         import Heroes from './assets/components/pages/guides/heroes/Heroes.jsx';
         import Arenas from './assets/components/pages/guides/arenas/Arenas.jsx';
         import Boosts from './assets/components/pages/guides/boosts/Boosts.jsx';
         import Install from './assets/components/pages/guides/install/Install.jsx';
-
     // Historia:
         import Story from './assets/components/pages/story/Story.jsx';
         import StoryExtend from './assets/components/pages/story/storyExtend/StoryExtend.jsx';
-
     // Acceso:
         import Register from './assets/components/pages/access/register/Register.jsx';
         import LogIn from './assets/components/pages/access/logIn/LogIn.jsx';
         import LostPsw from './assets/components/pages/access/lostPsw/LostPsw.jsx';
         import ChangePsw from './assets/components/pages/access/changePsw/ChangePsw.jsx';
-
     // Premium access:
         import Premium from './assets/components/pages/premium/Premium.jsx';
-
     // User panel:
         import UserPanel from './assets/components/pages/userPanel/UserPanel.jsx';
 
@@ -53,15 +47,15 @@ function App() {
             <Routes>
                 <Route path="/" element={<Hero/>} />
                 <Route path="/home" element={<Hero/>} />
-                <Route path="/guides/about" element={<About/>} />
                 <Route path="/news" element={<News/>} />
                 <Route path="/news/:url" element={<NewsExtend/>} />
-                <Route path="/guides" element={<Guides/>} />
-                <Route path="/guides/gamemodes" element={<GameModes/>} />
-                <Route path="/guides/heroes" element={<Heroes/>} />
-                <Route path="/guides/arenas" element={<Arenas/>} />
-                <Route path="/guides/boosts" element={<Boosts/>} />
-                <Route path="/guides/install" element={<Install/>} />
+                <Route path="/info" element={<Guides/>} />
+                <Route path="/info/about" element={<About/>} />
+                <Route path="/info/gameplay" element={<Gameplay/>} />
+                <Route path="/info/heroes" element={<Heroes/>} />
+                <Route path="/info/arenas" element={<Arenas/>} />
+                <Route path="/info/boosts" element={<Boosts/>} />
+                <Route path="/info/install" element={<Install/>} />
                 <Route path="/story" element={<Story/>} />
                 <Route path="/episode" element={<StoryExtend/>} />
                 <Route path="/news/not_news" element={<StoryExtend/>} />

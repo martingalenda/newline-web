@@ -4,7 +4,7 @@
 const CardNew = (props) => { 
 
     return ( 
-        <div className={`cardNew ${props.bg} ${props.type}`}> 
+        <div className={`cardNew ${props.bg} ${props.type} wow animate__fadeIn`} data-wow-duration="1.5s"> 
             <div className="cardNew__container">                
                 <h3 className="container__title container__item">{props.title}</h3>
                 <div className={`container__type container__type-${props.type} container__item`}><span>{props.type}</span></div>
@@ -19,5 +19,5 @@ const CardNew = (props) => {
         </div> 
     )
 }
-
+ 
 export default CardNew; 

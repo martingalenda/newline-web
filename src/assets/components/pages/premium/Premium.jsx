@@ -2,17 +2,21 @@
     import { useSelector } from 'react-redux';
 // ? RUTAS:
     import { Link } from 'react-router-dom';
+// ? WOW-ANIMATION:
+    import useWow from '../../../hooks/useWow';
 // ? COMPONENTS:
     import Package from './package/Package'
     import Countdown from '../../globals/countdown/Countdown.jsx';
 
 const Premium = () => { 
 
+    useWow()
+
     const {texts} = useSelector(state => state.languages)
 
     return(
         <>
-            <section className="premium">
+            <section className="premium wow animate__fadeIn" data-wow-duration="2s">
                 <div className="premium--container">
                     {/* <span className="premium--coming">{texts.premium.main.coming}</span> */}
                     <Countdown date={'March 27 2023 10:32:53 GMT-0500'}/>

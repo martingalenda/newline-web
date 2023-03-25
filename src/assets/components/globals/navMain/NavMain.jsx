@@ -23,7 +23,7 @@ const NavMain = () => {
     const [isActiveLang, openLang, closeLang] = useModals()
     const [isActiveGuidesSubMenu, openGuidesSubMenu, closeGuidesSubMenu] = useModals()
 
-        return(
+        return( 
             <nav className="navMain">
                 
                 <div className="navMain__container" >
@@ -38,7 +38,7 @@ const NavMain = () => {
                             <li className='menu__item'> <NavLink to="/news" activeclassname="active"> {texts.navMain.news} </NavLink> </li>
                             <div className='guidesSubMenu' onMouseLeave={closeGuidesSubMenu}>
                                 <li className='menu__item' onMouseEnter={openGuidesSubMenu} > 
-                                    <NavLink to="/guides" activeclassname="active"> {texts.navMain.guides} </NavLink>
+                                    <NavLink to="/info" activeclassname="active"> {texts.navMain.gameInfo} </NavLink>
                                 </li>
                                 <GuidesSubMenu active={isActiveGuidesSubMenu} close={closeGuidesSubMenu}/> 
                             </div>

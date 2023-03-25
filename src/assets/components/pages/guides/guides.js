@@ -7,11 +7,11 @@ import gBtn4 from './media/gBtn4.png';
 import gBtn5 from './media/gBtn5.png';
 
 const guides =  [
-    ["Sobre NL", gBtn3, "about"],
-    ["Modos de juego", gBtn0, "gamemodes"],
+    ["Sobre NL", gBtn4, "about"],
+    ["Modos de juego", gBtn0, "gameplay"],
     ["Arenas", gBtn2, "arenas"],
     ["Heroes", gBtn1, "heroes"],
-    ["Buffs", gBtn4, "boosts"],
+    ["Buffs", gBtn3, "boosts"],
     ["Instalación", gBtn5, "install"]
 ]
 

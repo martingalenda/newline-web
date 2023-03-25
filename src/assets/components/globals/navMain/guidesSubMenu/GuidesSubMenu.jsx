@@ -7,10 +7,10 @@
     // Data redireccionamiento
     import guides from '../../../pages/guides/guides';
  
-const SubMenu = ({active}) => { 
+const SubMenu = ({active, close}) => { 
 
     const {texts} = useSelector(state => state.languages)
- 
+  
     return (
         <>
             {active &&
@@ -19,7 +19,7 @@ const SubMenu = ({active}) => {
                 <ol className="subMenu__list"> 
 
                     { guides.map((item, i) => 
-                            <Link to={`/guides/${item[2]}`} key={i}>
+                            <Link to={`/info/${item[2]}`} onClick={close} key={i}>
                                 <li className="list__item"> 
                                     {texts.guides.gBtns[i]}
                                 </li>

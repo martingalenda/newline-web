@@ -9,8 +9,8 @@
         
 
 /* COMPONENTS IMPORTS */
-@import 'components/globals/buttons/classicBtn/_buttonC', // Template Boton clásico
-        'components/globals/buttons/betaBtn/_betaBtn', // Boton Beta Access (fixed bottom)
+@import 'components/globals/buttons/classicBtn/_classicBtn', // Template Boton clásico
+        'components/globals/buttons/premiumBtn/_premiumBtn', // Boton Premium Access (fixed bottom)
         'components/globals/buttons/playBtn/_playBtn', // Boton Play video
         'components/globals/buttons/fixedAction/_fixedAction', // Boton Fixed noticias
 
@@ -21,28 +21,29 @@
         'components/globals/modals/donate/_donate', // Modales de donaciones
         'components/globals/modals/playVideo/_playVideo', // Modal play Media
 
-        'components/globals/navMain/_navMain', // Navegación principal
-        'components/globals/navMobile/_navMobile', // Navegación mobile
-        'components/globals/navMain/guidesSubMenu/_guidesSubMenu', // Navegación principal
         'components/globals/tooltip/_muiTooltip', // Tooltip MUI
-        'components/globals/navMain/language/_lang'; // Selección de idiomas
+
+        'components/globals/navMain/_navMain', // Navegación principal
+        'components/globals/navMain/guidesSubMenu/_guidesSubMenu', // Navegación principal
+        'components/globals/navMain/language/_lang', // Selección de idiomas
+        'components/globals/navMobile/_navMobile'; // Navegación mobile
 
 
 /* PAGES IMPORTS */
 @import 'components/pages/hero/_hero', // ! MAIN ARRIVAL - INDEX / HOME
 
         'components/pages/news/_news', // ! ANUNCIOS
-        'components/pages/news/slider/_sliderNews', // Slider noticias
         'components/pages/news/cardNew/_cardNew', // Tarjeta noticia
+        'components/pages/news/slider/_sliderNews', // Slider noticias
         'components/pages/news/newsExtend/_newsExtend', // Noticia extendida
 
-        'components/pages/guides/_guides', // ! GUÍA DE JUEGO
+        'components/pages/guides/_guides', // ! GUÍA DE JUEGO | GAME INFO
         'components/pages/guides/about/_about', // ? Sobre NL
-        'components/pages/guides/gameModes/_gameModes', // ? Modos de juego
+        'components/pages/guides/gameplay/_gameplay', // ? Modos de juego
         'components/pages/guides/heroes/_heroes', // ? Heroes
-        'components/pages/guides/heroes/modalHeroes/_mHeroes', // Modal Heroes 
         'components/pages/guides/heroes/slider/_sliderHeroes', // Slider Heroes
         'components/pages/guides/heroes/slider/heroSlide/_heroSlide', // Slide Hero
+        'components/pages/guides/heroes/modalHeroes/_mHeroes', // Modal Heroes 
         'components/pages/guides/heroes/modalHeroes//selectClass/_selectClass', // Select class
         'components/pages/guides/arenas/_arenas', // ? Arenas
         'components/pages/guides/arenas/arenaExtend/_arenaExtend', // Extensión de arena
@@ -59,7 +60,7 @@
         'components/pages/access/lostPsw/_lostPsw', // ? Perdida de pw
         'components/pages/access/changePsw/_changePsw', // ? Cambio de contraseña
 
-        'components/pages/premium/_premium', // ! ACCESO PREMIUM AL BETA
+        'components/pages/premium/_premium', // ! ACCESO PREMIUM
         'components/pages/premium/package/_package', // package box
 
         'components/pages/userPanel/_userPanel', // ! PANEL DE USUARIO
