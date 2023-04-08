@@ -1,21 +1,3 @@
-# Guia de instalación
-
-
-1- Clonar el proyecto en git
-
-2- Instalar dependencias:
-`! Sass (preprocesador css)`
-`! https://fontawesome.com (icons)`
-`! https://reacttraining.com (react router)`
-`! https://wowjs.uk + animate.style (wow.js + animate.css)`
-`! https://react-hook-form.com/ (react hook form)`
-`! https://kenwheeler.github.io/slick/ (slick slider/carousel)`
-`! https://redux-toolkit.js.org/ (reduxjs/toolkit)`
-
-
-# Metodología de clases: `BEM`
-
-
 <!-- ----------------------------------------------------------------------- -->
 
 # Getting Started with Create React App
