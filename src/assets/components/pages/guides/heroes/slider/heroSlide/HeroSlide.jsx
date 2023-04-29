@@ -18,5 +18,5 @@ const HeroSlide = ({race, setModal, id, stopWow, setStopWow}) => {
         </>
     )
 } 
- 
+  
 export default HeroSlide 

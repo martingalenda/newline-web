@@ -23,23 +23,23 @@ const SelectClass = ({racesData, raceSelect, setHero, setId}) => {
     // console.log(filteredHeroes)
 
     return (
-
+ 
         <form className="hero__select">
-          <select className="select_class" 
-            {...register (
-                "hero"
-            )}>
-            {
-                racesData[raceSelect[0]][raceSelect[1]].map((hero, i) => 
-                    <option 
-                        key={hero.id} 
-                        value={[hero.ref , hero.id]}
-                        className="hero__option">
-                        {hero[hero.ref].name}
-                    </option>
-                )
-            }
-          </select>
+            <select className="select_class" 
+                {...register (
+                    "hero"
+                )}>
+                {
+                    racesData[raceSelect[0]][raceSelect[1]].map((hero, i) => 
+                        <option 
+                            key={hero.id} 
+                            value={[hero.ref , hero.id]}
+                            className="hero__option">
+                            {hero[hero.ref].name}
+                        </option>
+                    )
+                }
+            </select>
         </form>
 
     )

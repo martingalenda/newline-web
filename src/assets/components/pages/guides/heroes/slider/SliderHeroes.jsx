@@ -26,15 +26,15 @@ const SliderHeroes = ({stopWow, setStopWow}) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         cssEase: "linear" 
-    } 
+    }  
 
-     let [race, setRace] = useState([])
-     const [isActiveHeroes, openHeroes, closeHeroes] = useModals()
-
-     const setModal = (raceData) => {
-       setRace(raceData)
-       openHeroes()
-     }
+    let [race, setRace] = useState([])
+    const [isActiveHeroes, openHeroes, closeHeroes] = useModals()
+    
+    const setModal = (raceData) => {
+      setRace(raceData)
+      openHeroes()
+    }
  
     return(
       <>

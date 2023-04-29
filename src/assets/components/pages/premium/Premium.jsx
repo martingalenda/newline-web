@@ -19,7 +19,7 @@ const Premium = () => {
             <section className="premium wow animate__fadeIn" data-wow-duration="2s">
                 <div className="premium--container">
                     {/* <span className="premium--coming">{texts.premium.main.coming}</span> */}
-                    <Countdown date={'March 27 2023 10:32:53 GMT-0500'}/>
+                    <Countdown date={'April 27 2023 10:32:53 GMT-0500'}/>
                     <h2 className="premium--title">{texts.premium.main.title}</h2>
                     <h2 className="premium--subTitle">{texts.premium.main.subTitle}</h2>
 
@@ -29,7 +29,7 @@ const Premium = () => {
                         <Package price={300} type="hero" btnTxt={texts.premium.main.addHero}/>
                     </div>
                 </div>
-                <Link className="faq" target="_blank" rel='noreferrer' to="/news/premium_access">{texts.premium.main.faq}</Link>
+                <Link className="faq" target="_blank" rel="noopener noreferrer" to="/news/premium_access">{texts.premium.main.faq}</Link>
             </section>
         </>
     )

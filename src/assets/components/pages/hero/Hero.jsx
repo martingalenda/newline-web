@@ -19,7 +19,7 @@ const Hero = () => {
             <section className="hero wow animate__fadeIn bg__active" data-wow-duration="2s">
                 
                 <main className="hero__content wow animate__fadeIn" data-wow-duration="2.5s" >
-                    <Countdown bgActive="true" date={'March 27 2023 10:32:53 GMT-0500'}/>
+                    <Countdown bgActive="true" date={'June 27 2023 10:32:53 GMT-0500'}/>
                     { 
                         access >= 10 ?
                         <ClassicBtn btnClass="access" text={texts.hero.btnTxt2} link="/mypanel"/>

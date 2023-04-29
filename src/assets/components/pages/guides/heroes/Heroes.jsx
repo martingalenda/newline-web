@@ -7,7 +7,6 @@
 // ? COMPONENTS:
     import SliderHeroes from './slider/SliderHeroes';
     import PremiumBtn from '../../../globals/buttons/premiumBtn/PremiumBtn';
- 
     
 const Heroes = () => {
 
@@ -19,7 +18,7 @@ const Heroes = () => {
     return (
         <>
             <section className={`heroes ${!stopWow && 'wow animate__fadeIn'}`} data-wow-duration="1.5s">
-                <h2 className={`heroes__title ${!stopWow && 'wow animate__fadeInDown'}`} data-wow-duration="1.6s">{texts.heroes.title}</h2>
+                <h2 className={`heroes__title ${!stopWow && 'wow animate__fadeInDown'}`} data-wow-duration="1.6s"> {texts.heroes.title} </h2>
                 <span className={`heroes__leyend ${!stopWow && 'wow animate__fadeInDown'}`} data-wow-duration="1.6s">
                     {texts.heroes.leyend} 
                     <br/> 

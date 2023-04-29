@@ -46,7 +46,7 @@ const SubMenu = ({active, close}) => {
 
                     <li onClick={handleClickDonate} className="list__item">{texts.navMain.subMenu.donations}</li>
 
-                    <a target="_blank" rel='noreferrer' href="mailto:support@newlineg.com">
+                    <a target="_blank" rel="noopener noreferrer" href="mailto:support@newlineg.com">
                         <li className="list__item">{texts.navMain.subMenu.support}</li>
                     </a>
                     

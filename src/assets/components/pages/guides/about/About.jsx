@@ -13,7 +13,6 @@
     import Modal from '../../../globals/modals/Modal.jsx'
     import {useModals} from '../../../../hooks/useModals'
 
-
 const About = () => {
 
     const [isActiveTrailer, openTrailer, closeTrailer] = useModals();
@@ -39,7 +38,7 @@ const About = () => {
                 <AboutBottom stopWow={stopWow}/>
             </section>
             
-            <PremiumBtn />
+            <PremiumBtn /> 
 
             <Modal active={isActiveTrailer} close={closeTrailer}>
                 <PlayVideo
