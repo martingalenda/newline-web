@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/newline-web/static/css/main.02245fdb.css",
-    "main.js": "/newline-web/static/js/main.8f7163d9.js",
+    "main.js": "/newline-web/static/js/main.97a35090.js",
     "static/media/installBg.mp4": "/newline-web/static/media/installBg.c9180a62b320d1bd631a.mp4",
     "static/media/intro.mp4": "/newline-web/static/media/intro.09780c54ca34eadc5050.mp4",
     "static/media/bg_intro.png": "/newline-web/static/media/bg_intro.1409ba82d29b69898aeb.png",
@@ -74,10 +74,10 @@
     "static/media/slick.woff": "/newline-web/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/newline-web/index.html",
     "main.02245fdb.css.map": "/newline-web/static/css/main.02245fdb.css.map",
-    "main.8f7163d9.js.map": "/newline-web/static/js/main.8f7163d9.js.map"
+    "main.97a35090.js.map": "/newline-web/static/js/main.97a35090.js.map"
   },
   "entrypoints": [
     "static/css/main.02245fdb.css",
-    "static/js/main.8f7163d9.js"
+    "static/js/main.97a35090.js"
   ]
 }
