@@ -1,5 +1,6 @@
 {
   "name": "newline",
+  "homepage": "http://martingalenda.github.io/newline-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,7 +33,8 @@
     "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
@@ -51,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

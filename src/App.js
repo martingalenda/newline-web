@@ -44,7 +44,7 @@ function App() {
             <NavMain />
             <NavMobile />
 
-            <Routes>
+            <Routes basename="/newline-web">
                 <Route path="/" element={<Hero/>} />
                 <Route path="/home" element={<Hero/>} />
                 <Route path="/news" element={<News/>} />
